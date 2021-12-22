@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>APP研发架构总结 | Grx Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="架构即未来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="APP研发架构总结">
+<meta property="og:url" content="http://yoursite.com/2021/05/01/APP%E7%A0%94%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Grx Blog">
+<meta property="og:description" content="架构即未来">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-05-01T11:18:21.000Z">
+<meta property="article:modified_time" content="2021-12-21T05:13:38.160Z">
+<meta property="article:author" content="Grx">
+<meta property="article:tag" content="life">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Grx Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/rufei.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/"></a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/life">随笔</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ruixiaoguo" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="https://weibo.com/u/3984935859?refer_flag=1005055010_" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/grx0917" title="zhihu">zhihu</a>
+					        
+								<a class="linkedin" target="_blank" href="https://juejin.cn" title="linkedin">linkedin</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/life/" style="font-size: 10px;">life</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.devtang.com">唐巧的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://beyondvincent.com">破船之家</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://limboy.me">无网不剩</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://msching.github.io">码农人生</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://yulingtianxia.com">玉令天下</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.leichunfeng.com">雷纯锋的技术博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://jax.cnblogs.com">包建强</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.cnbang.net">bang</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/rufei.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/life">随笔</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ruixiaoguo" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="https://weibo.com/u/3984935859?refer_flag=1005055010_" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/grx0917" title="zhihu">zhihu</a>
+			        
+						<a class="linkedin" target="_blank" href="https://juejin.cn" title="linkedin">linkedin</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-APP研发的一些经验总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/05/01/APP%E7%A0%94%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" class="article-date">
+  	<time datetime="2021-05-01T11:18:21.000Z" itemprop="datePublished">2021-05-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      APP研发架构总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/" rel="tag">life</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>架构即未来</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="一、架构-API"><a href="#一、架构-API" class="headerlink" title="一、架构-API"></a>一、架构-API</h2><h4 id="1-制定安全机制"><a href="#1-制定安全机制" class="headerlink" title="1.制定安全机制"></a>1.制定安全机制</h4><p>设计API第⼀个需要考虑的是API的安全机制。我负责的上⼀个项⽬，因为API的安全问题，就被⼈攻击了两次。之后经过分析，主要存在两个漏洞：</p>
+<ul>
+<li>⼀是因为缺少对调⽤者进⾏安全验证的⽅式</li>
+</ul>
+<ul>
+<li>⼆是因为数据传输不够安全。</li>
+</ul>
+<p>那么，制定API的安全机制，主要就是为了解决这两个问题：</p>
+<p>1.保证API的调⽤者是经过⾃⼰授权的App；<br /><br>2.保证数据传输的安全。</p>
+<p>第⼀个问题的解决⽅案，我主要采⽤设计签名的⽅式。对每个客户端，Android、iOS、WeChat，分别分配⼀个AppKey和AppSecret。需要调⽤API时，将AppKey加⼊请求参数列表，并将AppSecret和所有参数⼀起，根据某种签名算法⽣成⼀个签名字符串，然后调⽤API时把该签名字符串也⼀起带上。服务端收到请求之后，根据请求中的AppKey查询相应的AppSecret，按照同样的签名算法，也⽣成⼀个签名字符串，当服务端⽣成的签名和请求带过来的签名⼀致的时候，那就表示这个请求的调⽤者是经过⾃⼰授权的，证明这个请求是安全的。⽽且，每个端都有⼀个Key，也⽅便不同端的标识和统计。为了防⽌AppSecret被别⼈获取，这个AppSecret⼀般写死在代码⾥⾯。另外，签名算法也需要有⼀定的复杂度，不能轻易被别⼈破解，最好是采⽤⾃⼰规定的⼀套签名算法，⽽不是采⽤外部公开的签名算法。另外，在参数列表中再加⼊⼀个时间戳，还可以防⽌部分重放攻击。</p>
+<p>第⼆个问题的解决⽅案，主要就是采⽤HTTPS了。HTTPS因为添加了SSL安全协议，⾃动对请求数据进⾏了压缩加密，在⼀定程序可以防⽌监听、防⽌劫持、防⽌重发，主要就是防⽌中间⼈攻击。苹果从iOS9开始，默认就采⽤HTTPS了。⽽关于在Android中如何使⽤HTTPS，Google官⽅也给出了很多安全建议。不过，⼤部分App并没有按照安全建议去实现，主要就是没有对SSL证书进⾏安全性检查，这就成为了⼀个很⼤的漏洞，中间⼈利⽤此漏洞⽤假证书就可以通过检查，从⽽可以劫持到所有数据了。因此，为了安全考虑，建议对SSL证书进⾏强校验，包括签名CA是否合法、域名是否匹配、是不是⾃签名证书、证书是否过期等。 接⼝协议标准化API返回的数据，⼀般都是采⽤JSON格式进⾏传输。</p>
+<p>然⽽，JSON的值只有六种数据类型：</p>
+<p>Number：整数或浮点数<br>String：字符串<br>Boolean：true 或 false<br>Array：数组包含在⽅括号[]中<br>Object：对象包含在⼤括号{}中<br>Null：空类型</p>
+<p>我遇到过的，关于API的坑有⼤部分就是因为JSON数据和实体对象转化时出错导致的，⽽且是各种各样的错误都有，其中不乏有⼀些很奇葩的错误。<br>最麻烦的就是处理Date类型，因为JSON本身没有Date类型，因此，JSON库将Date类型的数据序列<br>化时会转为String。这时，不同环境，不同平台，以及⽤不同的JSON解析库，转换后的结果经常会<br>不同。⽐如，你在开发机上可能得到的结果是”2016-1-1 17:11:11”，但放到服务器后结果却变成了<br>“Jan 1,2016 5:11:11 PM” ，客户端进⾏反序列化时⽆疑会失败。后来，我取消了所有Date类型，统<br>⼀采⽤时间戳表示，就再没有转化的烦恼了。<br>另外，接⼝的开发⼈员有时候会将⼀些数据错误地转换为了String，导致客户端使⽤时因类型错误⽽<br>异常。例如，本来是数字的1，被转成了”1”，客户端做运算时就会出错，或⽤switch判断时也会出<br>错，或其他⽆法转换的情况发⽣时；例如，为空时JSON正确地表示应该是null，但如果转为了<br>String就变成了”null”，那问题就来了，我遇到的因为这个错误的转换导致的程序奔溃已经好⼏次<br>了，第⼀次的时候，查了⼀整天才定位到问题所在。<br>还有，因为接⼝的开发⼈员不同，很多时候还会出现不同接⼝同⼀个意思的参数名称却不同。⽐如，<br>对于有分⻚数据的接⼝，⼀般都有当前⻚的参数，A开发⼈员可能将参数命名为currentPage，第⼀<br>⻚是从0开始；B开发⼈员在另⼀个接⼝则命名为currPage，第⼀⻚却从1开始；C开发⼈员在另⼀个<br>接⼝⼜命名为presentPage，第⼀⻚⼜是从0开始。客户端的开发⼈员看到也是醉了。<br>每个技术团队⼀般都会有⼀份接⼝协议⽂档，主要内容包括每个接⼝的描述、⼊参、输出结果等，<br>但⼀般并不严谨，很多地⽅没有统⼀标准，从⽽容易出现很多坑。因此，有⼀份统⼀标准且严格执<br>⾏的接⼝协议⾮常重要。协议的内容除了规定每个接⼝，包括接⼝中每个数据具体的数据类型，还<br>需要规定⼀套共⽤的数据字典，以及其他需要统⼀定义的信息，⽐如签名算法等。⼀旦有了这份统<br>⼀标准且严格执⾏的接⼝协议，很多问题都将迎刃⽽解。</p>
+<h4 id="2-版本控制"><a href="#2-版本控制" class="headerlink" title="2.版本控制"></a>2.版本控制</h4><p>我们已经不⽌⼀次因为接⼝发⽣变动⽽导致旧版本的App出错的问题，⽽且变动不⼀定是修改了接⼝<br>本身，有可能是底层增加了⼀种新的数据结构，接⼝把新数据也返回给客户端了，但客户端旧版本<br>是解析不了的，从⽽就导致出错了。<br /><br>为了解决接⼝的兼容性问题，需要做好接⼝版本控制。实现上，⼀般有两种做法：</p>
+<ul>
+<li>每个接⼝有各⾃的版本，⼀般为接⼝添加个version的参数；</li>
+<li>整个接⼝系统有统⼀的版本，⼀般在URL中添加版本号:<br />⽐如api.domain.com/v2。平时⼩版本的更新…<br>更新，则⽤第⼆种⽅式，这时候，基本就是⼀套全新的接⼝系统了，跟旧版本是相对独⽴的。<br>当版本越来越多时，维护就会成为⼀个⼤问题，我们没那么多精⼒去维护所有版本，因此，太旧的<br>版本⼀般就不会再维护了。这时候，如果有⽤户还在使⽤即将废弃的旧版本，需要提醒⽤户升级到新版本</li>
+</ul>
+<h2 id="二、架构-分层"><a href="#二、架构-分层" class="headerlink" title="二、架构-分层"></a>二、架构-分层</h2><p>API的设计完成之后，接下来就会考虑App项⽬的整体架构了开始思考如何拆分，如何才能做到松耦合⾼内聚<br /></p>
+<p>前⾯也说过，⼀个App的核⼼就是数据，那么，从App对数据处理的⻆⾊划分出发，最简单的划分就<br>是：数据管理、数据加⼯、数据展示。相应的也就有了三层架构：数据层、业务层、展示层。它们之间的关系如下图，数据层是三层中的最底层，往下，它接⼊API；往上，它向业务层交付数据。业<br>务层夹在三层中间，属于数据的加⼯⼚，将数据层提供上来的数据加⼯成展示层需要展示的数据。<br>展示层处于三层中的最上层，主要就是将从业务层取得的数据展示到界⾯上。</p>
+<h3 id="1-数据层"><a href="#1-数据层" class="headerlink" title="1.数据层"></a>1.数据层</h3><p>数据层是数据管理者，主要任务就是封装API，并将数据结果交付给上层，中间会再加个数据缓存。<br>整个主流程如下：</p>
+<p>业务层向数据层请求数据；<br>数据层检查缓存中有没有请求需要的数据；<br>如果有缓存数据，则直接返回缓存数据；<br>如果没有缓存数据，则从⽹络API获取数据，并将数据加⼊缓存，然后返回数据。</p>
+<p>调⽤⽹络API时，还要判断⽹络状态，根据不同状态做不同处理。如果⽹络不可⽤，就⽆需发起请求<br>了。⽹络可⽤时，也要区分是连接WIFI还是连接移动⽹络。连接移动⽹络时，⼀般需要限制调⽤⽐<br>较耗流量的请求。曾经，我们没有对移动⽹络状态下的请求进⾏限制，结果，测试时流量<br>DuangDuangDuang地⼀下⼦就不⻅了⼗⼏M。连接WIFI时，则⽆需设置这种限制，⽽且还可以预先<br>请求⼀些接⼝，⽐如请求当前分⻚数据时，可以将下⼀⻚的数据也预先请求。<br>缓存也需要缓存策略，不同的接⼝需要做不同的缓存处理。⾸先，缓存只适⽤于获取数据的接⼝，<br>对于修改数据的接⼝则不适⽤。其次，不同接⼝缓存时间⼀般也不同，对于很少变动的数据缓存时<br>间可以设置⻓⼀些，⽽频繁变动的数据缓存时间则⽐较短，甚⾄不进⾏缓存。最后，缓存数据因为<br>⽐较多，我们⼀般保存在数据库，⽽对于调⽤频率⾼、最新的数据，还会在内存中也拥有⼀份缓存，<br>不过缓存时间⽐较短。请求缓存数据时，会先检查内存缓存中有没有，有则直接将缓存的数据返回，<br>没有才从数据库获取。<br>那么，如何将数据交付给业务层呢？这是整个数据层模块与外部交互的部分，当与外部交互的时候，<br>⼀般都要符合⾯向接⼝编程的原则，因此只要提供开放的数据接⼝就可以了。对于接⼝的参数需要<br>说明⼀下，上⾯提到的参数有appKey、version、currentPage这⼏个，还有签名sign、时间戳time，<br>其实可以分为两类：系统参数和业务参数。像appKey、version、sign、time这些属于系统参数，⽽currentPage，或username之类的则属于业务参数。数据层开放的数据接⼝的参数只需要包含业务<br>参数就可以了，业务层并不需要关⼼系统参数是什么，系统参数在数据层内部封装API时指定就可以<br>了。</p>
+<h3 id="2-业务层"><a href="#2-业务层" class="headerlink" title="2.业务层"></a>2.业务层</h3><p>业务层是数据加⼯者，主要就是从数据层获取数据，然后经过业务逻辑处理后转化成展示层需要的<br>数据。业务层因为夹在数据层和展示层中间，起着承上启下的作⽤。也因此，业务层很容易沦落为<br>只是⼀个数据的中转站，主要就是因为对业务层具体的作⽤和职责没有理解清楚。<br>这⾥⽤⼀个例⼦来说明业务层具体的⼯作吧，就举个⽤户注册的例⼦。⽤户注册时，界⾯上需要⽤<br>户提供⼿机号、短信验证码、密码、确认密码。那么，最简单的操作就是，带上这些参数调⽤数据<br>层的注册接⼝。好了，问题来了，注册接⼝并没有提供确认密码的参数。那好，调⽤注册接⼝之前<br>先判断下密码和确认密码是否⼀致，不⼀致则返回错误提示给⽤户，⼀致了才调⽤注册接⼝。好了，<br>第⼆个问题来了，⽤户等⽹络请求等了⼀段时间后，请求结果返回说⼿机号少了⼀位。下⼀次，⼜<br>等了⼀段时间，这次⼜返回说⼿机号多了⼀位。就因为⼀个⼩错误要让⽤户等那么久，⽤户肯定有<br>意⻅。后台也有意⻅，各种⾮法的请求都发过来，是嫌服务器压⼒不够⼤啊。那好，调⽤接⼝之前<br>对这些参数做有效性检查吧，⼿机号要规范，短信验证码只能为六位数字，密码不能少于六位。终<br>于注册成功了，第三个问题⼜来了，注册接⼝是没有返回⽤户的accessToken的，只有登录接⼝才会<br>返回。让⽤户⼿动再登录⼀下？这⽤户体验不太好啊。正确的姿势应该是注册成功后再⾃动调⽤⼀<br>次登录接⼝，如果因为⽹络问题第⼀次登录失败，后⾯还需要再⾃动调⽤多⼀次，如果还是调⽤失<br>败，才让⽤户⼿动登录。<br>上⾯的例⼦中，对参数的有效性检查，注册成功后的⾃动登录，都属于业务逻辑的处理，也就是说<br>都是业务层的⼯作。<br>业务层交付给展示层的数据也是通过接⼝的⽅式，不过，和数据层交付给业务层时不同的是：交付<br>给展示层的数据应该是通过异步回调返回的。因为获取数据是⼀个⽐较耗时的任务，通过异步回调<br>才不会阻塞UI主线程。</p>
+<h3 id="3-展示层"><a href="#3-展示层" class="headerlink" title="3.展示层"></a>3.展示层</h3><p>展示层作为数据展示者，它只要关⼼数据如何展示就可以了。不过，数据如何展示却不是那么简单。<br>展示层是三层架构中最复杂的⼀层了，要考虑的东⻄远远多于其他两层，涉及的东⻄包括但不限于<br>界⾯布局、屏幕适配、图⽚资源、⽂本资源、颜⾊资源等等。在开发⼀段时间后，展示层出现代码<br>混乱是最常⻅的。因此，做好展示层，就需要保持⾼质量的代码。要保持⾼质量代码，我觉得⾄少<br>应该遵循⼏条基本的原则：</p>
+<p>保持规范性：定义好开发规范，包括书写规范、命名规范、注释规范等，并按照规范严格执⾏；<br>保持单⼀性：布局就只做布局，内容就只做内容，各⾃分离好，每个⽅法、每个类，也只做⼀件事情；<br>保持简洁性：保持代码和结构的简洁，每个⽅法，每个类，每个包，每个⽂件，都不要塞太多代码或资源，感觉多了就应该拆分。</p>
+<p>所谓⽆规矩不成⽅圆，展示层的设计，要从开发规范开始。⼀份好的开发规范，是保证代码有较⾼<br>的可读性的基础。iOS⽅⾯，苹果已经有⼀套Coding Guidelines，主要属于命名⽅⾯的规范。当我<br>们制定⾃⼰的开发规范时，⾸先就要遵守苹果的这份规范，在此基础上再加上⾃⼰的规范。Android⽅⾯，我也在我的博客中分享过⼀套（Android技术积累:开发规范），主要分为书写规范、命名规<br>范、注释规范三部分。<br>最重要的不是开发规范的制定，⽽是开发规范的执⾏。如果没有按照开发规范去执⾏，那开发规范<br>就等于形同虚设，那代码混乱的问题依然得不到解决。<br>说到单⼀性，⾯向对象设计中，有⼀个基本原则就是单⼀职责原则，它规定⼀个类应该只有⼀个发<br>⽣变化的原因。保持单⼀性是减低耦合度的关键标准，其⽬的就是各⽅⾯的解耦。⽽我这⾥说的单<br>⼀性不只是规定类的单⼀，也包括界⾯的单⼀、⽅法的单⼀、资源⽂件的单⼀等。<br>界⾯的单⼀，⾸先是界⾯的布局和界⾯的数据应该分离。另外，界⾯数据的获取和展示也应该分离。<br>⼀句话，保持界⾯的单⼀性就是要保持界⾯上每个维度都做好分离，从界⾯的布局，到数据的获取，<br>数据的检查，数据的展示。<br>⽅法的单⼀，则表现为⼀个⽅法是对⼀个⾏为的封装。⾏为⼜可以拆分为多个步骤，每个步骤其实<br>也是更细化的⾏为。因此，⽅法嵌套⽅法是⼀种常态。那么，保持⽅法的单⼀性，关键不在于怎么<br>定义这个⽅法的⾏为，⽽在于这个⾏为要怎么拆分成更细的⾏为。举个例⼦，通常在Activity的<br>onCreate⽅法，做初始化操作，细分出来就分为了：控件的初始化、逻辑变量的初始化、数据的初<br>始化。数据的初始化⼜可以再细分：数据的获取、数据的展示。每个细化的⾏为都应该封装为⼀个<br>独⽴的⽅法，这样，才真正符合⽅法的单⼀性。<br>资源⽂件的单⼀，主要是指Android的各类资源⽂件，包括存放字符串的strings.xml，存放字符串数<br>组的arrays.xml，存放颜⾊值的colors.xml，存放尺⼨值的dimens.xml，等等。资源⽂件的单⼀，是<br>说所有相关的资源信息要在资源⽂件⾥定义并引⽤到代码或布局⽂件⾥，⽽不是在代码或布局⽂件<br>⾥直接定义。这样做，可以很⽅便地做各种适配和修改，⽐如⽀持国际化，⽐如不同分辨率的屏幕<br>⽤不同尺⼨值。iOS则没有提供和Android⼀样的资源⽂件分离的机制，但可以参考Android的做法⾃<br>⼰去实现。</p>
+<h2 id="三-环境分离"><a href="#三-环境分离" class="headerlink" title="三.环境分离"></a>三.环境分离</h2><p>每个App项⽬，⾄少都会有两个环境：测试环境和⽣产环境。多的甚⾄有四个环境：开发环境、测试<br>环境、预⽣产环境和⽣产环境。<br /> <br /><br>开发⼈员经常需要在环境之间切换，测试⼈员也同样。经常出现测<br>试⼈员今天需要测试环境的最新版本，叫App开发⼈员打包⼀个给她，明天需要切换到⽣产版本，再<br>叫App开发⼈员打包⼀个⽣产环境的给她。我们知道，⼀个App，在⼀台⼿机上要么只能是测试环境<br>的，要么只能是⽣产环境的。测试⼈员要测试两个环境，只能不断替换不同环境的同个App，这实在<br>太麻烦了。<br /> <br /><br>为了解决此问题，最好的⽅案就是环境分离，不同环境有不同的App。<br>⼀个App的唯⼀标识，Android是⽤包名，iOS是⽤Bundle Identify。那么，在⼀个系统想安装不同环<br>境的App，只要每个环境App的包名和Bundle Identify不同即可。⽐如，⽣产版的包名和Bundle<br>Identify命名为com.mydomain.myapp，测试版的包名和Bundle Identify则命名为<br>com.mydomain.myapp.beta，这样，Android和iOS都会识别为两个不同的App了。<br>不过，只改包名和Bundle Identify是不够的，应⽤图标和应⽤名称也要修改，不然安装之后很难区分<br>哪个App是哪个环境的。⼀般做法就是，⾮⽣产环境的App图标就是在⽣产图标的基础上添加⼀个环<br>境标签，同时App的应⽤名称也是在⽣产的基础上添加环境后缀名。另外，因为包名和Bundle<br>Identify不同了，微信、微博、百度地图等这些第三⽅平台也都需要为不同环境的App分别申请不同<br>的appID。实现上，最笨的⽅法就是拷⻉当前⼯程，然后修改，缺陷很明显，维护成本很⾼。不过，好在<br>Android和iOS都有很⽅便的修改⽅式</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/12/22/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="APP研发的一些经验总结" data-title="APP研发架构总结" data-url="http://yoursite.com/2021/05/01/APP%E7%A0%94%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2021 Grx
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
