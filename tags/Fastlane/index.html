@@ -206,8 +206,8 @@
   
     <h1 itemprop="name">
 	
-	  <a class="archive-article-title" href="/Grx.github.io/2020/05/01/Fastlane%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E7%89%A9%E6%96%99%E5%88%B0iTunes%20Connect%EF%BC%88%E4%B8%89%EF%BC%89/" target="_blank">Fastlane自动上传物料到iTunes Connect（三）</a>
-  
+	  <a class="archive-article-title" href="/Grx.github.io/2020/05/01/Fastlane%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E7%89%A9%E6%96%99%E5%88%B0iTunes%20Connect%EF%BC%88%E4%B8%89%EF%BC%89/">Fastlane自动上传物料到iTunes Connect（三）</a>
+	
     </h1>
   
 
@@ -249,8 +249,8 @@
   
     <h1 itemprop="name">
 	
-	  <a class="archive-article-title" href="/Grx.github.io/2020/05/01/Fastlane%E8%AF%81%E4%B9%A6%E7%AE%A1%E7%90%86%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_blank">Fastlane证书管理cert、sigh(二)</a>
-  
+	  <a class="archive-article-title" href="/Grx.github.io/2020/05/01/Fastlane%E8%AF%81%E4%B9%A6%E7%AE%A1%E7%90%86%EF%BC%88%E4%BA%8C%EF%BC%89/">Fastlane证书管理cert、sigh(二)</a>
+	
     </h1>
   
 
@@ -292,8 +292,8 @@
   
     <h1 itemprop="name">
 	
-	  <a class="archive-article-title" href="/Grx.github.io/2020/05/01/Fastlane%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85%E5%92%8C%E5%8F%91%E5%B8%83%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank">Fastlane实现自动化打包和发布(一)</a>
-  
+	  <a class="archive-article-title" href="/Grx.github.io/2020/05/01/Fastlane%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85%E5%92%8C%E5%8F%91%E5%B8%83%EF%BC%88%E4%B8%80%EF%BC%89/">Fastlane实现自动化打包和发布(一)</a>
+	
     </h1>
   
 
@@ -368,7 +368,7 @@
 		isArchive: false,
 		isTag: true,
 		isCategory: false,
-		open_in_new: true,
+		open_in_new: false,
 		toc_hide_index: true,
 		root: "/Grx.github.io/",
 		innerArchive: true,
@@ -775,6 +775,56 @@
   
   <!-- <script async type="text/javascript" size="90" alpha="0.2" zIndex="0" src="/Grx.github.io/plugins/ribbon.js/ribbon.min.js"></script> -->
   
+  
+    <script type="text/javascript" src="/Grx.github.io/plugins/live2d-widget.js/L2Dwidget.min.js"></script>
+<script type="text/javascript">
+  /**
+   * 完整配置请参考：https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
+   */
+  var pluginModelPath = "assets/", // 模型的文件路径，无需更改
+    pluginRootPath = "/Grx.github.io/live2d_models/"; // 插件的路径，无需更改
+  //特定的模型json文件名称
+  var modelPathJson = {
+    "epsilon2_1": "Epsilon2.1",
+    "gf": "Gantzert_Felixander",
+    "haru/01": "haru01",
+    "haru/02": "haru02",
+    "nietzsche": "nietzche"
+  }
+
+  
+    var modelName = "hibiki";
+  
+
+  var modelJsonPath = "";
+  if (modelPathJson[modelName]) {
+    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelPathJson[modelName] +
+      ".model.json";
+  } else {
+    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelName + ".model.json";
+  }
+  L2Dwidget.init({
+    model: {
+      jsonPath: modelJsonPath
+    },
+    display: {
+       position: "right", 
+       width: 145, 
+       height: 315, 
+       hOffset: 50, 
+      
+    },
+    mobile: {
+       show: false, 
+       scale: 0.6 
+    },
+    react: {
+       opacity: 0.8 
+    }
+  })
+
+</script>
+
   
   
   <script type="text/javascript" src="/Grx.github.io/lib/snow.js"></script>

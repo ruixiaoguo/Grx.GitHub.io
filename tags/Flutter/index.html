@@ -206,8 +206,8 @@
   
     <h1 itemprop="name">
 	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/09/20/LLDebugTool%20-%20%E4%BE%BF%E6%8D%B7%E7%9A%84IOS%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7(%E6%94%AF%E6%8C%81Swift)/" target="_blank">LLDebugTool - 便捷的IOS调试工具(支持Swift)</a>
-  
+	  <a class="archive-article-title" href="/Grx.github.io/2018/09/20/LLDebugTool%20-%20%E4%BE%BF%E6%8D%B7%E7%9A%84IOS%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7(%E6%94%AF%E6%8C%81Swift)/">LLDebugTool - 便捷的IOS调试工具(支持Swift)</a>
+	
     </h1>
   
 
@@ -249,8 +249,8 @@
   
     <h1 itemprop="name">
 	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/09/17/%E6%B5%81%E8%A8%80%E7%BB%88%E7%BB%93%E8%80%85-%20Flutter%E5%92%8CRN%E8%B0%81%E6%89%8D%E6%98%AF%E6%9B%B4%E5%A5%BD%E7%9A%84%E8%B7%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E6%96%B9%E6%A1%88%EF%BC%9F/" target="_blank">流言终结者- Flutter和RN谁才是更好的跨端开发方案？</a>
-  
+	  <a class="archive-article-title" href="/Grx.github.io/2018/09/17/%E6%B5%81%E8%A8%80%E7%BB%88%E7%BB%93%E8%80%85-%20Flutter%E5%92%8CRN%E8%B0%81%E6%89%8D%E6%98%AF%E6%9B%B4%E5%A5%BD%E7%9A%84%E8%B7%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E6%96%B9%E6%A1%88%EF%BC%9F/">流言终结者- Flutter和RN谁才是更好的跨端开发方案？</a>
+	
     </h1>
   
 
@@ -292,8 +292,8 @@
   
     <h1 itemprop="name">
 	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/09/10/iOS%E5%8E%9F%E7%94%9F%20VS%20Flutter%E8%AF%84%E6%B5%8B/" target="_blank">iOS原生 VS Flutter评测</a>
-  
+	  <a class="archive-article-title" href="/Grx.github.io/2018/09/10/iOS%E5%8E%9F%E7%94%9F%20VS%20Flutter%E8%AF%84%E6%B5%8B/">iOS原生 VS Flutter评测</a>
+	
     </h1>
   
 
@@ -335,8 +335,8 @@
   
     <h1 itemprop="name">
 	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/09/02/Flutter%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/" target="_blank">Flutter原理与实践</a>
-  
+	  <a class="archive-article-title" href="/Grx.github.io/2018/09/02/Flutter%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/">Flutter原理与实践</a>
+	
     </h1>
   
 
@@ -411,7 +411,7 @@
 		isArchive: false,
 		isTag: true,
 		isCategory: false,
-		open_in_new: true,
+		open_in_new: false,
 		toc_hide_index: true,
 		root: "/Grx.github.io/",
 		innerArchive: true,
@@ -818,6 +818,56 @@
   
   <!-- <script async type="text/javascript" size="90" alpha="0.2" zIndex="0" src="/Grx.github.io/plugins/ribbon.js/ribbon.min.js"></script> -->
   
+  
+    <script type="text/javascript" src="/Grx.github.io/plugins/live2d-widget.js/L2Dwidget.min.js"></script>
+<script type="text/javascript">
+  /**
+   * 完整配置请参考：https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
+   */
+  var pluginModelPath = "assets/", // 模型的文件路径，无需更改
+    pluginRootPath = "/Grx.github.io/live2d_models/"; // 插件的路径，无需更改
+  //特定的模型json文件名称
+  var modelPathJson = {
+    "epsilon2_1": "Epsilon2.1",
+    "gf": "Gantzert_Felixander",
+    "haru/01": "haru01",
+    "haru/02": "haru02",
+    "nietzsche": "nietzche"
+  }
+
+  
+    var modelName = "hibiki";
+  
+
+  var modelJsonPath = "";
+  if (modelPathJson[modelName]) {
+    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelPathJson[modelName] +
+      ".model.json";
+  } else {
+    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelName + ".model.json";
+  }
+  L2Dwidget.init({
+    model: {
+      jsonPath: modelJsonPath
+    },
+    display: {
+       position: "right", 
+       width: 145, 
+       height: 315, 
+       hOffset: 50, 
+      
+    },
+    mobile: {
+       show: false, 
+       scale: 0.6 
+    },
+    react: {
+       opacity: 0.8 
+    }
+  })
+
+</script>
+
   
   
   <script type="text/javascript" src="/Grx.github.io/lib/snow.js"></script>
