@@ -9,7 +9,7 @@
   <meta name="description" content="上一篇算是先来一个前奏，这一篇开始我们正式开搞。 homekit App 相关代码实现创建Home 创建room 创建设备 创建服务">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IOS开发之HomeKit（二）">
-<meta property="og:url" content="http://yoursite.com/2019/04/11/IOS%E5%BC%80%E5%8F%91%E4%B9%8BHomeKit%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
+<meta property="og:url" content="https://github.com/2019/04/11/IOS%E5%BC%80%E5%8F%91%E4%B9%8BHomeKit%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
 <meta property="og:site_name" content="Grx博客">
 <meta property="og:description" content="上一篇算是先来一个前奏，这一篇开始我们正式开搞。 homekit App 相关代码实现创建Home 创建room 创建设备 创建服务">
 <meta property="og:locale">
@@ -31,7 +31,7 @@
   
   
   
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/ruixiaoguo/Grx.github.io.git/css/style.css">
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
@@ -96,11 +96,11 @@
 					<nav class="header-menu">
 						<ul>
 						
-							<li><a href="/">主页</a></li>
+							<li><a href="/ruixiaoguo/Grx.github.io.git/">主页</a></li>
 				        
-							<li><a href="/tags/life">随笔</a></li>
+							<li><a href="/ruixiaoguo/Grx.github.io.git/tags/life">随笔</a></li>
 				        
-							<li><a href="/archives">所有文章</a></li>
+							<li><a href="/ruixiaoguo/Grx.github.io.git/archives">所有文章</a></li>
 				        
 						</ul>
 					</nav>
@@ -122,7 +122,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/OC/" style="font-size: 10px;">-OC</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Apple-Watch/" style="font-size: 10px;">Apple Watch</a> <a href="/tags/Fastlane/" style="font-size: 13.33px;">Fastlane</a> <a href="/tags/Flutter/" style="font-size: 15px;">Flutter</a> <a href="/tags/Google/" style="font-size: 13.33px;">Google</a> <a href="/tags/Life/" style="font-size: 10px;">Life</a> <a href="/tags/Lottie/" style="font-size: 10px;">Lottie</a> <a href="/tags/MMKV/" style="font-size: 10px;">MMKV</a> <a href="/tags/Mac/" style="font-size: 11.67px;">Mac</a> <a href="/tags/MonkeyKing/" style="font-size: 10px;">MonkeyKing</a> <a href="/tags/OC/" style="font-size: 20px;">OC</a> <a href="/tags/PHP/" style="font-size: 11.67px;">PHP</a> <a href="/tags/RAC/" style="font-size: 11.67px;">RAC</a> <a href="/tags/RN/" style="font-size: 10px;">RN</a> <a href="/tags/Swift/" style="font-size: 16.67px;">Swift</a> <a href="/tags/WKWebView/" style="font-size: 10px;">WKWebView</a> <a href="/tags/WebView/" style="font-size: 10px;">WebView</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/appledoc/" style="font-size: 10px;">appledoc</a> <a href="/tags/cocos2d/" style="font-size: 10px;">cocos2d</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/life/" style="font-size: 18.33px;">life</a> <a href="/tags/xcode/" style="font-size: 11.67px;">xcode</a> <a href="/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/" style="font-size: 15px;">智能家居</a> <a href="/tags/%E9%80%86%E5%90%91/" style="font-size: 15px;">逆向</a>
+						<a href="/ruixiaoguo/Grx.github.io.git/tags/OC/" style="font-size: 10px;">-OC</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/Android/" style="font-size: 10px;">Android</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/Apple-Watch/" style="font-size: 10px;">Apple Watch</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/Fastlane/" style="font-size: 13.33px;">Fastlane</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/Flutter/" style="font-size: 15px;">Flutter</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/Google/" style="font-size: 13.33px;">Google</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/Life/" style="font-size: 10px;">Life</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/Lottie/" style="font-size: 10px;">Lottie</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/MMKV/" style="font-size: 10px;">MMKV</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/Mac/" style="font-size: 11.67px;">Mac</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/MonkeyKing/" style="font-size: 10px;">MonkeyKing</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/OC/" style="font-size: 20px;">OC</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/PHP/" style="font-size: 11.67px;">PHP</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/RAC/" style="font-size: 11.67px;">RAC</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/RN/" style="font-size: 10px;">RN</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/Swift/" style="font-size: 16.67px;">Swift</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/WKWebView/" style="font-size: 10px;">WKWebView</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/WebView/" style="font-size: 10px;">WebView</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/appledoc/" style="font-size: 10px;">appledoc</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/cocos2d/" style="font-size: 10px;">cocos2d</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/ios/" style="font-size: 10px;">ios</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/life/" style="font-size: 18.33px;">life</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/xcode/" style="font-size: 11.67px;">xcode</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/" style="font-size: 15px;">智能家居</a> <a href="/ruixiaoguo/Grx.github.io.git/tags/%E9%80%86%E5%90%91/" style="font-size: 15px;">逆向</a>
 					</div>
 				</section>
 				
@@ -180,11 +180,11 @@
 			<nav class="header-menu">
 				<ul>
 				
-					<li><a href="/">主页</a></li>
+					<li><a href="/ruixiaoguo/Grx.github.io.git/">主页</a></li>
 		        
-					<li><a href="/tags/life">随笔</a></li>
+					<li><a href="/ruixiaoguo/Grx.github.io.git/tags/life">随笔</a></li>
 		        
-					<li><a href="/archives">所有文章</a></li>
+					<li><a href="/ruixiaoguo/Grx.github.io.git/archives">所有文章</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -209,7 +209,7 @@
       <div class="body-wrap"><article id="post-IOS开发之HomeKit（二）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/11/IOS%E5%BC%80%E5%8F%91%E4%B9%8BHomeKit%EF%BC%88%E4%BA%8C%EF%BC%89/" class="article-date">
+      <a href="/ruixiaoguo/Grx.github.io.git/2019/04/11/IOS%E5%BC%80%E5%8F%91%E4%B9%8BHomeKit%EF%BC%88%E4%BA%8C%EF%BC%89/" class="article-date">
   	<time datetime="2019-04-11T07:28:47.000Z" itemprop="datePublished">2019-04-11</time>
 </a>
     </div>
@@ -232,7 +232,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/" rel="tag">智能家居</a></li></ul>
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/ruixiaoguo/Grx.github.io.git/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/" rel="tag">智能家居</a></li></ul>
 	</div>
 
         
@@ -254,7 +254,7 @@
 <h5 id="4-蓝色的方块是collectionView，展示了当前home的所有room，点击对应的room会push到这个room的详情界面。点击后边的加号同样会出现一个alterViewContorller，让用户输入一个唯一的名字，来为当前的home增加一个新的room。"><a href="#4-蓝色的方块是collectionView，展示了当前home的所有room，点击对应的room会push到这个room的详情界面。点击后边的加号同样会出现一个alterViewContorller，让用户输入一个唯一的名字，来为当前的home增加一个新的room。" class="headerlink" title="4.蓝色的方块是collectionView，展示了当前home的所有room，点击对应的room会push到这个room的详情界面。点击后边的加号同样会出现一个alterViewContorller，让用户输入一个唯一的名字，来为当前的home增加一个新的room。"></a>4.蓝色的方块是collectionView，展示了当前home的所有room，点击对应的room会push到这个room的详情界面。点击后边的加号同样会出现一个alterViewContorller，让用户输入一个唯一的名字，来为当前的home增加一个新的room。</h5><h3 id="上代码："><a href="#上代码：" class="headerlink" title="上代码："></a>上代码：</h3><h5 id="这里为了搞得清楚一点，单搞了一个类出来作为工具类；"><a href="#这里为了搞得清楚一点，单搞了一个类出来作为工具类；" class="headerlink" title="这里为了搞得清楚一点，单搞了一个类出来作为工具类；"></a>这里为了搞得清楚一点，单搞了一个类出来作为工具类；</h5><p><img src="https://upload-images.jianshu.io/upload_images/2641301-8e4fd5b4f7edc499.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/810" alt="avatar"></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/2641301-94225a85ee2e3249.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/768" alt="avatar"></p>
 <h5 id="接上图："><a href="#接上图：" class="headerlink" title="接上图："></a>接上图：</h5><p><img src="https://upload-images.jianshu.io/upload_images/2641301-2b7860f0e1df25f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/803" alt="avatar"></p>
-<h4 id="其中第一个方法是homeManager初始化之后的回调。我们对数据进行操作的时候，应该再其初始化之后进行。"><a href="#其中第一个方法是homeManager初始化之后的回调。我们对数据进行操作的时候，应该再其初始化之后进行。" class="headerlink" title="其中第一个方法是homeManager初始化之后的回调。我们对数据进行操作的时候，应该再其初始化之后进行。"></a>其中第一个方法是homeManager初始化之后的回调。我们对数据进行操作的时候，应该再其初始化之后进行。</h4><h4 id="获取home：-初始化之后我们在其回调方法中可以获取到manager-homes，这是一个数组，里边是用户的全部HMhome对象，我们可以遍历这个数组获取到全部的home，通过home-name得到home的名字。"><a href="#获取home：-初始化之后我们在其回调方法中可以获取到manager-homes，这是一个数组，里边是用户的全部HMhome对象，我们可以遍历这个数组获取到全部的home，通过home-name得到home的名字。" class="headerlink" title="获取home： 初始化之后我们在其回调方法中可以获取到manager.homes，这是一个数组，里边是用户的全部HMhome对象，我们可以遍历这个数组获取到全部的home，通过home.name得到home的名字。"></a>获取home： 初始化之后我们在其回调方法中可以获取到manager.homes，这是一个数组，里边是用户的全部HMhome对象，我们可以遍历这个数组获取到全部的home，通过home.name得到home的名字。</h4><h4 id="添加和移除home：上图中有两个分别是添加和移除home的方法，使用homeManager对象来调用。这两个方法同样有两个回调方法来告诉我们是否操作成功。"><a href="#添加和移除home：上图中有两个分别是添加和移除home的方法，使用homeManager对象来调用。这两个方法同样有两个回调方法来告诉我们是否操作成功。" class="headerlink" title="添加和移除home：上图中有两个分别是添加和移除home的方法，使用homeManager对象来调用。这两个方法同样有两个回调方法来告诉我们是否操作成功。"></a>添加和移除home：上图中有两个分别是添加和移除home的方法，使用homeManager对象来调用。这两个方法同样有两个回调方法来告诉我们是否操作成功。</h4><h4 id="获取room：获取到HMhome对象之后可以通过home-rooms获取到该home的全部room。同样通过遍历这个数组获取到全部的HMroom对象，然后通过room-name获取到room的名字。"><a href="#获取room：获取到HMhome对象之后可以通过home-rooms获取到该home的全部room。同样通过遍历这个数组获取到全部的HMroom对象，然后通过room-name获取到room的名字。" class="headerlink" title="获取room：获取到HMhome对象之后可以通过home.rooms获取到该home的全部room。同样通过遍历这个数组获取到全部的HMroom对象，然后通过room.name获取到room的名字。"></a>获取room：获取到HMhome对象之后可以通过home.rooms获取到该home的全部room。同样通过遍历这个数组获取到全部的HMroom对象，然后通过room.name获取到room的名字。</h4><h4 id="添加和移除room：同添加和移除home，不过是使用HMhome对象来调用。"><a href="#添加和移除room：同添加和移除home，不过是使用HMhome对象来调用。" class="headerlink" title="添加和移除room：同添加和移除home，不过是使用HMhome对象来调用。"></a>添加和移除room：同添加和移除home，不过是使用HMhome对象来调用。</h4><h4 id="其实这里边很多东西都是明确的上下级关系，只要搞清楚这个上下级关系，依次类推就很简单了。"><a href="#其实这里边很多东西都是明确的上下级关系，只要搞清楚这个上下级关系，依次类推就很简单了。" class="headerlink" title="其实这里边很多东西都是明确的上下级关系，只要搞清楚这个上下级关系，依次类推就很简单了。"></a>其实这里边很多东西都是明确的上下级关系，只要搞清楚这个上下级关系，依次类推就很简单了。</h4><h4 id="代码就写了一小部分，半成品代码放到github上了，有兴趣的可以去看一下。https-github-com-BigBirdalan-myHomeKit-git"><a href="#代码就写了一小部分，半成品代码放到github上了，有兴趣的可以去看一下。https-github-com-BigBirdalan-myHomeKit-git" class="headerlink" title="代码就写了一小部分，半成品代码放到github上了，有兴趣的可以去看一下。https://github.com/BigBirdalan/myHomeKit.git"></a>代码就写了一小部分，半成品代码放到github上了，有兴趣的可以去看一下。<a target="_blank" rel="noopener" href="https://github.com/BigBirdalan/myHomeKit.git">https://github.com/BigBirdalan/myHomeKit.git</a></h4>
+<h4 id="其中第一个方法是homeManager初始化之后的回调。我们对数据进行操作的时候，应该再其初始化之后进行。"><a href="#其中第一个方法是homeManager初始化之后的回调。我们对数据进行操作的时候，应该再其初始化之后进行。" class="headerlink" title="其中第一个方法是homeManager初始化之后的回调。我们对数据进行操作的时候，应该再其初始化之后进行。"></a>其中第一个方法是homeManager初始化之后的回调。我们对数据进行操作的时候，应该再其初始化之后进行。</h4><h4 id="获取home：-初始化之后我们在其回调方法中可以获取到manager-homes，这是一个数组，里边是用户的全部HMhome对象，我们可以遍历这个数组获取到全部的home，通过home-name得到home的名字。"><a href="#获取home：-初始化之后我们在其回调方法中可以获取到manager-homes，这是一个数组，里边是用户的全部HMhome对象，我们可以遍历这个数组获取到全部的home，通过home-name得到home的名字。" class="headerlink" title="获取home： 初始化之后我们在其回调方法中可以获取到manager.homes，这是一个数组，里边是用户的全部HMhome对象，我们可以遍历这个数组获取到全部的home，通过home.name得到home的名字。"></a>获取home： 初始化之后我们在其回调方法中可以获取到manager.homes，这是一个数组，里边是用户的全部HMhome对象，我们可以遍历这个数组获取到全部的home，通过home.name得到home的名字。</h4><h4 id="添加和移除home：上图中有两个分别是添加和移除home的方法，使用homeManager对象来调用。这两个方法同样有两个回调方法来告诉我们是否操作成功。"><a href="#添加和移除home：上图中有两个分别是添加和移除home的方法，使用homeManager对象来调用。这两个方法同样有两个回调方法来告诉我们是否操作成功。" class="headerlink" title="添加和移除home：上图中有两个分别是添加和移除home的方法，使用homeManager对象来调用。这两个方法同样有两个回调方法来告诉我们是否操作成功。"></a>添加和移除home：上图中有两个分别是添加和移除home的方法，使用homeManager对象来调用。这两个方法同样有两个回调方法来告诉我们是否操作成功。</h4><h4 id="获取room：获取到HMhome对象之后可以通过home-rooms获取到该home的全部room。同样通过遍历这个数组获取到全部的HMroom对象，然后通过room-name获取到room的名字。"><a href="#获取room：获取到HMhome对象之后可以通过home-rooms获取到该home的全部room。同样通过遍历这个数组获取到全部的HMroom对象，然后通过room-name获取到room的名字。" class="headerlink" title="获取room：获取到HMhome对象之后可以通过home.rooms获取到该home的全部room。同样通过遍历这个数组获取到全部的HMroom对象，然后通过room.name获取到room的名字。"></a>获取room：获取到HMhome对象之后可以通过home.rooms获取到该home的全部room。同样通过遍历这个数组获取到全部的HMroom对象，然后通过room.name获取到room的名字。</h4><h4 id="添加和移除room：同添加和移除home，不过是使用HMhome对象来调用。"><a href="#添加和移除room：同添加和移除home，不过是使用HMhome对象来调用。" class="headerlink" title="添加和移除room：同添加和移除home，不过是使用HMhome对象来调用。"></a>添加和移除room：同添加和移除home，不过是使用HMhome对象来调用。</h4><h4 id="其实这里边很多东西都是明确的上下级关系，只要搞清楚这个上下级关系，依次类推就很简单了。"><a href="#其实这里边很多东西都是明确的上下级关系，只要搞清楚这个上下级关系，依次类推就很简单了。" class="headerlink" title="其实这里边很多东西都是明确的上下级关系，只要搞清楚这个上下级关系，依次类推就很简单了。"></a>其实这里边很多东西都是明确的上下级关系，只要搞清楚这个上下级关系，依次类推就很简单了。</h4><h4 id="代码就写了一小部分，半成品代码放到github上了，有兴趣的可以去看一下。https-github-com-BigBirdalan-myHomeKit-git"><a href="#代码就写了一小部分，半成品代码放到github上了，有兴趣的可以去看一下。https-github-com-BigBirdalan-myHomeKit-git" class="headerlink" title="代码就写了一小部分，半成品代码放到github上了，有兴趣的可以去看一下。https://github.com/BigBirdalan/myHomeKit.git"></a>代码就写了一小部分，半成品代码放到github上了，有兴趣的可以去看一下。<a href="https://github.com/BigBirdalan/myHomeKit.git">https://github.com/BigBirdalan/myHomeKit.git</a></h4>
       
     </div>
     
@@ -263,7 +263,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/04/11/IOS%E5%BC%80%E5%8F%91%E4%B9%8BHomeKit%EF%BC%88%E4%B8%89%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/ruixiaoguo/Grx.github.io.git/2019/04/11/IOS%E5%BC%80%E5%8F%91%E4%B9%8BHomeKit%EF%BC%88%E4%B8%89%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
@@ -273,7 +273,7 @@
     </a>
   
   
-    <a href="/2019/04/11/IOS%E5%BC%80%E5%8F%91%E4%B9%8BHomeKit%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/ruixiaoguo/Grx.github.io.git/2019/04/11/IOS%E5%BC%80%E5%8F%91%E4%B9%8BHomeKit%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">IOS开发之HomeKit（一）</div>
       <strong class="article-nav-caption">></strong>
     </a>
@@ -309,7 +309,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="IOS开发之HomeKit（二）" data-title="IOS开发之HomeKit（二）" data-url="http://yoursite.com/2019/04/11/IOS%E5%BC%80%E5%8F%91%E4%B9%8BHomeKit%EF%BC%88%E4%BA%8C%EF%BC%89/"></div>
+	<div class="ds-thread" data-thread-key="IOS开发之HomeKit（二）" data-title="IOS开发之HomeKit（二）" data-url="https://github.com/ruixiaoguo/Grx.github.io.git/2019/04/11/IOS%E5%BC%80%E5%8F%91%E4%B9%8BHomeKit%EF%BC%88%E4%BA%8C%EF%BC%89/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -345,7 +345,7 @@
     </div>
     
   
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+<link rel="stylesheet" href="/ruixiaoguo/Grx.github.io.git/fancybox/jquery.fancybox.css">
 
 
 
@@ -366,7 +366,7 @@
 <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
 
-<script src="/js/main.js"></script>
+<script src="/ruixiaoguo/Grx.github.io.git/js/main.js"></script>
 
 
 
