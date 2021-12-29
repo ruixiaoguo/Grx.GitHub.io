@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ruixiaoguo.github.io/Grx.github.io">
-  <title>Archives | Grx博客</title>
+  <title>浅谈MVC,MVP,MVVM及VIPER架构 | Grx博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Grx博客">
-<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/archives/page/7/index.html">
+  <meta name="description" content="所谓架构二字，核心即是对于客户端的代码组织&#x2F;职责划分。 本质上都是三个角色：数据管理者、数据加工者、数据展示者。 无非是把数据管理者的工作进行拆分、唯一的界定标准就是把工作拆分的粒度大小。 而无论哪种思想、最终都逃不开三个问题的取舍。代码量、通用性、可读性。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈MVC,MVP,MVVM及VIPER架构">
+<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/2020/06/02/%E6%B5%85%E8%B0%88MVC,MVP,MVVM%E5%8F%8AVIPER%E6%9E%B6%E6%9E%84/index.html">
 <meta property="og:site_name" content="Grx博客">
-<meta property="og:description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter">
+<meta property="og:description" content="所谓架构二字，核心即是对于客户端的代码组织&#x2F;职责划分。 本质上都是三个角色：数据管理者、数据加工者、数据展示者。 无非是把数据管理者的工作进行拆分、唯一的界定标准就是把工作拆分的粒度大小。 而无论哪种思想、最终都逃不开三个问题的取舍。代码量、通用性、可读性。">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-06-02T11:20:12.000Z">
+<meta property="article:modified_time" content="2021-12-29T02:22:24.038Z">
 <meta property="article:author" content="Grx">
+<meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/Grx.github.io/atom.xml" title="Grx博客" type="application/atom+xml">
@@ -179,84 +182,209 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-浅谈MVC,MVP,MVVM及VIPER架构" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/Grx.github.io/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/06/08/Swift%20%E8%AF%AD%E8%A8%80%E6%8C%87%E5%8D%97/" class="archive-article-date">
-        <time datetime="2016-06-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/06/08/Swift%20%E8%AF%AD%E8%A8%80%E6%8C%87%E5%8D%97/">Swift 语言指南</a>
-	
+    <h1 class="article-title" itemprop="name">
+      浅谈MVC,MVP,MVVM及VIPER架构
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-          
+<a href="/Grx.github.io/2020/06/02/%E6%B5%85%E8%B0%88MVC,MVP,MVVM%E5%8F%8AVIPER%E6%9E%B6%E6%9E%84/" class="archive-article-date">
+        <time datetime="2020-06-02T11:20:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
+</a>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">2.8k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">9分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <blockquote>
+<ul>
+<li>所谓架构二字，核心即是对于客户端的代码组织/职责划分。<br /></li>
+<li>本质上都是三个角色：数据管理者、数据加工者、数据展示者。<br /></li>
+<li>无非是把数据管理者的工作进行拆分、唯一的界定标准就是把工作拆分的粒度大小。<br /></li>
+<li>而无论哪种思想、最终都逃不开三个问题的取舍。代码量、通用性、可读性。<br /></li>
+</ul>
+</blockquote>
+<span id="more"></span>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre><code>现在我们面对架构设计模式的时候有了很多选择：
+- MVC
+- MVP
+- MVVM
+- VIPER
+
+首先前三种模式都是把所有的实体归类到了下面三种分类中的一种：
+
+- Models（模型）数据层，或者负责处理数据的 数据接口层。
+- Views（视图） - 展示层(GUI)。对于 iOS理论上来来说所有以 UI 开头的类基本都属于这层。
+- Controller/Presenter/ViewModel（控制器/展示器/视图模型）
+  它是 Model 和 View 之间的胶水或者说是中间人。
+  一般来说，当用户对 View 有操作时它负责去修改相应 Model；当 Model 的值发生变化时它负责去更新对应 View。
+</code></pre>
+<h2 id="一、MVC“架构”"><a href="#一、MVC“架构”" class="headerlink" title="一、MVC“架构”"></a>一、MVC“架构”</h2><pre><code>经典MVC模式在提出时，更贴近现时代得说，在这种架构下，View 是无状态的，
+在Model变化的时候它只是简单的被 Controller重绘，
+尽管这种架构可以在应用里面实现，但是由于 MVC 的三种实体被紧密耦合着，每一种实体都和其他两种有着联系，
+所以即便是实现了也没有什么意义。
+
+View 和 Model 之间是相互独立的，它们只通过 Controller 来相互联系。这样的设计，使得View 和 Model 直接解耦合了。  
+但是现实中我们的View依然跟Model耦合，因为如果完全按照这个理想化的MVC的话，View（cell）层的设置都应该在 Controller中，这样的话，Controller会更臃肿。
+
+Cocoa MVC 鼓励你去写重控制器是因为 View 的整个生命周期都需要它去管理，
+Controller 和 View 很难做到相互独立。虽然你可以把控制器里的一些业务逻辑和数据转换的工作交给 Model，
+但是你再想把负担往 View 里面分摊的时候就没办法了；
+因为 View 的主要职责就只是讲用户的操作行为交给 Controller 去处理而已。
+</code></pre>
+<h5 id="于是-ViewController-最终就变成了所有东西的代理和数据源，甚至还负责网络请求的发起和取消。最后变得臃肿不堪。"><a href="#于是-ViewController-最终就变成了所有东西的代理和数据源，甚至还负责网络请求的发起和取消。最后变得臃肿不堪。" class="headerlink" title="于是 ViewController 最终就变成了所有东西的代理和数据源，甚至还负责网络请求的发起和取消。最后变得臃肿不堪。"></a>于是 ViewController 最终就变成了所有东西的代理和数据源，甚至还负责网络请求的发起和取消。最后变得臃肿不堪。</h5><h5 id="另一方面UIViewController负责了界面跳转的操作，界面跳转的相关配置是直接在对应的UIViewController实例上设置的，这样就很容易把源界面和目的界面耦合起来，表现在导入很多其他头文件。"><a href="#另一方面UIViewController负责了界面跳转的操作，界面跳转的相关配置是直接在对应的UIViewController实例上设置的，这样就很容易把源界面和目的界面耦合起来，表现在导入很多其他头文件。" class="headerlink" title="另一方面UIViewController负责了界面跳转的操作，界面跳转的相关配置是直接在对应的UIViewController实例上设置的，这样就很容易把源界面和目的界面耦合起来，表现在导入很多其他头文件。"></a>另一方面UIViewController负责了界面跳转的操作，界面跳转的相关配置是直接在对应的UIViewController实例上设置的，这样就很容易把源界面和目的界面耦合起来，表现在导入很多其他头文件。</h5><h2 id="二、MVP“架构”"><a href="#二、MVP“架构”" class="headerlink" title="二、MVP“架构”"></a>二、MVP“架构”</h2><pre><code>MVC的缺点在于并没有区分`业务逻辑和业务展示`, 这对单元测试很不友好. MVP针对以上缺点做了优化, 
+它将业务逻辑和业务展示也做了一层隔离, 对应的就变成了MVCP. 
+M和V功能不变, 原来的C现在只负责布局, 而所有的业务逻辑全都转移到了P层。
+P层处理完了业务逻辑，如果要更改view的显示，那么可以通过回调来实现，这样可以减轻耦合，同时可以单独测试P层的业务逻辑。
+
+在 MVP 中，Presenter 可以理解为松散的控制器，其中包含了视图的 UI 业务逻辑，
+所有从视图发出的事件，都会通过代理给 Presenter 进行处理；
+同时，Presenter 也通过视图暴露的接口与其进行通信。`而这一般是在 Controller中处理的。`
+</code></pre>
+<ul>
+<li>View负责界面展示和布局管理，向Presenter暴露视图更新和数据获取的接口</li>
+<li>Presenter负责接收来自View的事件，通过View提供的接口更新视图，并管理Model</li>
+<li>Model和MVC中的一样，提供数据模型</li>
+</ul>
+<h5 id="与MVC区别就是IOS中："><a href="#与MVC区别就是IOS中：" class="headerlink" title="与MVC区别就是IOS中："></a>与MVC区别就是IOS中：</h5><pre><code> （1）苹果的理想MVC中UIView相当于View，UIController是Controller，而在MVP中，UIView和UIController都相当于View，所以在 Presenter 里面基本没什么布局相关的代码，它的职责只是通过数据和状态更新 View。
+ （2）持有关系也不一样，MVC中 C 持有 M和V，但是在MVP中 V 持有 P，P 持有M 。
+ （3）在 MVP 架构里面，UIViewController 的那些子类其实是属于 View 的，而不是 Presenter。这种区别提供了极好的可测性，但是这是用开发速度的代价换来的，因为你必须要手动的去创建数据和绑定事件
+</code></pre>
+<h3 id="MVC和MVP的关系"><a href="#MVC和MVP的关系" class="headerlink" title="MVC和MVP的关系"></a>MVC和MVP的关系</h3><pre><code>我们都知道MVP是从经典的模式MVC演变而来，它们的基本思想有相通的地方：
+Controller/Presenter负责逻辑的处理，Model提供数 据，View负责显示。作为一种新的模式，
+MVP与MVC有着一个重大的区别：在MVP中View并不直接使用Model，
+它们之间的通信是通过 Presenter (MVC中的Controller)来进行的，所有的交互都发生在Presenter内部，
+而在现实中的MVC中View会直接从Model中读取数据而不是通过 Controller。
+</code></pre>
+<h3 id="MVP优缺点"><a href="#MVP优缺点" class="headerlink" title="MVP优缺点:"></a>MVP优缺点:</h3><ul>
+<li>UI布局和数据逻辑代码划分界限更明确。</li>
+<li>理解难度尚可，较容易推广。</li>
+<li>解决了Controller的臃肿问题。</li>
+<li>Presenter-Model层可以进行单元测试。</li>
+<li>需要额外写大量接口定义和逻辑代码（或者自己实现KVO监视）。</li>
+</ul>
+<h2 id="三、MVVM“架构”"><a href="#三、MVVM“架构”" class="headerlink" title="三、MVVM“架构”"></a>三、MVVM“架构”</h2><pre><code>iOS 里面的 ViewModel 到底是个什么东西呢？本质上来讲，他是独立于 UIKit 的， 
+View 和 View 的状态的一个呈现（representation）。ViewModel 能主动调用对 Model 做更改，
+也能在 Model 更新的时候对自身进行调整，然后通过 View 和 ViewModel 之间的绑定，对 View 也进行对应的更新。
+</code></pre>
+<h5 id="MVVM：一个-MVC-的增强版，"><a href="#MVVM：一个-MVC-的增强版，" class="headerlink" title="MVVM：一个 MVC 的增强版，"></a>MVVM：一个 MVC 的增强版，</h5><h5 id="我们正式连接了视图和控制器，并将表示逻辑从-Controller-移出放到一个新的对象里，即-View-Model。MVVM-听起来很复杂，但它本质上就是一个精心优化的-MVC-架构。"><a href="#我们正式连接了视图和控制器，并将表示逻辑从-Controller-移出放到一个新的对象里，即-View-Model。MVVM-听起来很复杂，但它本质上就是一个精心优化的-MVC-架构。" class="headerlink" title="我们正式连接了视图和控制器，并将表示逻辑从 Controller 移出放到一个新的对象里，即 View Model。MVVM 听起来很复杂，但它本质上就是一个精心优化的 MVC 架构。"></a>我们正式连接了视图和控制器，并将表示逻辑从 Controller 移出放到一个新的对象里，即 View Model。MVVM 听起来很复杂，但它本质上就是一个精心优化的 MVC 架构。</h5><h3 id="MVVM-vs-MVP区别："><a href="#MVVM-vs-MVP区别：" class="headerlink" title="MVVM vs MVP区别："></a>MVVM vs MVP区别：</h3><h5 id="首先ViewModel-Model层和之前的Present-Model层一样，没有什么大的变化。View持有ViewModel，这个和MVP也一样。变化主要在两个方面："><a href="#首先ViewModel-Model层和之前的Present-Model层一样，没有什么大的变化。View持有ViewModel，这个和MVP也一样。变化主要在两个方面：" class="headerlink" title="首先ViewModel-Model层和之前的Present-Model层一样，没有什么大的变化。View持有ViewModel，这个和MVP也一样。变化主要在两个方面："></a>首先ViewModel-Model层和之前的Present-Model层一样，没有什么大的变化。View持有ViewModel，这个和MVP也一样。变化主要在两个方面：<br /></h5><h5 id="1-ViewModel相较于Present，不仅仅是个逻辑处理机，它附带了自己的状态，所以被才可以被称为“Model”。ViewModel也因为这个变的更加独立完整，我们更容易通过ViewModel的状态去进行单元测试。Presenter在没有设置回调的时候其实一直在做空运算而已，运算得到的值没有进行存储，下次必须重新运算。"><a href="#1-ViewModel相较于Present，不仅仅是个逻辑处理机，它附带了自己的状态，所以被才可以被称为“Model”。ViewModel也因为这个变的更加独立完整，我们更容易通过ViewModel的状态去进行单元测试。Presenter在没有设置回调的时候其实一直在做空运算而已，运算得到的值没有进行存储，下次必须重新运算。" class="headerlink" title="1.ViewModel相较于Present，不仅仅是个逻辑处理机，它附带了自己的状态，所以被才可以被称为“Model”。ViewModel也因为这个变的更加独立完整，我们更容易通过ViewModel的状态去进行单元测试。Presenter在没有设置回调的时候其实一直在做空运算而已，运算得到的值没有进行存储，下次必须重新运算。"></a>1.ViewModel相较于Present，不仅仅是个逻辑处理机，它附带了自己的状态，所以被才可以被称为“Model”。<br />ViewModel也因为这个变的更加独立完整，我们更容易通过ViewModel的状态去进行单元测试。<br />Presenter在没有设置回调的时候其实一直在做空运算而已，运算得到的值没有进行存储，下次必须重新运算。</h5><h5 id="2-View不直接通过传递用户操作来控制ViewModel，ViewModel也不直接通过回调来修改View。对常用的数据和UI控件的事件-amp-属性，MVVM框架的底层均进行了封装，使得我们可以进行数据绑定操作。简单来说我们可以用类似-viewModel-username-bind-usernameTextField-text-类似的操作使得viewModel的属性和UI控件的属性相互绑定，其中一方修改的时候另一方直接自动做对应更改。这样的话我们就不用重复的书写很多回调操作，也不用处理一大堆UI控件的delegate事件。"><a href="#2-View不直接通过传递用户操作来控制ViewModel，ViewModel也不直接通过回调来修改View。对常用的数据和UI控件的事件-amp-属性，MVVM框架的底层均进行了封装，使得我们可以进行数据绑定操作。简单来说我们可以用类似-viewModel-username-bind-usernameTextField-text-类似的操作使得viewModel的属性和UI控件的属性相互绑定，其中一方修改的时候另一方直接自动做对应更改。这样的话我们就不用重复的书写很多回调操作，也不用处理一大堆UI控件的delegate事件。" class="headerlink" title="2.View不直接通过传递用户操作来控制ViewModel，ViewModel也不直接通过回调来修改View。对常用的数据和UI控件的事件&amp;属性，MVVM框架的底层均进行了封装，使得我们可以进行数据绑定操作。简单来说我们可以用类似[viewModel.username bind:usernameTextField.text]类似的操作使得viewModel的属性和UI控件的属性相互绑定，其中一方修改的时候另一方直接自动做对应更改。这样的话我们就不用重复的书写很多回调操作，也不用处理一大堆UI控件的delegate事件。"></a>2.View不直接通过传递用户操作来控制ViewModel，ViewModel也不直接通过回调来修改View。对常用的数据和UI控件的事件&amp;属性，MVVM框架的底层均进行了封装，使得我们可以进行数据绑定操作。<br />简单来说我们可以用类似[viewModel.username bind:usernameTextField.text]类似的操作使得viewModel的属性和UI控件的属性相互绑定，其中一方修改的时候另一方直接自动做对应更改。<br />这样的话我们就不用重复的书写很多回调操作，也不用处理一大堆UI控件的delegate事件。</h5><pre><code>MVVM模式将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致。
+唯一的区别是，它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然。
+这样开发者就不用处理接收事件和View更新的工作，框架已经帮你做好了。
+</code></pre>
+<h4 id="其实MVVM的精华小部分在ViewModel，更大部分就在数据绑定，甚至有很多人觉得应该称MVVM为MVB（Model-View-Binder）。主要结合RAC使用，否则跟MVP无太大区别。"><a href="#其实MVVM的精华小部分在ViewModel，更大部分就在数据绑定，甚至有很多人觉得应该称MVVM为MVB（Model-View-Binder）。主要结合RAC使用，否则跟MVP无太大区别。" class="headerlink" title="其实MVVM的精华小部分在ViewModel，更大部分就在数据绑定，甚至有很多人觉得应该称MVVM为MVB（Model-View-Binder）。主要结合RAC使用，否则跟MVP无太大区别。"></a>其实MVVM的精华小部分在ViewModel，更大部分就在数据绑定，甚至有很多人觉得应该称MVVM为MVB（Model-View-Binder）。主要结合RAC使用，否则跟MVP无太大区别。</h4><h2 id="四、VIPER“架构”"><a href="#四、VIPER“架构”" class="headerlink" title="四、VIPER“架构”"></a>四、VIPER“架构”</h2><pre><code>到目前为止，你可能觉得我们把职责划分成三层，这个颗粒度已经很不错了。
+现在 VIPER 从另一个角度对职责进行了划分，这次划分了五层。
+
+VIPER并不复杂，它是将原来MVC中的Controller中的各种任务进行了清晰的分解，在写代码时，你会很清楚你正在做什么。
+事实上，它比使用了数据绑定技术的MVVM更加简单，就是因为它职责明确。从MVC转到VIPER的过程同样是很清晰的，
+它甚至把重构的思路都体现出来了。而MVVM则留下了许多尚未明确的责任，导致不同的人会在某些地方有不同的实现。
+
+*  View
+         提供完整的视图，负责视图的组合、布局、更新
+         向Presenter提供更新视图的接口
+         将View相关的事件发送给Presenter
+*   Interactor（交互器） 
+          维护主要的业务逻辑功能，向Presenter提供现有的业务用例
+          维护、获取、更新Entity
+          当有业务相关的事件发生时，处理事件，并通知Presenter
+*   Presenter（展示器） 
+          接收并处理来自View的事件
+          向Interactor请求调用业务逻辑
+          向Interactor提供View中的数据
+          接收并处理来自Interactor的数据回调事件
+          通知View进行更新操作
+          通过Router跳转到其他View
+*   Entities（实体） 
+          纯粹的数据对象。不包括数据访问层，因为这是 Interactor 的职责。
+*   Router（路由）
+          负责 VIPER 模块之间的转场
+          提供View之间的跳转功能，减少了模块间的耦合
+          初始化VIPER的各个模块
+</code></pre>
+<h4 id="和其他模式的区别"><a href="#和其他模式的区别" class="headerlink" title="和其他模式的区别"></a>和其他模式的区别</h4><pre><code>VIPER把MVC中的Controller进一步拆分成了Presenter、Router和Interactor。
+和MVP中负责业务逻辑的Presenter不同，VIPER的Presenter的主要工作是在View和Interactor之间传递事件，
+并管理一些View的展示逻辑，主要的业务逻辑实现代码都放在了Interactor里。
+Interactor的设计里提出了”用例”的概念，也就是把每一个会出现的业务流程封装好，这样可测试性会大大提高。
+而Router则进一步解决了不同模块之间的耦合。
+</code></pre>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><pre><code>VIPER的特色就是`职责明确，粒度细，隔离关系明确`，这样能带来很多优点：
+  *   可测试性好。UI测试和业务逻辑测试可以各自单独进行。
+  *   易于迭代。各部分遵循单一职责，可以很明确地知道新的代码应该放在哪里。
+  *   隔离程度高，耦合程度低。一个模块的代码不容易影响到另一个模块。
+  *   易于团队合作。各部分分工明确，团队合作时易于统一代码风格，可以快速接手别人的代码。
+</code></pre>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><pre><code>*   一个模块内的类数量增大，代码量增大，在层与层之间需要花更多时间设计接口。
+*   模块的初始化较为复杂，打开一个新的界面需要生成View、Presenter、Interactor，并且设置互相之间的依赖关系。
+</code></pre>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Grx
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2020/06/02/浅谈MVC,MVP,MVVM及VIPER架构/" title="浅谈MVC,MVP,MVVM及VIPER架构" target="_blank">https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2020/06/02/浅谈MVC,MVP,MVVM及VIPER架构/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
   </div>
-</article>
-  
+  <div class="article-info article-info-index">
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/05/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%B0%E7%8E%8B%E8%80%85-realm/" class="archive-article-date">
-        <time datetime="2016-05-13T06:17:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-13</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/05/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%B0%E7%8E%8B%E8%80%85-realm/">移动端数据库新王者:realm</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -268,367 +396,116 @@
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://ruixiaoguo.github.io/Grx.github.io/2020/06/02/%E6%B5%85%E8%B0%88MVC,MVP,MVVM%E5%8F%8AVIPER%E6%9E%B6%E6%9E%84/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/05/08/Swift%20%E9%A1%B9%E7%9B%AE/" class="archive-article-date">
-        <time datetime="2016-05-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-08</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/Grx.github.io/2021/05/01/APP%E7%A0%94%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          APP研发架构总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Grx.github.io/2020/05/01/iOS%E8%8B%B9%E6%9E%9C%E5%AE%A1%E6%A0%B8%E4%B9%8B%E8%B7%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS苹果审核之路</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/05/08/Swift%20%E9%A1%B9%E7%9B%AE/">Swift 项目</a>
-	
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/05/07/iOS%E4%B8%AD%E4%BF%9D%E8%AF%81%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%E4%B8%8E%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/" class="archive-article-date">
-        <time datetime="2016-05-07T01:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-07</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/05/07/iOS%E4%B8%AD%E4%BF%9D%E8%AF%81%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%E4%B8%8E%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/">iOS中保证线程安全的几种方式与性能对比</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/05/05/%E5%BC%80%E6%BA%90APP%E9%A1%B9%E7%9B%AE/" class="archive-article-date">
-        <time datetime="2016-05-05T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-05</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/05/05/%E5%BC%80%E6%BA%90APP%E9%A1%B9%E7%9B%AE/">开源APP项目</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/04/08/Swift%20%E6%96%87%E7%AB%A0%E7%B2%BE%E9%80%89/" class="archive-article-date">
-        <time datetime="2016-04-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/04/08/Swift%20%E6%96%87%E7%AB%A0%E7%B2%BE%E9%80%89/">Swift 文章精选</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/03/25/iOS%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E6%8C%87%E5%8D%97/" class="archive-article-date">
-        <time datetime="2016-03-25T01:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-25</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/03/25/iOS%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E6%8C%87%E5%8D%97/">iOS人机交互指南</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ios</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/03/19/iOS%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6%EF%BC%9A%E5%88%A9%E7%94%A8%E7%A5%9E%E6%8F%92%E4%BB%B6injectionforxcode%E5%80%8D%E5%A2%9E%E4%BD%A0%E7%9A%84%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87/" class="archive-article-date">
-        <time datetime="2016-03-19T06:35:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-19</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/03/19/iOS%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6%EF%BC%9A%E5%88%A9%E7%94%A8%E7%A5%9E%E6%8F%92%E4%BB%B6injectionforxcode%E5%80%8D%E5%A2%9E%E4%BD%A0%E7%9A%84%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87/">iOS开发插件：利用神插件injectionforxcode倍增你的开发效率</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Xcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/03/08/Swift%20%E5%85%A5%E9%97%A8%E6%8C%87%E5%BC%95/" class="archive-article-date">
-        <time datetime="2016-03-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/03/08/Swift%20%E5%85%A5%E9%97%A8%E6%8C%87%E5%BC%95/">Swift 入门指引</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/02/19/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%A7%E5%93%81%EF%BC%8D%E4%B8%87%E8%B1%A1%E4%BC%98%E5%9B%BE/" class="archive-article-date">
-        <time datetime="2016-02-19T01:58:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-19</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/02/19/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%A7%E5%93%81%EF%BC%8D%E4%B8%87%E8%B1%A1%E4%BC%98%E5%9B%BE/">腾讯云产品－万象优图</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/Grx.github.io/archives/page/6/">&amp;laquo; Prev</a><a class="page-number" href="/Grx.github.io/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/Grx.github.io/archives/page/5/">5</a><a class="page-number" href="/Grx.github.io/archives/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/Grx.github.io/archives/page/8/">8</a><a class="page-number" href="/Grx.github.io/archives/page/9/">9</a><a class="page-number" href="/Grx.github.io/archives/page/10/">10</a><a class="extend next" rel="next" href="/Grx.github.io/archives/page/8/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -669,8 +546,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
