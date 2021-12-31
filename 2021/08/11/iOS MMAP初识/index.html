@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ruixiaoguo.github.io/Grx.github.io">
-  <title>Archives | Grx博客</title>
+  <title>iOS MMAP初识 | Grx博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Grx博客">
-<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/archives/page/6/index.html">
+  <meta name="description" content="基于二进制重排的冷启动优化非常热门，其中涉及到了mmap相关知识。mmap是什么? 它的原理? 使用以及何时该使用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS MMAP初识">
+<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/2021/08/11/iOS%20MMAP%E5%88%9D%E8%AF%86/index.html">
 <meta property="og:site_name" content="Grx博客">
-<meta property="og:description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter">
+<meta property="og:description" content="基于二进制重排的冷启动优化非常热门，其中涉及到了mmap相关知识。mmap是什么? 它的原理? 使用以及何时该使用。">
 <meta property="og:locale">
+<meta property="article:published_time" content="2021-08-11T14:10:22.000Z">
+<meta property="article:modified_time" content="2021-12-31T03:47:07.249Z">
 <meta property="article:author" content="Grx">
+<meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/Grx.github.io/atom.xml" title="Grx博客" type="application/atom+xml">
@@ -179,170 +182,145 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-iOS MMAP初识" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/Grx.github.io/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/08/15/iOS%E5%9B%A2%E9%98%9F%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" class="archive-article-date">
-        <time datetime="2018-08-15T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-15</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/08/15/iOS%E5%9B%A2%E9%98%9F%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/">iOS团队编程规范</a>
-	
+    <h1 class="article-title" itemprop="name">
+      iOS MMAP初识
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-          
+<a href="/Grx.github.io/2021/08/11/iOS%20MMAP%E5%88%9D%E8%AF%86/" class="archive-article-date">
+        <time datetime="2021-08-11T14:10:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-11</time>
+</a>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">2.2k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">8分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <blockquote>
+<p>基于二进制重排的冷启动优化非常热门，其中涉及到了mmap相关知识。mmap是什么? 它的原理? 使用以及何时该使用。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="一、mmap基础介绍"><a href="#一、mmap基础介绍" class="headerlink" title="一、mmap基础介绍"></a>一、mmap基础介绍</h2><h5 id="mmap是一种内存映射文件的方法，即将一个文件或者其它对象映射到进程的内存地址空间，实现文件磁盘地址和进程虚拟地址空间中一段虚拟地址的一一对应关系。实现这样的映射关系后，进程就可以采用指针的方式读写操作这一段内存，而系统会自动回写脏页面到对应的文件磁盘上。对相关文件的操作不必再调用read-write等系统调用函数。相反，内核空间对这段区域的修改也直接反映到用户空间，从而可以实现不同进程间的文件共享。"><a href="#mmap是一种内存映射文件的方法，即将一个文件或者其它对象映射到进程的内存地址空间，实现文件磁盘地址和进程虚拟地址空间中一段虚拟地址的一一对应关系。实现这样的映射关系后，进程就可以采用指针的方式读写操作这一段内存，而系统会自动回写脏页面到对应的文件磁盘上。对相关文件的操作不必再调用read-write等系统调用函数。相反，内核空间对这段区域的修改也直接反映到用户空间，从而可以实现不同进程间的文件共享。" class="headerlink" title="mmap是一种内存映射文件的方法，即将一个文件或者其它对象映射到进程的内存地址空间，实现文件磁盘地址和进程虚拟地址空间中一段虚拟地址的一一对应关系。实现这样的映射关系后，进程就可以采用指针的方式读写操作这一段内存，而系统会自动回写脏页面到对应的文件磁盘上。对相关文件的操作不必再调用read,write等系统调用函数。相反，内核空间对这段区域的修改也直接反映到用户空间，从而可以实现不同进程间的文件共享。"></a>mmap是一种内存映射文件的方法，即将一个文件或者其它对象映射到进程的内存地址空间，实现文件磁盘地址和进程虚拟地址空间中一段虚拟地址的一一对应关系。实现这样的映射关系后，进程就可以采用指针的方式读写操作这一段内存，而系统会自动回写脏页面到对应的文件磁盘上。对相关文件的操作不必再调用read,write等系统调用函数。相反，内核空间对这段区域的修改也直接反映到用户空间，从而可以实现不同进程间的文件共享。</h5><h5 id="在iOS中我们可以使用的mmap应该仅是将文件映射进入内存中。他的原理就是通过虚拟内存技术，将部分进程内的虚拟内存地址，与本地磁盘中的一个文件进行映射关联。通过mmap映射文件后，对我们程序员来说，对文件的读写就是操作一段内存的读写。系统会自动将修改的内容同步到本地文件中。"><a href="#在iOS中我们可以使用的mmap应该仅是将文件映射进入内存中。他的原理就是通过虚拟内存技术，将部分进程内的虚拟内存地址，与本地磁盘中的一个文件进行映射关联。通过mmap映射文件后，对我们程序员来说，对文件的读写就是操作一段内存的读写。系统会自动将修改的内容同步到本地文件中。" class="headerlink" title="在iOS中我们可以使用的mmap应该仅是将文件映射进入内存中。他的原理就是通过虚拟内存技术，将部分进程内的虚拟内存地址，与本地磁盘中的一个文件进行映射关联。通过mmap映射文件后，对我们程序员来说，对文件的读写就是操作一段内存的读写。系统会自动将修改的内容同步到本地文件中。"></a>在iOS中我们可以使用的mmap应该仅是将文件映射进入内存中。他的原理就是通过虚拟内存技术，将部分进程内的虚拟内存地址，与本地磁盘中的一个文件进行映射关联。通过mmap映射文件后，对我们程序员来说，对文件的读写就是操作一段内存的读写。系统会自动将修改的内容同步到本地文件中。</h5><h5 id="我们通过代码来举个例子，看看mmap映射文件后的效果："><a href="#我们通过代码来举个例子，看看mmap映射文件后的效果：" class="headerlink" title="我们通过代码来举个例子，看看mmap映射文件后的效果："></a>我们通过代码来举个例子，看看mmap映射文件后的效果：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">- (void)testRead</span><br><span class="line">&#123;</span><br><span class="line">    NSString *filePath = [@&quot;~/Library/testFile&quot; stringByExpandingTildeInPath];</span><br><span class="line">    int i = 0;</span><br><span class="line">    int fd = open(filePath.UTF8String, O_RDWR);</span><br><span class="line">    void *m_ptr = NULL;</span><br><span class="line">    //映射1GB的一个大文件</span><br><span class="line">    m_ptr = mmap(m_ptr, k1Gb, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);</span><br><span class="line">    close(fd);</span><br><span class="line">    //每次读取1KB，准备1KB的buffer</span><br><span class="line">    uint8_t bytes[k1Kb];</span><br><span class="line">    int left = 0;</span><br><span class="line">    int right = k1Mb-k1Kb;</span><br><span class="line">    while (i &lt; k1Mb) &#123;</span><br><span class="line">        size_t offSet = (k1Kb * i);</span><br><span class="line">        //从文件中拷贝1KB的内容到我们准备的buff中</span><br><span class="line">        memcpy(bytes, m_ptr + offSet, k1Kb);</span><br><span class="line">        //do something with 1kb buffer data ...</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="在上述例子中，我们映射了1个1GB大小的文件，每次读取其中的1KB，然后使用读取的数据做一些事情。"><a href="#在上述例子中，我们映射了1个1GB大小的文件，每次读取其中的1KB，然后使用读取的数据做一些事情。" class="headerlink" title="在上述例子中，我们映射了1个1GB大小的文件，每次读取其中的1KB，然后使用读取的数据做一些事情。"></a>在上述例子中，我们映射了1个1GB大小的文件，每次读取其中的1KB，然后使用读取的数据做一些事情。</h5><h5 id="mmap函数为我们返回了一个void-类型的指针，这里我们可以将其看做是一个data数组，其完全与我们平时通过malloc函数分配在内存中的数组一模一样，对其的操作也可以通过memcpy等一系列内存操作相关函数进行。"><a href="#mmap函数为我们返回了一个void-类型的指针，这里我们可以将其看做是一个data数组，其完全与我们平时通过malloc函数分配在内存中的数组一模一样，对其的操作也可以通过memcpy等一系列内存操作相关函数进行。" class="headerlink" title="mmap函数为我们返回了一个void *类型的指针，这里我们可以将其看做是一个data数组，其完全与我们平时通过malloc函数分配在内存中的数组一模一样，对其的操作也可以通过memcpy等一系列内存操作相关函数进行。"></a>mmap函数为我们返回了一个void *类型的指针，这里我们可以将其看做是一个data数组，其完全与我们平时通过malloc函数分配在内存中的数组一模一样，对其的操作也可以通过memcpy等一系列内存操作相关函数进行。</h5><h5 id="你可能注意到，上述代码映射了1G大小的文件进入内存中。在iOS这样内存受限的系统上，这种操作会导致我们的App内存占用过高被系统强行杀掉吗？答案是不会的。因为mmap仅会将文件与内存建立映射关系，并不会一次性将文件所有内容加载到物理内存中。如果使用XCode查看此时App的内存使用情况，你会发现通过mmap加载1G文件并不会造成太多的内存占用（实际上可能仅占用kb级别的内存，这与虚拟内存页加载机制有关，后面我们会详细讲述该机制）。"><a href="#你可能注意到，上述代码映射了1G大小的文件进入内存中。在iOS这样内存受限的系统上，这种操作会导致我们的App内存占用过高被系统强行杀掉吗？答案是不会的。因为mmap仅会将文件与内存建立映射关系，并不会一次性将文件所有内容加载到物理内存中。如果使用XCode查看此时App的内存使用情况，你会发现通过mmap加载1G文件并不会造成太多的内存占用（实际上可能仅占用kb级别的内存，这与虚拟内存页加载机制有关，后面我们会详细讲述该机制）。" class="headerlink" title="你可能注意到，上述代码映射了1G大小的文件进入内存中。在iOS这样内存受限的系统上，这种操作会导致我们的App内存占用过高被系统强行杀掉吗？答案是不会的。因为mmap仅会将文件与内存建立映射关系，并不会一次性将文件所有内容加载到物理内存中。如果使用XCode查看此时App的内存使用情况，你会发现通过mmap加载1G文件并不会造成太多的内存占用（实际上可能仅占用kb级别的内存，这与虚拟内存页加载机制有关，后面我们会详细讲述该机制）。"></a>你可能注意到，上述代码映射了1G大小的文件进入内存中。在iOS这样内存受限的系统上，这种操作会导致我们的App内存占用过高被系统强行杀掉吗？答案是不会的。因为mmap仅会将文件与内存建立映射关系，并不会一次性将文件所有内容加载到物理内存中。如果使用XCode查看此时App的内存使用情况，你会发现通过mmap加载1G文件并不会造成太多的内存占用（实际上可能仅占用kb级别的内存，这与虚拟内存页加载机制有关，后面我们会详细讲述该机制）。</h5><h2 id="二、背后原理"><a href="#二、背后原理" class="headerlink" title="二、背后原理"></a>二、背后原理</h2><h6 id="在上一节mmap基础介绍中我们有提到mmap可以加载大文件进入内存而不占用过多的实际物理内存，那mmap是如何做到这一点的呢？我们来探究一下他的基本原理。"><a href="#在上一节mmap基础介绍中我们有提到mmap可以加载大文件进入内存而不占用过多的实际物理内存，那mmap是如何做到这一点的呢？我们来探究一下他的基本原理。" class="headerlink" title="在上一节mmap基础介绍中我们有提到mmap可以加载大文件进入内存而不占用过多的实际物理内存，那mmap是如何做到这一点的呢？我们来探究一下他的基本原理。"></a>在上一节mmap基础介绍中我们有提到mmap可以加载大文件进入内存而不占用过多的实际物理内存，那mmap是如何做到这一点的呢？我们来探究一下他的基本原理。</h6><h3 id="1-虚拟内存"><a href="#1-虚拟内存" class="headerlink" title="1.虚拟内存"></a>1.虚拟内存</h3><h6 id="前文中我们有提及到一个虚拟内存的概念，这个概念是mmap的基础。什么是虚拟内存呢？"><a href="#前文中我们有提及到一个虚拟内存的概念，这个概念是mmap的基础。什么是虚拟内存呢？" class="headerlink" title="前文中我们有提及到一个虚拟内存的概念，这个概念是mmap的基础。什么是虚拟内存呢？"></a>前文中我们有提及到一个虚拟内存的概念，这个概念是mmap的基础。什么是虚拟内存呢？</h6><p>系统为我们每个iOS的App（进程）都创建了一套连续的内存地址，但这些内存地址并不是真实的物理内存地址。我们访问这些地址时系统会翻译成对应的物理内存（或其他存储位置）的地址。这样我们在开发App时不用关心这些内存地址是怎么存储的，只要拿来用就可以了。系统会帮助我们去真实的物理存储中读写我们需要的内容。</p>
+<h3 id="2-mmap映射内存"><a href="#2-mmap映射内存" class="headerlink" title="2.mmap映射内存"></a>2.mmap映射内存</h3><p>基于虚拟内存的技术，对于mmap来说，其实就是系统帮我们虚拟出了一套连续的内存地址，而这些内存实际对应的存储是磁盘上的某个文件。当我们访问这部分内存，需要进行加载实际内容时，系统会通过缺页中断进行内存页的加载。所以，我们加载了1G大小的文件，并没有占用实际的物理内存，在内存占用上也就不会占用太多的内存了</p>
+<h3 id="3-mmap读写内存"><a href="#3-mmap读写内存" class="headerlink" title="3.mmap读写内存"></a>3.mmap读写内存</h3><p>我们通过调用mmap函数，系统为我们返回了一个void *类型的内存地址。这部分内存就是由mmap映射出来的虚拟内存地址。我们可以对这部分内存内容进行读写操作。下面针对读和写2个操作分别介绍一下系统是如何加载文件内容和写入内容到文件的：</p>
+<ul>
+<li>读：</li>
+</ul>
+<h6 id="对于读操作来说，系统首先会判断当前所需要读取的内容是否已经从文件加载到物理内存中。如果已经加载，则会直接返回物理内存中的内容。如果未加载，则会触发缺页中断，系统会以内存页大小的单位进行文件读取（进行文件IO操作），并将内存页进行缓存。以便减少整体IO操作次数。"><a href="#对于读操作来说，系统首先会判断当前所需要读取的内容是否已经从文件加载到物理内存中。如果已经加载，则会直接返回物理内存中的内容。如果未加载，则会触发缺页中断，系统会以内存页大小的单位进行文件读取（进行文件IO操作），并将内存页进行缓存。以便减少整体IO操作次数。" class="headerlink" title="对于读操作来说，系统首先会判断当前所需要读取的内容是否已经从文件加载到物理内存中。如果已经加载，则会直接返回物理内存中的内容。如果未加载，则会触发缺页中断，系统会以内存页大小的单位进行文件读取（进行文件IO操作），并将内存页进行缓存。以便减少整体IO操作次数。"></a>对于读操作来说，系统首先会判断当前所需要读取的内容是否已经从文件加载到物理内存中。如果已经加载，则会直接返回物理内存中的内容。如果未加载，则会触发缺页中断，系统会以内存页大小的单位进行文件读取（进行文件IO操作），并将内存页进行缓存。以便减少整体IO操作次数。</h6><ul>
+<li>写：</li>
+</ul>
+<h6 id="对于写操作来说，系统会将写入内容的内存页标记为脏页（dirty）-并在合适的时机将脏页批量写入到映射的文件中（IO）。"><a href="#对于写操作来说，系统会将写入内容的内存页标记为脏页（dirty）-并在合适的时机将脏页批量写入到映射的文件中（IO）。" class="headerlink" title="对于写操作来说，系统会将写入内容的内存页标记为脏页（dirty）,并在合适的时机将脏页批量写入到映射的文件中（IO）。"></a>对于写操作来说，系统会将写入内容的内存页标记为脏页（dirty）,并在合适的时机将脏页批量写入到映射的文件中（IO）。</h6><h2 id="三、MMAP函数使用教程"><a href="#三、MMAP函数使用教程" class="headerlink" title="三、MMAP函数使用教程"></a>三、MMAP函数使用教程</h2><h3 id="1-映射文件"><a href="#1-映射文件" class="headerlink" title="1.映射文件"></a>1.映射文件</h3><p>mmap函数在系统的&lt;sys/mman.h&gt;头文件中声明：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void *mmap(void *start, size_t length, int prot, int flags,int fd, off_t offset)</span><br></pre></td></tr></table></figure>
+
+<p>参数含义为：</p>
+<ul>
+<li>start：映射区的开始地址（从哪个地址开始映射内存），如果传入NULL，则系统会自动选择合适的地址开始进行映射（通常情况下传入NULL）</li>
+<li>length：映射的长度</li>
+<li>prot：映射内存保护方式，且不能与open文件打开方式冲突，可以通过|操作符指定多个类型。在iOS中通常选择PROT_READ、PROT_WRITE</li>
+<li>flags：映射与其他进程的共享方式，iOS中通常使用MAP_SHARED</li>
+<li>fd：使用open函数获取的文件句柄，指定对那个文件进行操作</li>
+<li>offset：从文件的何处开始进行映射</li>
+</ul>
+<p>返回值为void *类型的指针，为映射成功后的内存地址。如果返回NULL表示映射失败，可以通过errno宏获取到对应的错误码。</p>
+<p>简单的代码例子为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">- (void)testRead</span><br><span class="line">&#123;</span><br><span class="line">    NSString *filePath = [@&quot;~/Library/testFile&quot; stringByExpandingTildeInPath];</span><br><span class="line">    int fd = open(filePath.UTF8String, O_RDWR);</span><br><span class="line">    void *m_ptr = NULL;</span><br><span class="line">    NSUInteger k1Gb = 1024 * 1024 * 1024;</span><br><span class="line">    m_ptr = mmap(m_ptr, k1Gb, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);</span><br><span class="line">    close(fd); //映射完成后文件就可以关闭了</span><br><span class="line"></span><br><span class="line">    //read</span><br><span class="line">    uint8_t buffer[1024];</span><br><span class="line">    memcpy(buffer, m_ptr, 1024);</span><br><span class="line">    //do something...</span><br><span class="line">    </span><br><span class="line">    //write</span><br><span class="line">    *(uint8_t *)m_prt = 10;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在映射成功后，可以对返回的指针进行常规的读写操作，跟操作分配在内存中的内容一模一样。</p>
+<h3 id="2-解除映射"><a href="#2-解除映射" class="headerlink" title="2.解除映射"></a>2.解除映射</h3><ul>
+<li><p>munmap函数用于对已映射文件的内存进行解除，函数声明为int munmap(void * addr, size_t len)，参数含义为：</p>
+</li>
+<li><p>addr：使用mmap获取到的映射内存地址</p>
+</li>
+<li><p>len：映射的长度</p>
+</li>
+</ul>
+<p>返回值为int，0代表成功，-1代表失败。使用errno获取对应的失败信息。</p>
+<h3 id="3-同步磁盘数据"><a href="#3-同步磁盘数据" class="headerlink" title="3.同步磁盘数据"></a>3.同步磁盘数据</h3><ul>
+<li><p>通常来说，对映射内存的更改不会同步写入到磁盘文件，而是有系统决定一个合适时机进行写入。使用msync函数可以立即将更改同步到磁盘。其函数声明为：int msync(void *addr, size_t len, int flags)，参数含义为：</p>
+</li>
+<li><p>addr、len：与mmap、munmap类似，分别为映射内存地址和指定的长度</p>
+</li>
+<li><p>flags：可选MS_ASYNC、MS_SYNC、MS_INVALIDATE，使用标志MS_ASYNC函数会计划一次同步，但其立即返回，</p>
+</li>
+</ul>
+<h2 id="四、应用场景"><a href="#四、应用场景" class="headerlink" title="四、应用场景"></a>四、应用场景</h2><p>前文我们分析了mmap的基本原理与性能后，我们来看看对于iOS开发来说mmap应该在什么场景下进行应用</p>
+<ol>
+<li><strong>mmap有个很大的优势在于映射文件不占用物理内存空间，因此可以用来读取大文件</strong><br /></li>
+<li><strong>对于读写效率上与常规的read/write比较，适用于需要随机读写的场景，及写入文件的场景</strong><br /></li>
+<li><strong>对于需要长时间持有某个文件或者需要与其他进程共享某个文件，及进程间通讯需要传递大量数据时</strong><br /></li>
+</ol>
+<p>如果不是特别需要或者性能上确实有巨大提升，否则还是老实的用常规文件读写吧。如果要使用mmap，那么进行充分的测试，否则可能有你意想不到的问题。</p>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Grx
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2021/08/11/iOS MMAP初识/" title="iOS MMAP初识" target="_blank">https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2021/08/11/iOS MMAP初识/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
   </div>
-</article>
-  
+  <div class="article-info article-info-index">
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/07/18/iOS%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%E8%B0%88%20%E5%BC%80%E7%AF%87/" class="archive-article-date">
-        <time datetime="2018-07-18T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/07/18/iOS%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%E8%B0%88%20%E5%BC%80%E7%AF%87/">iOS应用架构谈 开篇</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/07/08/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(github)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/" class="archive-article-date">
-        <time datetime="2018-07-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/07/08/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(github)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/">创建属于自己的私有库(github)以及提交到cocoapods</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/06/08/iOS%20%E7%BB%84%E4%BB%B6%E5%8C%96%E6%96%B9%E6%A1%88%E6%8E%A2%E7%B4%A2/" class="archive-article-date">
-        <time datetime="2018-06-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/06/08/iOS%20%E7%BB%84%E4%BB%B6%E5%8C%96%E6%96%B9%E6%A1%88%E6%8E%A2%E7%B4%A2/">iOS 组件化方案探索</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -354,291 +332,107 @@
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://ruixiaoguo.github.io/Grx.github.io/2021/08/11/iOS%20MMAP%E5%88%9D%E8%AF%86/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/04/08/iOS%E7%9A%84AOP(%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2)%E7%BC%96%E7%A8%8B--Aspects/" class="archive-article-date">
-        <time datetime="2018-04-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-08</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/Grx.github.io/2021/06/30/iOS%E5%90%AF%E5%8A%A8%E4%BC%98%E5%8C%96%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%87%8D%E6%8E%92/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS启动优化之二进制重排</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/04/08/iOS%E7%9A%84AOP(%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2)%E7%BC%96%E7%A8%8B--Aspects/">iOS的AOP(面向切面)编程--Aspects</a>
-	
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/02/25/%E4%BB%8E%E7%A8%8B%E5%BA%8F%E5%91%98%E5%88%B0%E9%A1%B9%E7%9B%AE%E7%BB%8F%E7%90%86%EF%BC%9A%E5%A6%82%E4%BD%95%E7%AE%A1%E7%90%86%E8%87%AA%E5%B7%B1%E7%9A%84%E6%97%B6%E9%97%B4/" class="archive-article-date">
-        <time datetime="2018-02-25T01:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-25</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/02/25/%E4%BB%8E%E7%A8%8B%E5%BA%8F%E5%91%98%E5%88%B0%E9%A1%B9%E7%9B%AE%E7%BB%8F%E7%90%86%EF%BC%9A%E5%A6%82%E4%BD%95%E7%AE%A1%E7%90%86%E8%87%AA%E5%B7%B1%E7%9A%84%E6%97%B6%E9%97%B4/">从程序员到项目经理：如何管理自己的时间</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/01/25/App%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99%E5%92%8C%E8%A7%84%E8%8C%83/" class="archive-article-date">
-        <time datetime="2018-01-25T01:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-25</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/01/25/App%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99%E5%92%8C%E8%A7%84%E8%8C%83/">App设计的基本原则和规范</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/Grx.github.io/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2017/07/08/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%AE%89%E8%BA%AB%E7%AB%8B%E5%91%BD%E7%9A%84138%E6%9D%A1%E5%BF%A0%E5%91%8A/" class="archive-article-date">
-        <time datetime="2017-07-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2017/07/08/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%AE%89%E8%BA%AB%E7%AB%8B%E5%91%BD%E7%9A%84138%E6%9D%A1%E5%BF%A0%E5%91%8A/">程序员安身立命的138条忠告</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2017/02/24/Xcode8-1%E5%A6%82%E4%BD%95%E6%94%AF%E6%8C%81iOS8-0%E4%BB%A5%E4%B8%8B%E7%89%88%E6%9C%AC/" class="archive-article-date">
-        <time datetime="2017-02-24T01:42:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-24</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2017/02/24/Xcode8-1%E5%A6%82%E4%BD%95%E6%94%AF%E6%8C%81iOS8-0%E4%BB%A5%E4%B8%8B%E7%89%88%E6%9C%AC/">Xcode8.1如何支持iOS8.0以下版本</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">xcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2017/02/14/iOS%E7%BD%91%E7%BB%9C-%E3%80%8E%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E3%80%81%E6%96%AD%E7%82%B9%E4%B8%8B%E8%BD%BD%E3%80%8F%E7%9A%84%E5%AE%9E%E7%8E%B0%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9AAFNetworking/" class="archive-article-date">
-        <time datetime="2017-02-14T02:32:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-14</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2017/02/14/iOS%E7%BD%91%E7%BB%9C-%E3%80%8E%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E3%80%81%E6%96%AD%E7%82%B9%E4%B8%8B%E8%BD%BD%E3%80%8F%E7%9A%84%E5%AE%9E%E7%8E%B0%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9AAFNetworking/">iOS网络--『文件下载、断点下载』的实现（三）：AFNetworking</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/Grx.github.io/archives/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/Grx.github.io/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/Grx.github.io/archives/page/4/">4</a><a class="page-number" href="/Grx.github.io/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/Grx.github.io/archives/page/7/">7</a><a class="page-number" href="/Grx.github.io/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/Grx.github.io/archives/page/10/">10</a><a class="extend next" rel="next" href="/Grx.github.io/archives/page/7/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -679,8 +473,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

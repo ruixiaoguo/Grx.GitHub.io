@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ruixiaoguo.github.io/Grx.github.io">
-  <title>Archives | Grx博客</title>
+  <title>iOS启动优化之二进制重排 | Grx博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Grx博客">
-<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/archives/page/6/index.html">
+  <meta name="description" content="App的启动速度对用户体验会有一定的影响，因此，为追求用户体验，启动速度的优化必然是App开发过程中，不可或缺的一个环节。那么我们需要先分析App在启动过程中都做了些什么事？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS启动优化之二进制重排">
+<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/2021/06/30/iOS%E5%90%AF%E5%8A%A8%E4%BC%98%E5%8C%96%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%87%8D%E6%8E%92/index.html">
 <meta property="og:site_name" content="Grx博客">
-<meta property="og:description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter">
+<meta property="og:description" content="App的启动速度对用户体验会有一定的影响，因此，为追求用户体验，启动速度的优化必然是App开发过程中，不可或缺的一个环节。那么我们需要先分析App在启动过程中都做了些什么事？">
 <meta property="og:locale">
+<meta property="article:published_time" content="2021-06-30T13:10:06.000Z">
+<meta property="article:modified_time" content="2021-12-31T03:07:54.763Z">
 <meta property="article:author" content="Grx">
+<meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/Grx.github.io/atom.xml" title="Grx博客" type="application/atom+xml">
@@ -179,213 +182,183 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-iOS启动优化之二进制重排" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/Grx.github.io/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/08/15/iOS%E5%9B%A2%E9%98%9F%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" class="archive-article-date">
-        <time datetime="2018-08-15T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-15</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/08/15/iOS%E5%9B%A2%E9%98%9F%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/">iOS团队编程规范</a>
-	
+    <h1 class="article-title" itemprop="name">
+      iOS启动优化之二进制重排
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-          
+<a href="/Grx.github.io/2021/06/30/iOS%E5%90%AF%E5%8A%A8%E4%BC%98%E5%8C%96%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%87%8D%E6%8E%92/" class="archive-article-date">
+        <time datetime="2021-06-30T13:10:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
+</a>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">2.3k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">8分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <blockquote>
+<p>App的启动速度对用户体验会有一定的影响，因此，为追求用户体验，启动速度的优化必然是App开发过程中，不可或缺的一个环节。那么我们需要先分析App在启动过程中都做了些什么事？</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="一、APP加载慢背后原理"><a href="#一、APP加载慢背后原理" class="headerlink" title="一、APP加载慢背后原理"></a>一、APP加载慢背后原理</h2><h3 id="1-虚拟内存和物理内存"><a href="#1-虚拟内存和物理内存" class="headerlink" title="1.虚拟内存和物理内存"></a>1.虚拟内存和物理内存</h3><ul>
+<li><p>早期计算机没有虚拟地址，一旦加载都会全部加载到内存中，而且进程都是按顺序排列的，这样别的进程只需要把自己的地址加一些就能访问到别的进程这样就很不安全。</p>
+</li>
+<li><p>现在软件发展的比硬件快，软件占用的内存越来越大，这就导致计算机的内存不够用，当开启多个软件时候，如果内存不够用就只能等待，只有等前面的软件关掉后才能加载打开，这就是早期计算机有时候为啥只有把前面的软件关掉才能打开新软件的原因。用户使用软件时候并不是使用到全部内存，只会使用到一部分，如果软件一打开就把软件全部加载到内存中，这样会很浪费内存空间。</p>
+</li>
+<li><p>基于上面原因虚拟内存技术出现了，软件打开后，软件自己以为有一大片内存空间，但实际上是虚拟的，而虚拟内存和物理内存是通过一张表来关联的</p>
+</li>
+</ul>
+<h3 id="2-内存使用率问题"><a href="#2-内存使用率问题" class="headerlink" title="2.内存使用率问题"></a>2.内存使用率问题</h3><ul>
+<li><p>内存分页管理，映射表不能以字节为单位，是以页为单位。在应用加载时候不会把所有数据放内存中，因为数据是懒加载。</p>
+</li>
+<li><p>当进程访问虚拟地址时候，首先看页表，如果发现该页表数据为0，说明该页面数据未在物理地址上，这个时候系统会阻塞该进程，这个行为就叫做页中断（page Fault），也叫缺页异常，然后将磁盘中对应页面的数据加载到内存中，然后让虚拟内存指向刚加载的物理内存，将数据加载到内存中时候，如果有空的内存空间，就放空的内存空间中，如果没有的话，就会去覆盖其他进程的数据，具体怎么覆盖操作系统有一个算法，这样永远都会保证当前进程的使用，这就是灵活管理内存。</p>
+</li>
+</ul>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><h4 id="当我们向操作系统申请内存时，操作系统并不是直接分配给我们物理内存，而是只标记当前进程拥有该段内存，当真正使用这段内存时才会分配。这种延迟分配物理内存的方式就通过-page-fault-机制来实现的。page-fault-机制又会造成缺页异常，导致启动时间增加。"><a href="#当我们向操作系统申请内存时，操作系统并不是直接分配给我们物理内存，而是只标记当前进程拥有该段内存，当真正使用这段内存时才会分配。这种延迟分配物理内存的方式就通过-page-fault-机制来实现的。page-fault-机制又会造成缺页异常，导致启动时间增加。" class="headerlink" title="当我们向操作系统申请内存时，操作系统并不是直接分配给我们物理内存，而是只标记当前进程拥有该段内存，当真正使用这段内存时才会分配。这种延迟分配物理内存的方式就通过 page fault 机制来实现的。page fault 机制又会造成缺页异常，导致启动时间增加。"></a>当我们向操作系统申请内存时，操作系统并不是直接分配给我们物理内存，而是只标记当前进程拥有该段内存，当真正使用这段内存时才会分配。这种延迟分配物理内存的方式就通过 page fault 机制来实现的。page fault 机制又会造成缺页异常，导致启动时间增加。</h4><h2 id="二、App启动分析"><a href="#二、App启动分析" class="headerlink" title="二、App启动分析"></a>二、App启动分析</h2><h3 id="1-App启动分为-冷启动-和-热启动"><a href="#1-App启动分为-冷启动-和-热启动" class="headerlink" title="1.App启动分为 冷启动 和 热启动"></a>1.App启动分为 冷启动 和 热启动</h3><ul>
+<li><p>冷启动：点击 App 启动前，它的进程不在系统里，需要系统新创建一个进程分配给它的情况。这是一次完整的启动过程</p>
+</li>
+<li><p>热启动：App 在冷启动后，用户将App 退到后台，即在App的进程还在系统里的情况下，用户重新启动进入 App 的过程，这个过程做的事情非常少，启动速度非常快。<br>因此，我们主要针对 App 冷启动进行优化。</p>
+</li>
+</ul>
+<p>一般而言，App 启动时间，指的是从用户点击 App 开始，到用户看到第一个界面之间的时间，总结来说：App 的启动主要包括三个阶段：</p>
+<pre><code>1.main() 函数执行前
+2.main() 函数执行后
+3.首屏渲染完成后
+</code></pre>
+<h3 id="2-冷启动都做了什么？"><a href="#2-冷启动都做了什么？" class="headerlink" title="2.冷启动都做了什么？"></a>2.冷启动都做了什么？</h3><ul>
+<li>dylib loading：加载可执行文件（App 的.o 文件的集合），加载动态链接库</li>
+<li>rebase/binding：对动态链接库进行 rebase 指针调整和 bind 符号绑定；</li>
+<li>Objc setup：Objc 运行时的初始化处理，包括 Objc 相关类的注册、category 注册、selector 唯一性检查等；</li>
+<li>initializer：初始化，包括了执行 +load() 方法attribute((constructor)) 修饰的函数的调用、创建 C++ 静态全局变量。</li>
+</ul>
+<h3 id="3-冷启动常规优化"><a href="#3-冷启动常规优化" class="headerlink" title="3.冷启动常规优化"></a>3.冷启动常规优化</h3><ul>
+<li><p>减少动态库加载：每个库本身都有依赖关系，苹果公司建议使用更少的动态库，并且建议在使用动态库的数量较多时，尽量将多个动态库进行合并。数量上，苹果公司建议最多使用 6 个非系统动态库。</p>
+</li>
+<li><p>减少加载启动后不会去使用的类或者方法。</p>
+</li>
+<li><p>+load()方法里的内容可以放到首屏渲染完成后再执行，或使用 +initialize()方法替换掉。因为，在一个 +load() 方法里，进行运行时方法替换操作会带来 4 毫秒的消耗。不要小看这 4 毫秒，积少成多，执行 +load() 方法对启动速度的影响会越来越大。</p>
+</li>
+<li><p>控制 C++ 全局变量的数量。</p>
+</li>
+</ul>
+<h4 id="当我们做了以上工作，对-pre-main-的时间有所优化之后，如果还想再进行优化，那就需要使用-LLVM-为我们提供的优化方式：二进制重排"><a href="#当我们做了以上工作，对-pre-main-的时间有所优化之后，如果还想再进行优化，那就需要使用-LLVM-为我们提供的优化方式：二进制重排" class="headerlink" title="当我们做了以上工作，对 pre-main 的时间有所优化之后，如果还想再进行优化，那就需要使用 LLVM 为我们提供的优化方式：二进制重排"></a>当我们做了以上工作，对 pre-main 的时间有所优化之后，如果还想再进行优化，那就需要使用 LLVM 为我们提供的优化方式：二进制重排</h4><h2 id="三、System-Trace调试"><a href="#三、System-Trace调试" class="headerlink" title="三、System Trace调试"></a>三、System Trace调试</h2><pre><code>首先优化，要先学会调试，只有调试才能发现需要优化的地方
+</code></pre>
+<ul>
+<li><p><strong>首先我们打开项目command + i打开Instruments调试工具</strong></p>
+</li>
+<li><p><strong>选择System Trace,这个软件可以看到我们项目中每个线程的数据</strong></p>
+</li>
+<li><p><strong>点击开始后这里我们搜索Main thread，选择我们的app，然后点击Main thread ,再到下面选择Main Thread –&gt; Virtual Memory（虚拟内存）</strong></p>
+</li>
+<li><p><strong>这里面File Backed Page In就是page fault的次数。</strong></p>
+</li>
+<li><p><strong>当我们把APP杀死后里面再启动，结果发现File Backed Page In这个值变得很小，说明APP就算杀死后，在启动不是冷启动，还是有一部数据在系统的缓存中。</strong></p>
+</li>
+<li><p><strong>要做到真正的冷启动，我们可以把APP杀掉后启动多个手机里面的APP，然后再启动APP，发现File Backed Page In又变得很大。</strong></p>
+</li>
+<li><p><strong>说明虚拟内存是在系统中的，当系统内存不够的时候，其他APP会覆盖老的APP的虚拟内存。</strong></p>
+</li>
+<li><p><strong>二进制重拍是在链接阶段生成的，重排之后生成可执行文件，所以我们只能在编译阶段来优化，而无法对已生成的ipa进行优化。</strong></p>
+</li>
+</ul>
+<h2 id="四、二进制重排"><a href="#四、二进制重排" class="headerlink" title="四、二进制重排"></a>四、二进制重排</h2><h3 id="1-重排原理"><a href="#1-重排原理" class="headerlink" title="1.重排原理"></a>1.重排原理</h3><ul>
+<li><p><strong>App启动时首先的调用的几个方法，会分布在虚拟内存的各个⻚面中, 执行这些方法时，需要从读取到物理内容中，就会产生多次 page fault</strong></p>
+</li>
+<li><p><strong>如果能将启动阶段需要的读取代码集中排布，将这些方法全都放到相邻的区域中，我们读取这些方法可能就只需要极少的 page fault 次数。可以减少不必要的 page fault 时间。达到优化启动时间的效果。</strong></p>
+</li>
+</ul>
+<h3 id="2-重排实现-流程复杂参考链接二进制重排实现"><a href="#2-重排实现-流程复杂参考链接二进制重排实现" class="headerlink" title="2.重排实现(流程复杂参考链接二进制重排实现)"></a>2.重排实现(流程复杂参考链接<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3f9ed86a45cb">二进制重排实现</a>)</h3><pre><code>苹果其实已经给我们提供了这个机制。
+</code></pre>
+<h4 id="2-1-Order-File"><a href="#2-1-Order-File" class="headerlink" title="2.1 Order File"></a>2.1 Order File</h4><ul>
+<li>实际上 二进制重排就是对即将生成的可执行文件重新排列，即它发生在链接阶段。</li>
+<li>首先，Xcode 用的链接器叫做 ld ，ld 有一个参数叫 Order File，我们可以通过这个参数配置一个 后缀名 为order的文件路径。在这个 order 文件中，将你需要的符号按顺序写在里面。当工程 build 的时候，Xcode 会读取这个文件，打的二进制包就会按照这个文件中的符号顺序进行生成对应的 mach-O。</li>
+</ul>
+<h4 id="2-2-查看项目符合顺序"><a href="#2-2-查看项目符合顺序" class="headerlink" title="2.2 查看项目符合顺序"></a>2.2 查看项目符合顺序</h4><ul>
+<li><p>可以设置 Write Link Map File 来设置是否输出，默认是 no。Link Map 是编译期间产生的 ，( ld 的读取二进制文件顺序默认是按照 Compile Sources 里的顺序 )，它记录了二进制文件的布局。</p>
+</li>
+<li><p>修改 Write Link Map File 为 YES，然后clean项目并重新编译</p>
+</li>
+<li><p>Products -&gt; show in finder，上上层文件夹，然后找到一个xxxxx-LinkMap-normal-arm64.txt 的txt文件。</p>
+</li>
+</ul>
+<h4 id="2-3-Clang插桩"><a href="#2-3-Clang插桩" class="headerlink" title="2.3 Clang插桩"></a>2.3 Clang插桩</h4><h4 id="2-4-补充"><a href="#2-4-补充" class="headerlink" title="2.4 补充"></a>2.4 补充</h4><ul>
+<li><strong>swift / OC 混编工程问题</strong></li>
+</ul>
+<p>通过如上方式适合纯 OC 工程获取符号。由于 swift 的编译器前端是自己的 swift 编译前端程序，因此配置稍有不同。搜索 Other Swift Flags，添加两条配置即可：-sanitize-coverage=func、 -sanitize=undefined。swift类同样可以通过这个方式获取。</p>
+<ul>
+<li><strong>cocoapod 工程问题</strong></li>
+</ul>
+<p>cocoapod 工程引入的库，会产生多 target，我们在主target添加的配置是不会生效的，我们需要针对需要的target做对应的设置。<br>对于直接手动导入到工程里的 sdk，不管是 静态库 .a 还是 动态库，会默认使用主工程的设置，也就是可以拿到符号的。</p>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Grx
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2021/06/30/iOS启动优化之二进制重排/" title="iOS启动优化之二进制重排" target="_blank">https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2021/06/30/iOS启动优化之二进制重排/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
   </div>
-</article>
-  
+  <div class="article-info article-info-index">
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/07/18/iOS%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%E8%B0%88%20%E5%BC%80%E7%AF%87/" class="archive-article-date">
-        <time datetime="2018-07-18T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/07/18/iOS%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%E8%B0%88%20%E5%BC%80%E7%AF%87/">iOS应用架构谈 开篇</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/07/08/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(github)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/" class="archive-article-date">
-        <time datetime="2018-07-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/07/08/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(github)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/">创建属于自己的私有库(github)以及提交到cocoapods</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/06/08/iOS%20%E7%BB%84%E4%BB%B6%E5%8C%96%E6%96%B9%E6%A1%88%E6%8E%A2%E7%B4%A2/" class="archive-article-date">
-        <time datetime="2018-06-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/06/08/iOS%20%E7%BB%84%E4%BB%B6%E5%8C%96%E6%96%B9%E6%A1%88%E6%8E%A2%E7%B4%A2/">iOS 组件化方案探索</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/04/08/iOS%E7%9A%84AOP(%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2)%E7%BC%96%E7%A8%8B--Aspects/" class="archive-article-date">
-        <time datetime="2018-04-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/04/08/iOS%E7%9A%84AOP(%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2)%E7%BC%96%E7%A8%8B--Aspects/">iOS的AOP(面向切面)编程--Aspects</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -397,248 +370,116 @@
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://ruixiaoguo.github.io/Grx.github.io/2021/06/30/iOS%E5%90%AF%E5%8A%A8%E4%BC%98%E5%8C%96%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%87%8D%E6%8E%92/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/02/25/%E4%BB%8E%E7%A8%8B%E5%BA%8F%E5%91%98%E5%88%B0%E9%A1%B9%E7%9B%AE%E7%BB%8F%E7%90%86%EF%BC%9A%E5%A6%82%E4%BD%95%E7%AE%A1%E7%90%86%E8%87%AA%E5%B7%B1%E7%9A%84%E6%97%B6%E9%97%B4/" class="archive-article-date">
-        <time datetime="2018-02-25T01:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-25</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/Grx.github.io/2021/08/11/iOS%20MMAP%E5%88%9D%E8%AF%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          iOS MMAP初识
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Grx.github.io/2021/05/01/APP%E7%A0%94%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">APP研发架构总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/02/25/%E4%BB%8E%E7%A8%8B%E5%BA%8F%E5%91%98%E5%88%B0%E9%A1%B9%E7%9B%AE%E7%BB%8F%E7%90%86%EF%BC%9A%E5%A6%82%E4%BD%95%E7%AE%A1%E7%90%86%E8%87%AA%E5%B7%B1%E7%9A%84%E6%97%B6%E9%97%B4/">从程序员到项目经理：如何管理自己的时间</a>
-	
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/01/25/App%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99%E5%92%8C%E8%A7%84%E8%8C%83/" class="archive-article-date">
-        <time datetime="2018-01-25T01:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-25</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/01/25/App%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99%E5%92%8C%E8%A7%84%E8%8C%83/">App设计的基本原则和规范</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/Grx.github.io/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2017/07/08/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%AE%89%E8%BA%AB%E7%AB%8B%E5%91%BD%E7%9A%84138%E6%9D%A1%E5%BF%A0%E5%91%8A/" class="archive-article-date">
-        <time datetime="2017-07-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2017/07/08/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%AE%89%E8%BA%AB%E7%AB%8B%E5%91%BD%E7%9A%84138%E6%9D%A1%E5%BF%A0%E5%91%8A/">程序员安身立命的138条忠告</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2017/02/24/Xcode8-1%E5%A6%82%E4%BD%95%E6%94%AF%E6%8C%81iOS8-0%E4%BB%A5%E4%B8%8B%E7%89%88%E6%9C%AC/" class="archive-article-date">
-        <time datetime="2017-02-24T01:42:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-24</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2017/02/24/Xcode8-1%E5%A6%82%E4%BD%95%E6%94%AF%E6%8C%81iOS8-0%E4%BB%A5%E4%B8%8B%E7%89%88%E6%9C%AC/">Xcode8.1如何支持iOS8.0以下版本</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">xcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2017/02/14/iOS%E7%BD%91%E7%BB%9C-%E3%80%8E%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E3%80%81%E6%96%AD%E7%82%B9%E4%B8%8B%E8%BD%BD%E3%80%8F%E7%9A%84%E5%AE%9E%E7%8E%B0%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9AAFNetworking/" class="archive-article-date">
-        <time datetime="2017-02-14T02:32:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-14</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2017/02/14/iOS%E7%BD%91%E7%BB%9C-%E3%80%8E%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E3%80%81%E6%96%AD%E7%82%B9%E4%B8%8B%E8%BD%BD%E3%80%8F%E7%9A%84%E5%AE%9E%E7%8E%B0%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9AAFNetworking/">iOS网络--『文件下载、断点下载』的实现（三）：AFNetworking</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/Grx.github.io/archives/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/Grx.github.io/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/Grx.github.io/archives/page/4/">4</a><a class="page-number" href="/Grx.github.io/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/Grx.github.io/archives/page/7/">7</a><a class="page-number" href="/Grx.github.io/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/Grx.github.io/archives/page/10/">10</a><a class="extend next" rel="next" href="/Grx.github.io/archives/page/7/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -679,8 +520,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
