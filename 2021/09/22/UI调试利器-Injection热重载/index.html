@@ -18,11 +18,11 @@
 <meta property="og:description" content="John Holdsworth 开发了一个叫作 Injection 的工具可以动态地将 Swift 或Objective-C 的代码在已运行的程序中执行，以加快调试速度，同时保证程序不用重启。">
 <meta property="og:locale">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1112722-b44f2349c108a9c6.gif?imageMogr2/auto-orient/strip">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2120486-cbc0ebc26528b497.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2120486-db5f65667029b532.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2120486-d9973b9cb5e48df2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2120486-cbc0ebc26528b497.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2120486-db5f65667029b532.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2120486-d9973b9cb5e48df2.png">
 <meta property="article:published_time" content="2021-09-22T12:40:16.000Z">
-<meta property="article:modified_time" content="2022-01-05T05:09:41.515Z">
+<meta property="article:modified_time" content="2022-01-05T05:17:28.573Z">
 <meta property="article:author" content="Grx">
 <meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
@@ -245,12 +245,12 @@
 </blockquote>
 <span id="more"></span>
 <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><h5 id="iOS-原生代码的编译调试，都是通过一遍又一遍地编译重启-App-来进行的。所以，项目代码量越大，编译时间就越长。虽然我们可以通过将部分代码先编译成二进制集成到工程里，来避免每次都全量编译来加快编译速度，但即使这样，每次编译都还是需要重启-App，需要再走一遍调试流程。"><a href="#iOS-原生代码的编译调试，都是通过一遍又一遍地编译重启-App-来进行的。所以，项目代码量越大，编译时间就越长。虽然我们可以通过将部分代码先编译成二进制集成到工程里，来避免每次都全量编译来加快编译速度，但即使这样，每次编译都还是需要重启-App，需要再走一遍调试流程。" class="headerlink" title="iOS 原生代码的编译调试，都是通过一遍又一遍地编译重启 App 来进行的。所以，项目代码量越大，编译时间就越长。虽然我们可以通过将部分代码先编译成二进制集成到工程里，来避免每次都全量编译来加快编译速度，但即使这样，每次编译都还是需要重启 App，需要再走一遍调试流程。"></a>iOS 原生代码的编译调试，都是通过一遍又一遍地编译重启 App 来进行的。所以，项目代码量越大，编译时间就越长。虽然我们可以通过将部分代码先编译成二进制集成到工程里，来避免每次都全量编译来加快编译速度，但即使这样，每次编译都还是需要重启 App，需要再走一遍调试流程。</h5><p><img src="http://upload-images.jianshu.io/upload_images/1112722-b44f2349c108a9c6.gif?imageMogr2/auto-orient/strip" alt="Mou icon"></p>
-<h2 id="二、使用方法："><a href="#二、使用方法：" class="headerlink" title="二、使用方法："></a>二、使用方法：</h2><h3 id="1-下载工具："><a href="#1-下载工具：" class="headerlink" title="1.下载工具："></a>1.下载工具：</h3><h6 id="1-App-Store下载Injectionlll。"><a href="#1-App-Store下载Injectionlll。" class="headerlink" title="1.App Store下载Injectionlll。"></a>1.App Store下载Injectionlll。</h6><h6 id="2-Github下载https-github-com-johnno1962-injectionforxcode"><a href="#2-Github下载https-github-com-johnno1962-injectionforxcode" class="headerlink" title="2.Github下载https://github.com/johnno1962/injectionforxcode"></a>2.Github下载<a target="_blank" rel="noopener" href="https://github.com/johnno1962/injectionforxcode">https://github.com/johnno1962/injectionforxcode</a></h6><h3 id="2-选择监听文件目录"><a href="#2-选择监听文件目录" class="headerlink" title="2.选择监听文件目录"></a>2.选择监听文件目录</h3><h5 id="打开Injectionlll工具，选择项目工程文件下的-xcodeproj文件"><a href="#打开Injectionlll工具，选择项目工程文件下的-xcodeproj文件" class="headerlink" title="打开Injectionlll工具，选择项目工程文件下的.xcodeproj文件"></a>打开Injectionlll工具，选择项目工程文件下的.xcodeproj文件</h5><p><img src="https://upload-images.jianshu.io/upload_images/2120486-cbc0ebc26528b497.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="Mou icon"></p>
+<h2 id="二、使用方法："><a href="#二、使用方法：" class="headerlink" title="二、使用方法："></a>二、使用方法：</h2><h3 id="1-下载工具："><a href="#1-下载工具：" class="headerlink" title="1.下载工具："></a>1.下载工具：</h3><h6 id="1-App-Store下载Injectionlll。"><a href="#1-App-Store下载Injectionlll。" class="headerlink" title="1.App Store下载Injectionlll。"></a>1.App Store下载Injectionlll。</h6><h6 id="2-Github下载https-github-com-johnno1962-injectionforxcode"><a href="#2-Github下载https-github-com-johnno1962-injectionforxcode" class="headerlink" title="2.Github下载https://github.com/johnno1962/injectionforxcode"></a>2.Github下载<a target="_blank" rel="noopener" href="https://github.com/johnno1962/injectionforxcode">https://github.com/johnno1962/injectionforxcode</a></h6><h3 id="2-选择监听文件目录"><a href="#2-选择监听文件目录" class="headerlink" title="2.选择监听文件目录"></a>2.选择监听文件目录</h3><h5 id="打开Injectionlll工具，选择项目工程文件下的-xcodeproj文件"><a href="#打开Injectionlll工具，选择项目工程文件下的-xcodeproj文件" class="headerlink" title="打开Injectionlll工具，选择项目工程文件下的.xcodeproj文件"></a>打开Injectionlll工具，选择项目工程文件下的.xcodeproj文件</h5><p><img src="https://upload-images.jianshu.io/upload_images/2120486-cbc0ebc26528b497.png" alt="avatar"></p>
 <h3 id="3-项目工程配置："><a href="#3-项目工程配置：" class="headerlink" title="3.项目工程配置："></a>3.项目工程配置：</h3><h5 id="在-application-DidFinishLaunching-方法中加入如下代码："><a href="#在-application-DidFinishLaunching-方法中加入如下代码：" class="headerlink" title="在 application:DidFinishLaunching: 方法中加入如下代码："></a>在 application:DidFinishLaunching: 方法中加入如下代码：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if DEBUG</span><br><span class="line">	[[NSBundle bundleWithPath:@&quot;/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle&quot;] load];</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
 
 <h3 id="4-实现-void-injected方法"><a href="#4-实现-void-injected方法" class="headerlink" title="4.实现-(void)injected方法"></a>4.实现-(void)injected方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (void)injected&#123;</span><br><span class="line">    NSLog(@&quot;I&#x27;ve been injected: %@&quot;, self);</span><br><span class="line">    [self viewDidLoad];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/2120486-db5f65667029b532.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="Mou icon"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2120486-db5f65667029b532.png" alt="Mou icon"></p>
 <h3 id="5-运行效果"><a href="#5-运行效果" class="headerlink" title="5.运行效果"></a>5.运行效果</h3><h5 id="在-void-injected中编写UI代码，command-s-保存切执行代码，Injjection就开始编译修改过的文件为动态库，然后重新进入页面刷新，即可重绘UI。"><a href="#在-void-injected中编写UI代码，command-s-保存切执行代码，Injjection就开始编译修改过的文件为动态库，然后重新进入页面刷新，即可重绘UI。" class="headerlink" title="在- (void)injected中编写UI代码，command+s 保存切执行代码，Injjection就开始编译修改过的文件为动态库，然后重新进入页面刷新，即可重绘UI。"></a>在- (void)injected中编写UI代码，command+s 保存切执行代码，Injjection就开始编译修改过的文件为动态库，然后重新进入页面刷新，即可重绘UI。</h5><h3 id="6-需注意的问题"><a href="#6-需注意的问题" class="headerlink" title="6.需注意的问题"></a>6.需注意的问题</h3><ul>
 <li><p><strong>1.真机,cmd+s无效,只支持模拟器调试。</strong></p>
 </li>
@@ -287,7 +287,7 @@
 
 <p>当类的方法都被替换后，我们就可以开始重新绘制界面了。整个过程无需重新编译和重启 App， 至此使用动态库方式极速调试的目的就达成了。</p>
 <p>Injection 的工作原理图如下所示:</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2120486-d9973b9cb5e48df2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="Mou icon"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2120486-d9973b9cb5e48df2.png" alt="Mou icon"></p>
 
     
 
