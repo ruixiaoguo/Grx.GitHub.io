@@ -18,7 +18,7 @@
 <meta property="og:description" content="LLVM最早的时候是Illinois的一个研究项目，主要负责人是Chris Lattner，他现在就职于Apple. Apple 目前也是llvm项目的主要赞助者之一，对开发者保持开放，并兼容已有脚本。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-11-12T06:22:35.000Z">
-<meta property="article:modified_time" content="2022-01-05T09:48:35.615Z">
+<meta property="article:modified_time" content="2022-01-05T10:25:57.842Z">
 <meta property="article:author" content="Grx">
 <meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
@@ -255,8 +255,7 @@
 <li><strong>GCC实质上是一个后端编译器，他负责将源代码编译生成二进制代码。GCC 主要用来编译代码，而不是解析代码。这意味着苹果必须编写自己的解析器来为你提供调试功能。</strong><br /></li>
 <li><strong>另外，GCC 使用的是 GPL 许可协议，这使得苹果不能直使用GCC，除非苹果将Xcode 的许可协议更改为GPL。由于苹果的解析器和 GCC 的基准代码不同，GCC 和 Xcode 之间经常会出现一些不一致。</strong></li>
 </ul>
-<h2 id="三、LLVM编译器组成"><a href="#三、LLVM编译器组成" class="headerlink" title="三、LLVM编译器组成"></a>三、LLVM编译器组成</h2><h4 id="1-传统编译器分三个阶段："><a href="#1-传统编译器分三个阶段：" class="headerlink" title="1.传统编译器分三个阶段："></a>1.传统编译器分三个阶段：</h4><p>######前端（Frontend）– 优化器（Optimizer）– 后端（Backend）</p>
-<h4 id="2-llvm也分三个阶段，但是设计上略微的有些区别，提供了同一种中间表示"><a href="#2-llvm也分三个阶段，但是设计上略微的有些区别，提供了同一种中间表示" class="headerlink" title="2.llvm也分三个阶段，但是设计上略微的有些区别，提供了同一种中间表示"></a>2.llvm也分三个阶段，但是设计上略微的有些区别，提供了同一种中间表示</h4><ul>
+<h2 id="三、LLVM编译器组成"><a href="#三、LLVM编译器组成" class="headerlink" title="三、LLVM编译器组成"></a>三、LLVM编译器组成</h2><h4 id="1-传统编译器分三个阶段："><a href="#1-传统编译器分三个阶段：" class="headerlink" title="1.传统编译器分三个阶段："></a>1.传统编译器分三个阶段：</h4><h6 id="前端（Frontend）–-优化器（Optimizer）–-后端（Backend）"><a href="#前端（Frontend）–-优化器（Optimizer）–-后端（Backend）" class="headerlink" title="前端（Frontend）– 优化器（Optimizer）– 后端（Backend）"></a>前端（Frontend）– 优化器（Optimizer）– 后端（Backend）</h6><h4 id="2-llvm也分三个阶段，但是设计上略微的有些区别，提供了同一种中间表示"><a href="#2-llvm也分三个阶段，但是设计上略微的有些区别，提供了同一种中间表示" class="headerlink" title="2.llvm也分三个阶段，但是设计上略微的有些区别，提供了同一种中间表示"></a>2.llvm也分三个阶段，但是设计上略微的有些区别，提供了同一种中间表示</h4><ul>
 <li><strong>前端:词法分析，语法分析，语义分析，<font color=red>生成中间代码</font>；</strong></li>
 <li><strong>优化器：中间代码优化；</strong></li>
 <li><strong>后端：生成机器码（比如生成Mach-o）；</strong></li>
