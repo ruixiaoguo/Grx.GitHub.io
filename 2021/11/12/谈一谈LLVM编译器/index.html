@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ruixiaoguo.github.io/Grx.github.io">
-  <title>Archives | Grx博客</title>
+  <title>谈一谈LLVM编译器 | Grx博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Grx博客">
-<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/archives/page/5/index.html">
+  <meta name="description" content="LLVM最早的时候是Illinois的一个研究项目，主要负责人是Chris Lattner，他现在就职于Apple. Apple 目前也是llvm项目的主要赞助者之一，对开发者保持开放，并兼容已有脚本。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谈一谈LLVM编译器">
+<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/2021/11/12/%E8%B0%88%E4%B8%80%E8%B0%88LLVM%E7%BC%96%E8%AF%91%E5%99%A8/index.html">
 <meta property="og:site_name" content="Grx博客">
-<meta property="og:description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter">
+<meta property="og:description" content="LLVM最早的时候是Illinois的一个研究项目，主要负责人是Chris Lattner，他现在就职于Apple. Apple 目前也是llvm项目的主要赞助者之一，对开发者保持开放，并兼容已有脚本。">
 <meta property="og:locale">
+<meta property="article:published_time" content="2021-11-12T06:22:35.000Z">
+<meta property="article:modified_time" content="2022-01-05T09:48:35.615Z">
 <meta property="article:author" content="Grx">
+<meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/Grx.github.io/atom.xml" title="Grx博客" type="application/atom+xml">
@@ -179,342 +182,153 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-谈一谈LLVM编译器" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/Grx.github.io/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/09/20/LLDebugTool%20-%20%E4%BE%BF%E6%8D%B7%E7%9A%84IOS%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7(%E6%94%AF%E6%8C%81Swift)/" class="archive-article-date">
-        <time datetime="2018-09-20T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-20</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/09/20/LLDebugTool%20-%20%E4%BE%BF%E6%8D%B7%E7%9A%84IOS%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7(%E6%94%AF%E6%8C%81Swift)/">LLDebugTool - 便捷的IOS调试工具(支持Swift)</a>
-	
+    <h1 class="article-title" itemprop="name">
+      谈一谈LLVM编译器
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-          
+<a href="/Grx.github.io/2021/11/12/%E8%B0%88%E4%B8%80%E8%B0%88LLVM%E7%BC%96%E8%AF%91%E5%99%A8/" class="archive-article-date">
+        <time datetime="2021-11-12T06:22:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-12</time>
+</a>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.3k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">4分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <blockquote>
+<p>LLVM最早的时候是Illinois的一个研究项目，主要负责人是Chris Lattner，他现在就职于Apple. Apple 目前也是llvm项目的主要赞助者之一，对开发者保持开放，并兼容已有脚本。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="一、LLVM简介"><a href="#一、LLVM简介" class="headerlink" title="一、LLVM简介"></a>一、LLVM简介</h2><ul>
+<li><p><strong>LLVM是构架编译器(compiler)的框架系统，以C++编写而成，用于优化以任意程序语言编写的程序的编译时间(compile-time)、链接时间(link-time)、运行时间(run-time)以及空闲时间(idle-time)。</strong></p>
+</li>
+<li><p><strong>在理解LLVM时，我们可以认为它包括了一个狭义的LLVM和一个广义的LLVM：</strong></p>
+<ul>
+<li><strong>广义的LLVM：其实就是指整个LLVM编译器架构，包括了前端、后端、优化器、众多的库函数以及很多的模块；<br /></strong></li>
+<li><strong>狭义的LLVM：其实就是聚焦于编译器后端功能（代码生成、代码优化、JIT等）的一系列模块和库。</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="二、为什么放弃GCC？"><a href="#二、为什么放弃GCC？" class="headerlink" title="二、为什么放弃GCC？"></a>二、为什么放弃GCC？</h2><ul>
+<li><strong>Xcode 最早的编译器是GCC，尽管GCC是一个相对较好的编译器，但是他跟IDE 之间的匹配性并不是太好。</strong><br /></li>
+<li><strong>通常，编译器分为编译器前端和编译器后端。编译器前端主要负责的是展开预处理器宏定义 并将源代码转化为中间代码。编译器后端负责生成并优化机器代码。</strong><br /></li>
+<li><strong>GCC实质上是一个后端编译器，他负责将源代码编译生成二进制代码。GCC 主要用来编译代码，而不是解析代码。这意味着苹果必须编写自己的解析器来为你提供调试功能。</strong><br /></li>
+<li><strong>另外，GCC 使用的是 GPL 许可协议，这使得苹果不能直使用GCC，除非苹果将Xcode 的许可协议更改为GPL。由于苹果的解析器和 GCC 的基准代码不同，GCC 和 Xcode 之间经常会出现一些不一致。</strong></li>
+</ul>
+<h2 id="三、LLVM编译器组成"><a href="#三、LLVM编译器组成" class="headerlink" title="三、LLVM编译器组成"></a>三、LLVM编译器组成</h2><h4 id="1-传统编译器分三个阶段："><a href="#1-传统编译器分三个阶段：" class="headerlink" title="1.传统编译器分三个阶段："></a>1.传统编译器分三个阶段：</h4><p>######前端（Frontend）– 优化器（Optimizer）– 后端（Backend）</p>
+<h4 id="2-llvm也分三个阶段，但是设计上略微的有些区别，提供了同一种中间表示"><a href="#2-llvm也分三个阶段，但是设计上略微的有些区别，提供了同一种中间表示" class="headerlink" title="2.llvm也分三个阶段，但是设计上略微的有些区别，提供了同一种中间表示"></a>2.llvm也分三个阶段，但是设计上略微的有些区别，提供了同一种中间表示</h4><ul>
+<li><strong>前端:词法分析，语法分析，语义分析，<font color=red>生成中间代码</font>；</strong></li>
+<li><strong>优化器：中间代码优化；</strong></li>
+<li><strong>后端：生成机器码（比如生成Mach-o）；</strong></li>
+</ul>
+<p><strong>LLVM的优点在于，中间表示IR代码编写良好，而且不同的前端语言最终都转换成同一种的IR。优化器只对中间表示IR操作.</strong></p>
+<h2 id="四、BitCode中间码"><a href="#四、BitCode中间码" class="headerlink" title="四、BitCode中间码"></a>四、BitCode中间码</h2><h4 id="Xcode7开始-新建项目默认就打开了Bitcode设置"><a href="#Xcode7开始-新建项目默认就打开了Bitcode设置" class="headerlink" title="Xcode7开始,新建项目默认就打开了Bitcode设置"></a>Xcode7开始,新建项目默认就打开了Bitcode设置</h4><ul>
+<li><p><strong>LLVM 是目前苹果采用的编译器工具链, Bitcode 是 LLVM 编译器的中间代码的一种编码。</strong></p>
+</li>
+<li><p><strong>LLVM的前端可以理解为C/C++/OC/Swift等编程语言,LLVM的后端可以理解为各个芯片平台上的汇编指令或者可执行机器指令数据，BitCode就是位于这两者直接的中间码</strong></p>
+</li>
+<li><p><strong>LLVM的编译工作原理是前端负责把项目程序源代码翻译成Bitcode中间码,然后再根据不同目标机器芯片平台转换为相应的汇编指令以及翻译为机器码.</strong></p>
+</li>
+<li><p><strong>这样设计就可以让LLVM成为了一个编译器架构,可以轻而易举的在LLVM架构之上发明新的语言(前端),以及在LLVM架构下面支持新的CPU(后端)指令输出,虽然Bitcode仅仅只是一个中间码不能在任何平台上运行,但是它可以转化为任何被支持的CPU架构,包括现在还没被发明的CPU架构</strong></p>
+</li>
+<li><p><strong>也就是说现在打开Bitcode功能提交一个App到应用商店,以后如果苹果新出了一款手机并CPU也是全新设计的,在苹果后台服务器一样可以从这个App的Bitcode开始编译转化为新CPU上的可执行程序,可供新手机用户下载运行这个App.</strong></p>
+</li>
+<li><p><strong><font color=red>对应 iOS，bitcode 是可选的。</font></strong></font></p>
+</li>
+<li><p><strong><font color=red>对于 watchOS，bitcode 是必须的。</font></strong></p>
+</li>
+<li><p><strong><font color=red>Mac OS 不支持 bitcode。</font></strong></p>
+</li>
+</ul>
+<h2 id="五、Clang和LLVM关系"><a href="#五、Clang和LLVM关系" class="headerlink" title="五、Clang和LLVM关系"></a>五、Clang和LLVM关系</h2><h3 id="Clang"><a href="#Clang" class="headerlink" title="Clang:"></a>Clang:</h3><ul>
+<li><strong>llvm项目的一个子项目；</strong></li>
+<li><strong>基于llvm架构的c/c++/objective-c编码器前端；</strong></li>
+</ul>
+<p><strong>clang 作为llvm编译器的前端，只负责对源代码词法分析，语法分析，语义分析，生成中间代码等功能，只是编译器的一部分。</strong></p>
+<h3 id="Clang相比于GCC有什么优势呢"><a href="#Clang相比于GCC有什么优势呢" class="headerlink" title="Clang相比于GCC有什么优势呢?"></a>Clang相比于GCC有什么优势呢?</h3><p><strong>其实，这也是Clang当初在设计开发的时候所主要考虑的原因。Clang是一个高度模块化开发的轻量级编译器，它的编译速度快、占用内存小、非常方便进行二次开发。</strong></p>
+<h2 id="六、oc源文件的编译过程"><a href="#六、oc源文件的编译过程" class="headerlink" title="六、oc源文件的编译过程"></a>六、oc源文件的编译过程</h2><blockquote>
+<p><strong>LLVM编译一个源文件的过程：预处理 -&gt; 词法分析 -&gt; Token -&gt; 语法分析 -&gt; AST -&gt; 代码生成 -&gt; LLVM IR -&gt; 优化 -&gt; 生成汇编代码 -&gt; Link -&gt; 目标文件</strong></p>
+</blockquote>
+<ul>
+<li><strong>0：导入源文件main.m的oc文件；</strong></li>
+<li><strong>1：preprocessor 预编译过程，生成对于cpp输出文件；(词法分析,语法分析)</strong></li>
+<li><strong>2：compiler编译,通过使用ir (中间代码LLVM Intermediate Representation (Bitcode)) 编译；</strong></li>
+<li><strong>3：后端部分，生成对应的汇编代码；</strong></li>
+<li><strong>4：汇编代码生成目标文件；</strong></li>
+<li><strong>5：linker；</strong></li>
+<li><strong>6：生成对于的二进制文件；</strong></li>
+</ul>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Grx
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2021/11/12/谈一谈LLVM编译器/" title="谈一谈LLVM编译器" target="_blank">https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2021/11/12/谈一谈LLVM编译器/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
   </div>
-</article>
-  
+  <div class="article-info article-info-index">
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/09/18/MonkeyKing%EF%BC%9A%E6%97%A0%E9%9C%80%E9%9B%86%E6%88%90%E7%AC%AC%E4%B8%89%E6%96%B9%E7%9B%B4%E6%8E%A5%E5%88%86%E4%BA%AB%E7%99%BB%E5%BD%95/" class="archive-article-date">
-        <time datetime="2018-09-18T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-18</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/09/18/MonkeyKing%EF%BC%9A%E6%97%A0%E9%9C%80%E9%9B%86%E6%88%90%E7%AC%AC%E4%B8%89%E6%96%B9%E7%9B%B4%E6%8E%A5%E5%88%86%E4%BA%AB%E7%99%BB%E5%BD%95/">MonkeyKing：无需集成第三方直接分享登录</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MonkeyKing</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/09/17/%E6%B5%81%E8%A8%80%E7%BB%88%E7%BB%93%E8%80%85-%20Flutter%E5%92%8CRN%E8%B0%81%E6%89%8D%E6%98%AF%E6%9B%B4%E5%A5%BD%E7%9A%84%E8%B7%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E6%96%B9%E6%A1%88%EF%BC%9F/" class="archive-article-date">
-        <time datetime="2018-09-17T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/09/17/%E6%B5%81%E8%A8%80%E7%BB%88%E7%BB%93%E8%80%85-%20Flutter%E5%92%8CRN%E8%B0%81%E6%89%8D%E6%98%AF%E6%9B%B4%E5%A5%BD%E7%9A%84%E8%B7%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E6%96%B9%E6%A1%88%EF%BC%9F/">流言终结者- Flutter和RN谁才是更好的跨端开发方案？</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/09/10/Lottie%E5%88%9D%E7%BA%A7%E6%95%99%E7%A8%8B%EF%BC%9A%E6%89%93%E9%80%A0iOS%20APP%E5%AE%8C%E7%BE%8E%E5%8A%A8%E7%94%BB/" class="archive-article-date">
-        <time datetime="2018-09-10T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/09/10/Lottie%E5%88%9D%E7%BA%A7%E6%95%99%E7%A8%8B%EF%BC%9A%E6%89%93%E9%80%A0iOS%20APP%E5%AE%8C%E7%BE%8E%E5%8A%A8%E7%94%BB/">Lottie初级教程：打造iOS APP完美动画</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Lottie</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/09/10/iOS%E5%8E%9F%E7%94%9F%20VS%20Flutter%E8%AF%84%E6%B5%8B/" class="archive-article-date">
-        <time datetime="2018-09-10T02:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/09/10/iOS%E5%8E%9F%E7%94%9F%20VS%20Flutter%E8%AF%84%E6%B5%8B/">iOS原生 VS Flutter评测</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/09/05/iOS%20RAC%E7%9A%84%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" class="archive-article-date">
-        <time datetime="2018-09-05T08:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-05</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/09/05/iOS%20RAC%E7%9A%84%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/">iOS RAC的使用总结</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">RAC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/09/04/WebView%E6%80%A7%E8%83%BD%E3%80%81%E4%BD%93%E9%AA%8C%E5%88%86%E6%9E%90%E4%B8%8E%E4%BC%98%E5%8C%96/" class="archive-article-date">
-        <time datetime="2018-09-04T08:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-04</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/09/04/WebView%E6%80%A7%E8%83%BD%E3%80%81%E4%BD%93%E9%AA%8C%E5%88%86%E6%9E%90%E4%B8%8E%E4%BC%98%E5%8C%96/">WebView性能、体验分析与优化</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">WebView</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/09/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JSCore/" class="archive-article-date">
-        <time datetime="2018-09-03T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/09/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JSCore/">深入理解JSCore</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -526,109 +340,116 @@
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://ruixiaoguo.github.io/Grx.github.io/2021/11/12/%E8%B0%88%E4%B8%80%E8%B0%88LLVM%E7%BC%96%E8%AF%91%E5%99%A8/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/09/03/%E7%BE%8E%E5%9B%A2%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%93%8D%E5%BA%94%E5%BC%8F%E6%A1%86%E6%9E%B6%20EasyReact/" class="archive-article-date">
-        <time datetime="2018-09-03T09:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-03</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/Grx.github.io/2021/12/20/iOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%83%BD%E6%BA%90%E6%95%88%E7%8E%87%E6%8C%87%E5%8D%97/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          iOS应用程序的能源效率指南
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Grx.github.io/2021/10/02/%E5%88%A9%E7%94%A8%20RunLoop%20%E5%8E%9F%E7%90%86%E7%9B%91%E6%8E%A7%E7%BA%BF%E7%A8%8B%E5%8D%A1%E9%A1%BF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利用 RunLoop 原理监控线程卡顿</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/09/03/%E7%BE%8E%E5%9B%A2%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%93%8D%E5%BA%94%E5%BC%8F%E6%A1%86%E6%9E%B6%20EasyReact/">美团客户端响应式框架 EasyReact</a>
-	
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2018/09/02/Flutter%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/" class="archive-article-date">
-        <time datetime="2018-09-02T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-02</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2018/09/02/Flutter%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/">Flutter原理与实践</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/Grx.github.io/archives/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/Grx.github.io/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/Grx.github.io/archives/page/3/">3</a><a class="page-number" href="/Grx.github.io/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/Grx.github.io/archives/page/6/">6</a><a class="page-number" href="/Grx.github.io/archives/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/Grx.github.io/archives/page/10/">10</a><a class="extend next" rel="next" href="/Grx.github.io/archives/page/6/">Next &amp;raquo;</a>
-    </nav>
-  
+
+
+
+
+
 
 
           </div>
@@ -669,8 +490,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
