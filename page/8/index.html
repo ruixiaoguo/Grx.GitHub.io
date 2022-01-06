@@ -51,6 +51,9 @@
 
 
   
+    <script src="/Grx.github.io/lib/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/yellow/pace-theme-minimal.css" rel="stylesheet">
+  
 
 </head>
 
@@ -79,7 +82,9 @@
 			
 				<li><a href="/Grx.github.io/tags/life" >随笔</a></li>
 			
-				<li><a href="/Grx.github.io/archives" >所有文章</a></li>
+				<li><a href="/Grx.github.io/tags/OC" >技术笔记</a></li>
+			
+				<li><a href="/Grx.github.io/archives" >全部文章</a></li>
 			
 			</ul>
 		</nav>
@@ -108,6 +113,24 @@
 					<a class="weibo" href="https://weibo.com/u/3984935859?refer_flag=1005055010_" title="微博" target="_blank"><i class="icon-weibo"></i></a>
 				
 					<a class="zhihu" href="https://www.zhihu.com/people/grx0917" title="知乎" target="_blank"><i class="icon-zhihu"></i></a>
+				
+					<a class="blog" href="https://juejin.cn" title="博客" target="_blank"><i class="icon-blog"></i></a>
+				
+					<a class="qq" href="/Grx.github.io/img/QQ.jpg" title="QQ" target="_blank"><i class="icon-qq"></i></a>
+				
+					<a class="weixin" href="/Grx.github.io/img/WeiXin.jpg" title="微信" target="_blank"><i class="icon-weixin"></i></a>
+				
+					<a class="segmentfault" href="https://segmentfault.com" title="SegmentFault" target="_blank"><i class="icon-segmentfault"></i></a>
+				
+					<a class="jianshu" href="https://www.jianshu.com" title="简书" target="_blank"><i class="icon-jianshu"></i></a>
+				
+					<a class="csdn" href="https://www.csdn.net" title="CSDN" target="_blank"><i class="icon-csdn"></i></a>
+				
+					<a class="cnblog" href="https://www.cnblogs.com/index.html" title="博客园" target="_blank"><i class="icon-cnblog"></i></a>
+				
+					<a class="bilibili" href="https://www.bilibili.com" title="哔哩哔哩" target="_blank"><i class="icon-bilibili"></i></a>
+				
+					<a class="acfun" href="https://www.acfun.cn" title="NULL" target="_blank"><i class="icon-acfun"></i></a>
 				
 			</div>
 		
@@ -143,6 +166,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -156,6 +181,24 @@
 			        
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/grx0917" title="知乎"><i class="icon-zhihu"></i></a>
 			        
+						<a class="blog" target="_blank" href="https://juejin.cn" title="博客"><i class="icon-blog"></i></a>
+			        
+						<a class="qq" target="_blank" href="/Grx.github.io/img/QQ.jpg" title="QQ"><i class="icon-qq"></i></a>
+			        
+						<a class="weixin" target="_blank" href="/Grx.github.io/img/WeiXin.jpg" title="微信"><i class="icon-weixin"></i></a>
+			        
+						<a class="segmentfault" target="_blank" href="https://segmentfault.com" title="SegmentFault"><i class="icon-segmentfault"></i></a>
+			        
+						<a class="jianshu" target="_blank" href="https://www.jianshu.com" title="简书"><i class="icon-jianshu"></i></a>
+			        
+						<a class="csdn" target="_blank" href="https://www.csdn.net" title="CSDN"><i class="icon-csdn"></i></a>
+			        
+						<a class="cnblog" target="_blank" href="https://www.cnblogs.com/index.html" title="博客园"><i class="icon-cnblog"></i></a>
+			        
+						<a class="bilibili" target="_blank" href="https://www.bilibili.com" title="哔哩哔哩"><i class="icon-bilibili"></i></a>
+			        
+						<a class="acfun" target="_blank" href="https://www.acfun.cn" title="NULL"><i class="icon-acfun"></i></a>
+			        
 				</div>
 			</nav>
 
@@ -163,11 +206,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/Grx.github.io/">主页</a></li>
+					<li style="width: 25%"><a href="/Grx.github.io/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/Grx.github.io/tags/life">随笔</a></li>
+					<li style="width: 25%"><a href="/Grx.github.io/tags/life">随笔</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/Grx.github.io/archives">所有文章</a></li>
+					<li style="width: 25%"><a href="/Grx.github.io/tags/OC">技术笔记</a></li>
+		        
+					<li style="width: 25%"><a href="/Grx.github.io/archives">全部文章</a></li>
 		        
 				</ul>
 			</nav>
@@ -218,7 +263,7 @@
     <h2 id="iOS中保证线程安全的几种方式与性能对比"><a href="#iOS中保证线程安全的几种方式与性能对比" class="headerlink" title="iOS中保证线程安全的几种方式与性能对比"></a>iOS中保证线程安全的几种方式与性能对比</h2><h3 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h3><br >
  前段时间看了几个开源项目，发现他们保持线程同步的方式各不相同，有@synchronized、NSLock、dispatch_semaphore、NSCondition、pthread_mutex、OSSpinLock。后来网上查了一下，发现他们的实现机制各不相同，性能也各不一样。不好意思，我们平常使用最多的@synchronized是性能最差的。下面我们先分别介绍每个加锁方式的使用，在使用一个案例来对他们进行性能对比
     
-    <a class="article-more-a" href="/Grx.github.io/2016/05/07/iOS%E4%B8%AD%E4%BF%9D%E8%AF%81%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%E4%B8%8E%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/#more">more >></a>
+    <a class="article-more-a" href="/Grx.github.io/2016/05/07/iOS%E4%B8%AD%E4%BF%9D%E8%AF%81%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%E4%B8%8E%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/#more">更多 >></a>
     
     
 
@@ -235,7 +280,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-OC</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
         		</li>
       		
 		</ul>
@@ -307,7 +352,7 @@
     <h2 id="开源APP项目"><a href="#开源APP项目" class="headerlink" title="开源APP项目"></a>开源APP项目</h2><h3 id="01-Coding-iOS"><a href="#01-Coding-iOS" class="headerlink" title="01.Coding-iOS"></a>01.Coding-iOS</h3><p><img src="http://upload-images.jianshu.io/upload_images/106726-ba3ebd3707a1d99f.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt="Mou icon"></p>
 <p>地址<a target="_blank" rel="noopener" href="https://github.com/Coding/Coding-iOS">Coding-iOS</a></p>
     
-    <a class="article-more-a" href="/Grx.github.io/2016/05/05/%E5%BC%80%E6%BA%90APP%E9%A1%B9%E7%9B%AE/#more">more >></a>
+    <a class="article-more-a" href="/Grx.github.io/2016/05/05/%E5%BC%80%E6%BA%90APP%E9%A1%B9%E7%9B%AE/#more">更多 >></a>
     
     
 
@@ -395,7 +440,7 @@
     
     <h2 id="Swift-文章精选"><a href="#Swift-文章精选" class="headerlink" title="Swift 文章精选"></a>Swift 文章精选</h2><p>基于《<a target="_blank" rel="noopener" href="https://github.com/ipader/SwiftGuide">Swift 语言指南</a>》收录过的文章，做了一个甄别和筛选。目的是摒弃杂音，更利于提高学习效率。</p>
     
-    <a class="article-more-a" href="/Grx.github.io/2016/04/08/Swift%20%E6%96%87%E7%AB%A0%E7%B2%BE%E9%80%89/#more">more >></a>
+    <a class="article-more-a" href="/Grx.github.io/2016/04/08/Swift%20%E6%96%87%E7%AB%A0%E7%B2%BE%E9%80%89/#more">更多 >></a>
     
     
 
@@ -490,7 +535,7 @@
 </ul>
 <p>———— | ————- | ————-<br><a target="_blank" rel="noopener" href="http://isux.tencent.com/ios8-human-interface-guidelines.html">UI设计基础</a> |<a target="_blank" rel="noopener" href="http://weibo.com/txisux">@腾讯ISUX</a>| <a target="_blank" rel="noopener" href="https://developer.apple.com/library/ios/documentation/userexperience/conceptual/mobilehig/index.html#//apple_ref/doc/uid/TP40006556-CH66-SW1">Designing for iOS</a><br><a target="_blank" rel="noopener" href="http://isux.tencent.com/ios8-human-interface-guidelines-design-strategies.html">设计策略</a> |<a target="_blank" rel="noopener" href="http://weibo.com/txisux">@腾讯ISUX</a>| <a target="_blank" rel="noopener" href="https://developer.apple.com/library/ios/documentation/userexperience/conceptual/mobilehig/Principles.html#//apple_ref/doc/uid/TP40006556-CH4-SW1">Design Principles</a> </p>
     
-    <a class="article-more-a" href="/Grx.github.io/2016/03/25/iOS%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E6%8C%87%E5%8D%97/#more">more >></a>
+    <a class="article-more-a" href="/Grx.github.io/2016/03/25/iOS%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E6%8C%87%E5%8D%97/#more">更多 >></a>
     
     
 
@@ -582,7 +627,7 @@
 
 <hr>
     
-    <a class="article-more-a" href="/Grx.github.io/2016/03/08/Swift%20%E5%85%A5%E9%97%A8%E6%8C%87%E5%BC%95/#more">more >></a>
+    <a class="article-more-a" href="/Grx.github.io/2016/03/08/Swift%20%E5%85%A5%E9%97%A8%E6%8C%87%E5%BC%95/#more">更多 >></a>
     
     
 
@@ -670,7 +715,7 @@
     
     <h2 id="产品简介"><a href="#产品简介" class="headerlink" title="产品简介"></a>产品简介</h2><p>腾讯云•万象优图为客户提供的专业一体化的图片解决方案，涵盖图片上传、下载、存储、图像处理功能，将QQ空间相册积累的十年图片服务运作经验开放给开发者。</p>
     
-    <a class="article-more-a" href="/Grx.github.io/2016/02/19/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%A7%E5%93%81%EF%BC%8D%E4%B8%87%E8%B1%A1%E4%BC%98%E5%9B%BE/#more">more >></a>
+    <a class="article-more-a" href="/Grx.github.io/2016/02/19/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%A7%E5%93%81%EF%BC%8D%E4%B8%87%E8%B1%A1%E4%BC%98%E5%9B%BE/#more">更多 >></a>
     
     
 
@@ -758,7 +803,7 @@
     
     <h3 id="产品简介"><a href="#产品简介" class="headerlink" title="产品简介"></a>产品简介</h3><p>维纳斯(WNS，Wireless Network Service),又名移动连通服务，是一个为APP提供高连通、高可靠、强安全的网络连接通道的服务；它利用QQ、微信等腾讯内部业务的海量接入数据来持续优化调度算法，并集成了用户就近接入、腾讯直通车、加密通道透传功能等等，提供了手机端SDK（IOS/Android），业务不必关心网络细节，即可安全与业务后台简单可靠的通讯。）</p>
     
-    <a class="article-more-a" href="/Grx.github.io/2016/02/18/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%A7%E5%93%81%EF%BC%8D%E7%BB%B4%E7%BA%B3%E6%96%AF/#more">more >></a>
+    <a class="article-more-a" href="/Grx.github.io/2016/02/18/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%A7%E5%93%81%EF%BC%8D%E7%BB%B4%E7%BA%B3%E6%96%AF/#more">更多 >></a>
     
     
 
@@ -846,7 +891,7 @@
     
     <h2 id="优图人脸识别简介"><a href="#优图人脸识别简介" class="headerlink" title="优图人脸识别简介"></a>优图人脸识别简介</h2><p>腾讯云•优图人脸识别是由腾讯优图团队推出的生物识别技术。腾讯优图团队立足腾讯社交数据大平台，拥有海量数据分析与人脸训练集，收集并标注了千万人脸数据，日处理图片能力达到过亿，累计处理人脸已达数百亿，积累数千万人脸身份，开发了人脸检测、人脸五官定位、人脸特征提取、人脸对比、活体检测等一整套技术方案。并在人脸检测、五官定位、人脸识别、图像理解等领域都积累了深厚的技术能力，在国际权威数据集评测上，上述技术水平均位于世界前列。</p>
     
-    <a class="article-more-a" href="/Grx.github.io/2016/02/16/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%A7%E5%93%81%EF%BC%8D%E4%BC%98%E5%9B%BE%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/#more">more >></a>
+    <a class="article-more-a" href="/Grx.github.io/2016/02/16/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%A7%E5%93%81%EF%BC%8D%E4%BC%98%E5%9B%BE%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/#more">更多 >></a>
     
     
 
@@ -934,7 +979,7 @@
     
     <h2 id="Swift-开源项目精选"><a href="#Swift-开源项目精选" class="headerlink" title="Swift 开源项目精选"></a>Swift 开源项目精选</h2><p>基于《<a target="_blank" rel="noopener" href="https://github.com/ipader/SwiftGuide">Swift 语言指南</a>》开源项目收录，做了一个甄别和筛选，并辅以一句话介绍。还有开发者们自己维护的《<a target="_blank" rel="noopener" href="https://github.com/ipader/SwiftGuide/wiki/%E5%BC%80%E5%8F%91%E8%80%85%E3%80%81%E9%A1%B9%E7%9B%AE%E3%80%81%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5">开发者、项目、最佳实践</a>》和 《<a target="_blank" rel="noopener" href="https://github.com/ipader/SwiftGuide/wiki/%E5%BC%80%E5%8F%91%E8%80%85%E4%B8%AA%E4%BA%BA%E8%B5%84%E6%96%99%E9%A1%B5">开发者个人资料页</a>》。</p>
     
-    <a class="article-more-a" href="/Grx.github.io/2016/02/08/Swift%20%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E7%B2%BE%E9%80%89/#more">more >></a>
+    <a class="article-more-a" href="/Grx.github.io/2016/02/08/Swift%20%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E7%B2%BE%E9%80%89/#more">更多 >></a>
     
     
 
@@ -1022,7 +1067,7 @@
     
     <h2 id="Github上的iOS-App源码-中文"><a href="#Github上的iOS-App源码-中文" class="headerlink" title="Github上的iOS App源码 (中文)"></a>Github上的iOS App源码 (中文)</h2><h4 id="Github版"><a href="#Github版" class="headerlink" title="Github版"></a><a target="_blank" rel="noopener" href="https://github.com/zJunZ/CollectGithubAPP">Github版</a></h4><h4 id="英文App地址"><a href="#英文App地址" class="headerlink" title="英文App地址"></a><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/c82f49f51675">英文App地址</a></h4>
     
-    <a class="article-more-a" href="/Grx.github.io/2016/01/25/Github%E4%B8%8A%E7%9A%84iOS-App%E6%BA%90%E7%A0%81-%E4%B8%AD%E6%96%87/#more">more >></a>
+    <a class="article-more-a" href="/Grx.github.io/2016/01/25/Github%E4%B8%8A%E7%9A%84iOS-App%E6%BA%90%E7%A0%81-%E4%B8%AD%E6%96%87/#more">更多 >></a>
     
     
 
@@ -1093,7 +1138,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018-2022 <a href="https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/" target="_blank">Grx</a>
+    		&copy; 2014-2022 <a href="https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/" target="_blank">Grx</a>
     	</div>
       	<div class="footer-right">
 			
@@ -1289,10 +1334,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-OC</a>
               </li>
              
               <li class="article-tag-list-item">
