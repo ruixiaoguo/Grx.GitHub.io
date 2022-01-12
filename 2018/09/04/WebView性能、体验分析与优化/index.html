@@ -17,17 +17,13 @@
 <meta property="og:site_name" content="Grx博客">
 <meta property="og:description" content="WebView性能、体验分析与优化在App开发中，内嵌WebView始终占有着一席之地。它能以较低的成本实现Android、iOS和Web的复用，也可以冠冕堂皇的突破苹果对热更新的封锁。然而便利性的同时，WebView的性能体验却备受质疑，导致很多客户端中需要动态更新等页面时不得不采用其他方案。以发展的眼光来看，功能的动态加载以及三端的融合将会是大趋势。那么如何克服WebView固有的问题呢？我们">
 <meta property="og:locale">
-<meta property="og:image" content="https://tech.meituan.com/img/webviewspeed/time.png">
-<meta property="og:image" content="https://tech.meituan.com/img/webviewspeed/blocking.png">
-<meta property="og:image" content="https://tech.meituan.com/img/webviewspeed/chunk.png">
-<meta property="og:image" content="https://tech.meituan.com/img/webviewspeed/demo.png">
 <meta property="og:image" content="https://tech.meituan.com/img/webviewspeed/dest.png">
 <meta property="article:published_time" content="2018-09-04T08:28:47.000Z">
-<meta property="article:modified_time" content="2018-09-05T07:37:28.000Z">
+<meta property="article:modified_time" content="2022-01-12T06:57:47.662Z">
 <meta property="article:author" content="Grx">
 <meta property="article:tag" content="WebView">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tech.meituan.com/img/webviewspeed/time.png">
+<meta name="twitter:image" content="https://tech.meituan.com/img/webviewspeed/dest.png">
   
     <link rel="alternative" href="/Grx.github.io/atom.xml" title="Grx博客" type="application/atom+xml">
   
@@ -295,7 +291,6 @@
 <blockquote>
 <p>交互无反馈<br>到达新的页面，页面白屏<br>页面基本框架出现，但是没有数据；页面处于loading状态<br>出现所需的数据<br>如果从程序上观察，WebView启动过程大概分为以下几个阶段：</p>
 </blockquote>
-<p><img src="https://tech.meituan.com/img/webviewspeed/time.png" alt="avatar"> </p>
 <p>如何缩短这些过程的时间，就成了优化WebView性能的关键。</p>
 <p>接下来我们逐一分析各个阶段的耗时情况，以及需要注意的优化点。</p>
 <h2 id="WebView初始化"><a href="#WebView初始化" class="headerlink" title="WebView初始化"></a>WebView初始化</h2><p>当App首次打开时，默认是并不初始化浏览器内核的；只有当创建WebView实例的时候，才会创建WebView的基础框架。</p>
@@ -332,7 +327,6 @@
 <li>在浏览器中，我们输入地址时（甚至在之前），浏览器就可以开始加载页面。</li>
 <li>而在客户端中，客户端需要先花费时间初始化WebView完成后，才开始加载。<br>而这段时间，由于WebView还不存在，所有后续的过程是完全阻塞的。可以这样形容WebView初始化过程：</li>
 </ul>
-<p><img src="https://tech.meituan.com/img/webviewspeed/blocking.png" alt="avatar"> </p>
 <p>那么有哪些解决办法呢？</p>
 <h2 id="怎么优化"><a href="#怎么优化" class="headerlink" title="怎么优化"></a>怎么优化</h2><p>由于这段过程发生在native的代码中，单纯靠前端代码是无法优化的；大部分的方案都是前端和客户端协作完成，以下是几个业界采用过的方案。</p>
 <h2 id="全局WebView"><a href="#全局WebView" class="headerlink" title="全局WebView"></a>全局WebView</h2><p>方法：</p>
@@ -383,7 +377,6 @@
 <p>那么怎么优化利用这段时间呢？</p>
 <p>在HTTP协议中，我们可以在header中设置 transfer-encoding:chunked 使得页面可以分块输出。如果合理设计页面，让head部分都是确定的静态资源版本相关内容，而body部分是业务数据相关内容，那么我们可以在用户请求的时候，首先将Web API可以确定的部分先输出给浏览器，然后等API完全获取后，再将API数据传输给浏览器。</p>
 <p>下图可以直观的看出分chunk输出和一起输出的区别：</p>
-<p><img src="https://tech.meituan.com/img/webviewspeed/chunk.png" alt="avatar"> </p>
 <ul>
 <li>如果采用普通方式输出页面，则页面会在服务器请求完所有API并处理完成后开始传输。浏览器要在后端所有API都加载完成后才能开始解析。</li>
 <li>如果采用chunk-encoding: chunked，并优先将页面的静态部分输出；然后处理API请求，并最终返回页面，可以让后端的API请求和前端的资源加载同时进行。</li>
@@ -393,8 +386,6 @@
 <h2 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h2><p>我们以一个美团的活动页面作为样例：</p>
 <p>测试页面：<a target="_blank" rel="noopener" href="http://i.meituan.com/firework/meituanxianshifengqiang">http://i.meituan.com/firework/meituanxianshifengqiang</a></p>
 <p>在Mac上面，模拟4G情况</p>
-<p>页面样式：</p>
-<p><img src="https://tech.meituan.com/img/webviewspeed/demo.png" alt="avatar"> </p>
 <p>测试得到的时间耗费如下：</p>
 <p>表1</p>
 <pre><code>阶段    时间    大小    备注
