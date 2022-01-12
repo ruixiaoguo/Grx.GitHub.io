@@ -17,11 +17,13 @@
 <meta property="og:site_name" content="Grx博客">
 <meta property="og:description" content="架构引人而异，不同的架构师有不同的看法；架构也因项目而异，不同的项目需求不同，相应的架构也会不同。但是万道不离其宗，有些东西还是通用的，是所有架构师需要掌握的，也是所有项目都会有的需求">
 <meta property="og:locale">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyawng6zmtj30k00deaav.jpg">
 <meta property="article:published_time" content="2021-05-01T11:18:21.000Z">
-<meta property="article:modified_time" content="2021-12-23T05:54:53.485Z">
+<meta property="article:modified_time" content="2022-01-12T07:12:33.724Z">
 <meta property="article:author" content="Grx">
 <meta property="article:tag" content="life">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyawng6zmtj30k00deaav.jpg">
   
     <link rel="alternative" href="/Grx.github.io/atom.xml" title="Grx博客" type="application/atom+xml">
   
@@ -305,6 +307,7 @@
 </ul>
 <h2 id="二、架构-分层"><a href="#二、架构-分层" class="headerlink" title="二、架构-分层"></a>二、架构-分层</h2><p>API的设计完成之后，接下来就会考虑App项⽬的整体架构了开始思考如何拆分，如何才能做到松耦合⾼内聚<br /></p>
 <p>前⾯也说过，⼀个App的核⼼就是数据，那么，从App对数据处理的⻆⾊划分出发，最简单的划分就<br>是：数据管理、数据加⼯、数据展示。相应的也就有了三层架构：数据层、业务层、展示层。它们之间的关系如下图，数据层是三层中的最底层，往下，它接⼊API；往上，它向业务层交付数据。业<br>务层夹在三层中间，属于数据的加⼯⼚，将数据层提供上来的数据加⼯成展示层需要展示的数据。<br>展示层处于三层中的最上层，主要就是将从业务层取得的数据展示到界⾯上。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyawng6zmtj30k00deaav.jpg"></p>
 <h3 id="1-数据层"><a href="#1-数据层" class="headerlink" title="1.数据层"></a>1.数据层</h3><p>数据层是数据管理者，主要任务就是封装API，并将数据结果交付给上层，中间会再加个数据缓存。<br>整个主流程如下：</p>
 <p>业务层向数据层请求数据；<br>数据层检查缓存中有没有请求需要的数据；<br>如果有缓存数据，则直接返回缓存数据；<br>如果没有缓存数据，则从⽹络API获取数据，并将数据加⼊缓存，然后返回数据。</p>
 <p>调⽤⽹络API时，还要判断⽹络状态，根据不同状态做不同处理。如果⽹络不可⽤，就⽆需发起请求<br>了。⽹络可⽤时，也要区分是连接WIFI还是连接移动⽹络。连接移动⽹络时，⼀般需要限制调⽤⽐<br>较耗流量的请求。曾经，我们没有对移动⽹络状态下的请求进⾏限制，结果，测试时流量<br>DuangDuangDuang地⼀下⼦就不⻅了⼗⼏M。连接WIFI时，则⽆需设置这种限制，⽽且还可以预先<br>请求⼀些接⼝，⽐如请求当前分⻚数据时，可以将下⼀⻚的数据也预先请求。<br>缓存也需要缓存策略，不同的接⼝需要做不同的缓存处理。⾸先，缓存只适⽤于获取数据的接⼝，<br>对于修改数据的接⼝则不适⽤。其次，不同接⼝缓存时间⼀般也不同，对于很少变动的数据缓存时<br>间可以设置⻓⼀些，⽽频繁变动的数据缓存时间则⽐较短，甚⾄不进⾏缓存。最后，缓存数据因为<br>⽐较多，我们⼀般保存在数据库，⽽对于调⽤频率⾼、最新的数据，还会在内存中也拥有⼀份缓存，<br>不过缓存时间⽐较短。请求缓存数据时，会先检查内存缓存中有没有，有则直接将缓存的数据返回，<br>没有才从数据库获取。<br>那么，如何将数据交付给业务层呢？这是整个数据层模块与外部交互的部分，当与外部交互的时候，<br>⼀般都要符合⾯向接⼝编程的原则，因此只要提供开放的数据接⼝就可以了。对于接⼝的参数需要<br>说明⼀下，上⾯提到的参数有appKey、version、currentPage这⼏个，还有签名sign、时间戳time，<br>其实可以分为两类：系统参数和业务参数。像appKey、version、sign、time这些属于系统参数，⽽currentPage，或username之类的则属于业务参数。数据层开放的数据接⼝的参数只需要包含业务<br>参数就可以了，业务层并不需要关⼼系统参数是什么，系统参数在数据层内部封装API时指定就可以<br>了。</p>
