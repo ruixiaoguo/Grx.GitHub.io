@@ -17,11 +17,14 @@
 <meta property="og:site_name" content="Grx博客">
 <meta property="og:description" content="LLVM最早的时候是Illinois的一个研究项目，主要负责人是Chris Lattner，他现在就职于Apple. Apple 目前也是llvm项目的主要赞助者之一，对开发者保持开放，并兼容已有脚本。">
 <meta property="og:locale">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyaumifmgpj30fx0aq0t7.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyauo1z1v1j30hb0bqgn1.jpg">
 <meta property="article:published_time" content="2021-11-12T06:22:35.000Z">
-<meta property="article:modified_time" content="2022-01-05T10:25:57.842Z">
+<meta property="article:modified_time" content="2022-01-12T06:01:47.085Z">
 <meta property="article:author" content="Grx">
 <meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyaumifmgpj30fx0aq0t7.jpg">
   
     <link rel="alternative" href="/Grx.github.io/atom.xml" title="Grx博客" type="application/atom+xml">
   
@@ -306,6 +309,7 @@
 <li><strong>后端：生成机器码（比如生成Mach-o）；</strong></li>
 </ul>
 <p><strong>LLVM的优点在于，中间表示IR代码编写良好，而且不同的前端语言最终都转换成同一种的IR。优化器只对中间表示IR操作.</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyaumifmgpj30fx0aq0t7.jpg"></p>
 <h2 id="四、BitCode中间码"><a href="#四、BitCode中间码" class="headerlink" title="四、BitCode中间码"></a>四、BitCode中间码</h2><h4 id="Xcode7开始-新建项目默认就打开了Bitcode设置"><a href="#Xcode7开始-新建项目默认就打开了Bitcode设置" class="headerlink" title="Xcode7开始,新建项目默认就打开了Bitcode设置"></a>Xcode7开始,新建项目默认就打开了Bitcode设置</h4><ul>
 <li><p><strong>LLVM 是目前苹果采用的编译器工具链, Bitcode 是 LLVM 编译器的中间代码的一种编码。</strong></p>
 </li>
@@ -330,6 +334,7 @@
 </ul>
 <p><strong>clang 作为llvm编译器的前端，只负责对源代码词法分析，语法分析，语义分析，生成中间代码等功能，只是编译器的一部分。</strong></p>
 <h3 id="Clang相比于GCC有什么优势呢"><a href="#Clang相比于GCC有什么优势呢" class="headerlink" title="Clang相比于GCC有什么优势呢?"></a>Clang相比于GCC有什么优势呢?</h3><p><strong>其实，这也是Clang当初在设计开发的时候所主要考虑的原因。Clang是一个高度模块化开发的轻量级编译器，它的编译速度快、占用内存小、非常方便进行二次开发。</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyauo1z1v1j30hb0bqgn1.jpg"></p>
 <h2 id="六、oc源文件的编译过程"><a href="#六、oc源文件的编译过程" class="headerlink" title="六、oc源文件的编译过程"></a>六、oc源文件的编译过程</h2><blockquote>
 <p><strong>LLVM编译一个源文件的过程：预处理 -&gt; 词法分析 -&gt; Token -&gt; 语法分析 -&gt; AST -&gt; 代码生成 -&gt; LLVM IR -&gt; 优化 -&gt; 生成汇编代码 -&gt; Link -&gt; 目标文件</strong></p>
 </blockquote>
