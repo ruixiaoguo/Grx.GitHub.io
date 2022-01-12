@@ -17,11 +17,13 @@
 <meta property="og:site_name" content="Grx博客">
 <meta property="og:description" content="卡顿问题，就是在主线程上无法响应用户交互的问题。如果一个 App 时不时地就给你卡一下，有时还长时间无响应，这时你还愿意继续用它吗？所以说，卡顿问题对 App 的伤害是巨大的，也是我们必须要重点解决的一个问题。">
 <meta property="og:locale">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyausfudc1j30u00n3tcz.jpg">
 <meta property="article:published_time" content="2021-10-02T13:20:11.000Z">
-<meta property="article:modified_time" content="2022-01-05T08:43:21.966Z">
+<meta property="article:modified_time" content="2022-01-12T06:05:44.968Z">
 <meta property="article:author" content="Grx">
 <meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyausfudc1j30u00n3tcz.jpg">
   
     <link rel="alternative" href="/Grx.github.io/atom.xml" title="Grx博客" type="application/atom+xml">
   
@@ -299,6 +301,7 @@
 <h2 id="二、RunLoop监听卡顿原理？"><a href="#二、RunLoop监听卡顿原理？" class="headerlink" title="二、RunLoop监听卡顿原理？"></a>二、RunLoop监听卡顿原理？</h2><p><strong>对于 iOS 开发来说，监控卡顿就是要去找到主线程上都做了哪些事儿。我们都知道，线程的消息事件是依赖于 NSRunLoop 的，所以从 NSRunLoop 入手，就可以知道主线程上都调用了哪些方法。我们通过监听 NSRunLoop 的状态，就能够发现调用方法是否执行时间过长，从而判断出是否会出现卡顿。<br /><br /><br>所以可以通过监控 RunLoop 的状态来判断是否会出现卡顿。</strong></p>
 <h4 id="RunLoop-的六个状态"><a href="#RunLoop-的六个状态" class="headerlink" title="RunLoop 的六个状态"></a>RunLoop 的六个状态</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">typedef CF_OPTIONS(CFOptionFlags, CFRunLoopActivity) &#123;</span><br><span class="line">    kCFRunLoopEntry , // 进入 loop</span><br><span class="line">    kCFRunLoopBeforeTimers , // 触发 Timer 回调</span><br><span class="line">    kCFRunLoopBeforeSources , // 触发 Source0 回调</span><br><span class="line">    kCFRunLoopBeforeWaiting , // 等待 mach_port 消息</span><br><span class="line">    kCFRunLoopAfterWaiting ), // 接收 mach_port 消息</span><br><span class="line">    kCFRunLoopExit , // 退出 loop</span><br><span class="line">    kCFRunLoopAllActivities  // loop 所有状态改变</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyausfudc1j30u00n3tcz.jpg"></p>
 <p><strong>如果 RunLoop 的线程，进入睡眠前方法的执行时间过长而导致无法进入睡眠，或者线程唤醒后接收消息时间过长而无法进入下一步的话，就可以认为是线程受阻了。如果这个线程是主线程的话，表现出来的就是出现了卡顿。<br /><br /><br>所以，如果我们要利用 RunLoop 原理来监控卡顿的话，就是要关注这两个阶段。RunLoop 在进入睡眠之前和唤醒后的两个 loop 状态定义的值，分别是 kCFRunLoopBeforeSources 和 kCFRunLoopAfterWaiting ，也就是要触发 Source0 回调和接收 mach_port 消息两个状态。</strong></p>
 <h2 id="三、RunLoop如何监听卡顿？"><a href="#三、RunLoop如何监听卡顿？" class="headerlink" title="三、RunLoop如何监听卡顿？"></a>三、RunLoop如何监听卡顿？</h2><p><strong>要想监听 RunLoop，你就首先需要创建一个 CFRunLoopObserverContext 观察者，代码如下：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CFRunLoopObserverContext context = &#123;0,(__bridge void*)self,NULL,NULL&#125;;</span><br><span class="line">runLoopObserver = CFRunLoopObserverCreate(kCFAllocatorDefault,kCFRunLoopAllActivities,YES,0,&amp;runLoopObserverCallBack,&amp;context);</span><br></pre></td></tr></table></figure>

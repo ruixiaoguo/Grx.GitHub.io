@@ -17,11 +17,17 @@
 <meta property="og:site_name" content="Grx博客">
 <meta property="og:description" content="App的启动速度对用户体验会有一定的影响，因此，为追求用户体验，启动速度的优化必然是App开发过程中，不可或缺的一个环节。那么我们需要先分析App在启动过程中都做了些什么事？">
 <meta property="og:locale">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyaveawr8ij30qz0ftwfp.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyaveasq91j30go07f74r.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyavealokej30u005emx7.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyavgu3emsj30u0054dfv.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyavgtnamsj30u0054t8q.jpg">
 <meta property="article:published_time" content="2021-06-30T13:10:06.000Z">
-<meta property="article:modified_time" content="2021-12-31T03:07:54.763Z">
+<meta property="article:modified_time" content="2022-01-12T06:29:44.304Z">
 <meta property="article:author" content="Grx">
 <meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyaveawr8ij30qz0ftwfp.jpg">
   
     <link rel="alternative" href="/Grx.github.io/atom.xml" title="Grx博客" type="application/atom+xml">
   
@@ -292,6 +298,7 @@
 <li><p>基于上面原因虚拟内存技术出现了，软件打开后，软件自己以为有一大片内存空间，但实际上是虚拟的，而虚拟内存和物理内存是通过一张表来关联的</p>
 </li>
 </ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyaveawr8ij30qz0ftwfp.jpg"></p>
 <h3 id="2-内存使用率问题"><a href="#2-内存使用率问题" class="headerlink" title="2.内存使用率问题"></a>2.内存使用率问题</h3><ul>
 <li><p>内存分页管理，映射表不能以字节为单位，是以页为单位。在应用加载时候不会把所有数据放内存中，因为数据是懒加载。</p>
 </li>
@@ -309,6 +316,8 @@
 2.main() 函数执行后
 3.首屏渲染完成后
 </code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyaveasq91j30go07f74r.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyavealokej30u005emx7.jpg"></p>
 <h3 id="2-冷启动都做了什么？"><a href="#2-冷启动都做了什么？" class="headerlink" title="2.冷启动都做了什么？"></a>2.冷启动都做了什么？</h3><ul>
 <li>dylib loading：加载可执行文件（App 的.o 文件的集合），加载动态链接库</li>
 <li>rebase/binding：对动态链接库进行 rebase 指针调整和 bind 符号绑定；</li>
@@ -351,6 +360,8 @@
 <li><p><strong>如果能将启动阶段需要的读取代码集中排布，将这些方法全都放到相邻的区域中，我们读取这些方法可能就只需要极少的 page fault 次数。可以减少不必要的 page fault 时间。达到优化启动时间的效果。</strong></p>
 </li>
 </ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyavgu3emsj30u0054dfv.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyavgtnamsj30u0054t8q.jpg"></p>
 <h3 id="2-重排实现-流程复杂参考链接二进制重排实现"><a href="#2-重排实现-流程复杂参考链接二进制重排实现" class="headerlink" title="2.重排实现(流程复杂参考链接二进制重排实现)"></a>2.重排实现(流程复杂参考链接<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3f9ed86a45cb">二进制重排实现</a>)</h3><pre><code>苹果其实已经给我们提供了这个机制。
 </code></pre>
 <h4 id="2-1-Order-File"><a href="#2-1-Order-File" class="headerlink" title="2.1 Order File"></a>2.1 Order File</h4><ul>
