@@ -6,22 +6,36 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ruixiaoguo.github.io/Grx.github.io">
-  <title>iOS应用程序的能源效率指南 | Grx博客</title>
+  <title>抖音工程架构演进 | Grx博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="所有应用程序在CPU上运行网络操作、更新用户界面或运行代码时都会消耗能源。随着用户越来越依赖电池电量，以及应用程序的激增，能源效率成为用户体验不可或缺的一部分。">
+  <meta name="description" content="快速的业务发展也对技术支撑提出了更高的要求，架构演进的本质是为了提高研发效率，提高代码稳定性和保证代码质量。架构要解决的问题是如何组织代码。合理的架构设计可以解决大型项目跨团队协作分工和多业务线并行开发的效率问题。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS应用程序的能源效率指南">
-<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/2021/12/20/iOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%83%BD%E6%BA%90%E6%95%88%E7%8E%87%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:title" content="抖音工程架构演进">
+<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/2021/12/30/%E6%8A%96%E9%9F%B3%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/index.html">
 <meta property="og:site_name" content="Grx博客">
-<meta property="og:description" content="所有应用程序在CPU上运行网络操作、更新用户界面或运行代码时都会消耗能源。随着用户越来越依赖电池电量，以及应用程序的激增，能源效率成为用户体验不可或缺的一部分。">
+<meta property="og:description" content="快速的业务发展也对技术支撑提出了更高的要求，架构演进的本质是为了提高研发效率，提高代码稳定性和保证代码质量。架构要解决的问题是如何组织代码。合理的架构设计可以解决大型项目跨团队协作分工和多业务线并行开发的效率问题。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-12-20T09:18:08.000Z">
-<meta property="article:modified_time" content="2022-01-05T10:25:59.662Z">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyb10ppambg30np0dcb2e.gif">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyb1325gt3j30q20dv3z5.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyb132jze5j30rv0lyjuf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyb185pxfoj30zk0esmz3.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyb1jek1zyj30wo0m0q73.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyb1jeq170j30iv092dga.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyb1v0mdhfj30oc06qwfc.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyb1uxfl6sj30zk0k0n1t.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyb20u1qtbj30vy0mhtcx.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyb22kb84nj30zk0k0n1m.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyb22ktj70j30vl0ibabw.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyb22kknvbj30zk0nq77f.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyb2d9xiqgj30xr0l0goa.jpg">
+<meta property="article:published_time" content="2021-12-30T10:20:18.000Z">
+<meta property="article:modified_time" content="2022-01-12T10:29:59.036Z">
 <meta property="article:author" content="Grx">
 <meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyb10ppambg30np0dcb2e.gif">
   
     <link rel="alternative" href="/Grx.github.io/atom.xml" title="Grx博客" type="application/atom+xml">
   
@@ -227,14 +241,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-iOS应用程序的能源效率指南" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-抖音工程架构演进" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      iOS应用程序的能源效率指南
+      抖音工程架构演进
     </h1>
   
 
@@ -246,8 +260,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/Grx.github.io/2021/12/20/iOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%83%BD%E6%BA%90%E6%95%88%E7%8E%87%E6%8C%87%E5%8D%97/" class="archive-article-date">
-        <time datetime="2021-12-20T09:18:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-20</time>
+<a href="/Grx.github.io/2021/12/30/%E6%8A%96%E9%9F%B3%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/" class="archive-article-date">
+        <time datetime="2021-12-30T10:20:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-30</time>
 </a>
 
   
@@ -260,7 +274,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.1k字</span>
+      <span class="post-count">1.5k字</span>
     </span>
   </span>
 
@@ -269,7 +283,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">5分</span>
     </span>
   </span>
 </div>
@@ -281,63 +295,69 @@
   <div class="article-entry" itemprop="articleBody">
     
     <blockquote>
-<p>所有应用程序在CPU上运行网络操作、更新用户界面或运行代码时都会消耗能源。随着用户越来越依赖电池电量，以及应用程序的激增，能源效率成为用户体验不可或缺的一部分。</p>
+<p>快速的业务发展也对技术支撑提出了更高的要求，架构演进的本质是为了提高研发效率，提高代码稳定性和保证代码质量。架构要解决的问题是如何组织代码。合理的架构设计可以解决大型项目跨团队协作分工和多业务线并行开发的效率问题。</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="一、良好的用户体验需要"><a href="#一、良好的用户体验需要" class="headerlink" title="一、良好的用户体验需要:"></a>一、良好的用户体验需要:</h2><ul>
-<li><strong>电池续航能力很好。</strong>随着能源效率的下降，电池续航能力也会下降。用户希望其iOS设备上的电池续航时间为全天。</li>
-<li><strong>速度惊人。</strong>iOS旨在在复杂的操作中提供出色的性能，并使您的应用程序飞起来。</li>
-<li><strong>反应灵敏。</strong>一次消耗过多的资源可能会导致界面滞后，对用户输入的反应缓慢。</li>
-<li><strong>酷炫的体验。</strong>随着越来越多的应用程序使用更多资源，系统工作越来越努力，设备的物理温度也逐渐上升。当这种情况发生时，系统会采取措施冷却到更可接受的水平。</li>
-</ul>
-<h2 id="二、耗电原因？"><a href="#二、耗电原因？" class="headerlink" title="二、耗电原因？"></a>二、耗电原因？</h2><h3 id="CPU-是耗电操作"><a href="#CPU-是耗电操作" class="headerlink" title="CPU 是耗电操作"></a>CPU 是耗电操作</h3><ul>
-<li><p><strong>引起 CPU 耗电的单点问题可以通过监控来解决，但点滴汇聚终成大海，每一个不合理的小的电量消耗，最终都可能会造成大的电量浪费。<br>对 CPU 的使用要精打细算，要避免让 CPU 做多余的事情。</strong></p>
-</li>
-<li><p><strong>对于大量数据的复杂计算，应该把数据传到服务器去处理，如果必须要在 App 内处理复杂数据计算，可以通过 GCD 的 dispatch_block_create_with_qos_class 方法指定队列的 Qos 为 QOS_CLASS_UTILITY，将计算工作放到这个队列的 block 里。在 QOS_CLASS_UTILITY 这种 Qos 模式下，系统针对大量数据的计算，以及复杂数据处理专门做了电量优化。</strong></p>
-</li>
-</ul>
-<h3 id="I-O-耗电操作"><a href="#I-O-耗电操作" class="headerlink" title="I/O 耗电操作"></a>I/O 耗电操作</h3><p><strong>任何的 I/O 操作，都会破坏掉低功耗状态 优化方案：</strong></p>
+<h2 id="一、抖音工程架构四个阶段的演进过程："><a href="#一、抖音工程架构四个阶段的演进过程：" class="headerlink" title="一、抖音工程架构四个阶段的演进过程："></a>一、抖音工程架构四个阶段的演进过程：</h2><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyb10ppambg30np0dcb2e.gif"></p>
+<h3 id="阶段一：抖音原始工程架构"><a href="#阶段一：抖音原始工程架构" class="headerlink" title="阶段一：抖音原始工程架构"></a>阶段一：抖音原始工程架构</h3><blockquote>
+<p><strong>抖音项目一开始是单体架构+Cocoapods，业务代码、工程配置、资源文件全部放在一个大业务仓库，由 Podfile 文件描述第三方仓库的依赖版本。</strong></p>
+</blockquote>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyb1325gt3j30q20dv3z5.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyb132jze5j30rv0lyjuf.jpg"></p>
+<h3 id="阶段二：分离壳工程后的工程架构"><a href="#阶段二：分离壳工程后的工程架构" class="headerlink" title="阶段二：分离壳工程后的工程架构"></a>阶段二：分离壳工程后的工程架构</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyb185pxfoj30zk0esmz3.jpg"></p>
+<p><strong>壳工程包含：工程配置、部分系统资源、工程主入口</strong></p>
+<p><strong>业务仓：业务线抽象成独立的Pod</strong></p>
+<p><strong>依赖仓：基础能力代码拆分成基础仓库，跟第三方仓库一样独立发版 ，通过Pod管理</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyb1jek1zyj30wo0m0q73.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyb1jeq170j30iv092dga.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyb1v0mdhfj30oc06qwfc.jpg"></p>
+<p><strong>优点：</strong></p>
 <ul>
-<li><p><strong>业内的普遍做法是，将碎片化的数据磁盘存储操作延后，先在内存中聚合，然后再进行磁盘存储。碎片化的数据进行聚合，在内存中进行存储的机制，可以使用系统自带的 NSCache 来完成。</strong></p>
+<li><strong>一个工程同时支持多个项目。一份代码可以打包出抖音、抖音极速版等项目</strong></li>
+<li><strong>部分业务线功能复用、部分业务线中台化发展的需求，所有业务线抽象成独立的 Pod，所有业务 Pod 必须通过宿主的壳工程进行集成发版。</strong></li>
+<li><strong>一些业务线可以通过自动化同步生成自己的子壳工程，实现业务线自己的 Example 工程，进行独立开发，如语音通话，直播，短视频。</strong></li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li><strong>采用 Cocoapods 本身自带的版本依赖决议进行版本分析会消耗大量的时间；</strong></li>
+<li><strong>Podfile.lock 过于繁琐，可读性很差，难以解决 Podfile.lock 的冲突；</strong></li>
+<li><strong>隐式依赖被动/不符合预期地升级，难以确定性地声明所有依赖，防止隐式依赖被升级；</strong></li>
+<li><strong>依赖版本在 Podfile/Podfile.lock 重复声明，增加了解决冲突的成本；</strong></li>
+<li><strong>Podfile.lock 参与依赖版本决议流程比较复杂，会出现不符合预期的情况。</strong></li>
+</ul>
+<h3 id="阶段三：单仓多组件工程架构"><a href="#阶段三：单仓多组件工程架构" class="headerlink" title="阶段三：单仓多组件工程架构"></a>阶段三：单仓多组件工程架构</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyb1uxfl6sj30zk0k0n1t.jpg"></p>
+<p><strong>单仓多组件：业务仓支持添加 podspec 增加组件，实现更小粒度的二进制依赖：</strong></p>
+<ul>
+<li><strong>业务实现层</strong></li>
+<li><strong>业务接口层</strong></li>
+<li><strong>服务层和基础层：存放公共的业务逻辑和通用服务，一是满足业务逻辑复用，二是满足子壳工程最小化二进制依赖</strong></li>
+</ul>
+<p><strong>都是通过Pod集成方式发版</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyb20u1qtbj30vy0mhtcx.jpg"></p>
+<h3 id="阶段四：Example-子壳工程架构"><a href="#阶段四：Example-子壳工程架构" class="headerlink" title="阶段四：Example 子壳工程架构"></a>阶段四：Example 子壳工程架构</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyb22kb84nj30zk0k0n1m.jpg"></p>
+<p><strong>子壳工程架构：壳工程支持添加 podspec 增加组件，增加 AWELaunchKit为子壳工程提供运行时的基础能力，满足代码复用和更小二进制依赖</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyb22ktj70j30vl0ibabw.jpg"></p>
+<p><strong>AWELaunchKit：</strong></p>
+<ul>
+<li><strong>为宿主和其他子壳工程提供了基础服务的依赖和初始化配置，同时提供了一套启动加载的 BootTasks 管理框架，部分业务涉及启动相关的逻辑可以在业务仓对应的服务层中实现，并通过 BootTasks 管理框架注册到启动加载器里面。</strong></li>
+<li><strong>提供了一套宿主 UI 入口和自定义入口框架。为了方便测试和调试，也整合了整套测试调试框架</strong></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyb22kknvbj30zk0nq77f.jpg"></p>
+<p><strong>组件依赖分析后台</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyb2d9xiqgj30xr0l0goa.jpg"></p>
+<h2 id="组件化遇到的问题："><a href="#组件化遇到的问题：" class="headerlink" title="组件化遇到的问题："></a>组件化遇到的问题：</h2><h3 id="1-二进制污染"><a href="#1-二进制污染" class="headerlink" title="1.二进制污染"></a>1.二进制污染</h3><p>组件之间的依赖除了显式的依赖，还存在很多隐式依赖，代码层面，除了普通的接口依赖，还有宏依赖、枚举依赖、全局变量依赖以及内联函数等的依赖。单仓 lint 进行编译链接完备性检查并不能解决依赖变动对其他二进制的影响。</p>
+<h3 id="2-编译优化"><a href="#2-编译优化" class="headerlink" title="2.编译优化"></a>2.编译优化</h3><p>编译优化最高效的方式就是提高缓存的利用率。对于本地研发和 CI 流程，都涉及分布式编译缓存同步。同时通过编译参数优化、依赖优化、hmap 优化也能不同程度的提高编译效率</p>
+<h3 id="3-主干分支稳定性问题"><a href="#3-主干分支稳定性问题" class="headerlink" title="3.主干分支稳定性问题"></a>3.主干分支稳定性问题</h3><p>对于多业务线并行开发，几百号人的业务开发团队，如果主干分支一旦出现问题，那么解决问题的时间就需要乘上几百倍。因此，需要从编译层面和运行层面都要有足够的机制去保证一个稳定的主干分支，才能保证业务侧的长期稳定性。</p>
+<h3 id="4-业务层的依赖耦合问题"><a href="#4-业务层的依赖耦合问题" class="headerlink" title="4.业务层的依赖耦合问题"></a>4.业务层的依赖耦合问题</h3><p>大型项目动则千万行的代码，代码间的依赖关系是复杂的网状关系。需要基于代码的语法树模型，从语义中去分析不合理的依赖，并输出治理的方案。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><p><strong>大型项目的组件化工作是一个系统性工程。涉及工程架构的改造、CI/CD 研发工具链的支撑、本地研发工具链的支撑，业务架构的设计优化，需要从各个方面综合考虑成本和收益。</strong></p>
 </li>
-<li><p><strong>NSCache 是线程安全的，NSCache 会在到达预设缓存空间值时清理缓存，这时会触发 cache:willEvictObject: 方法的回调，在这个回调里就可以对数据进行 I/O 操作，达到将聚合的数据 I/O 延后的目的。I/O 操作的次数减少了，对电量的消耗也就减少了。</strong></p>
+<li><p><strong>没有最好的架构，只有更好的架构，在架构演进的过程中，我们需要充分考虑架构的改动对业务的影响以及能给业务带来的收益。好的架构一定是能帮助业务节省时间，保证质量的。与此同时，我们在架构改进的过程中，要保证不能影响业务的正常迭代，所以向前兼容且避免大面积冲突也是很重要的事情。</strong></p>
 </li>
-</ul>
-<h5 id="示范场景："><a href="#示范场景：" class="headerlink" title="示范场景："></a>示范场景：</h5><h5 id="SDWebImage-图片加载框架，在图片的读取缓存处理时没有直接使用-I-O，而是使用了-NSCache。"><a href="#SDWebImage-图片加载框架，在图片的读取缓存处理时没有直接使用-I-O，而是使用了-NSCache。" class="headerlink" title="SDWebImage 图片加载框架，在图片的读取缓存处理时没有直接使用 I/O，而是使用了 NSCache。"></a>SDWebImage 图片加载框架，在图片的读取缓存处理时没有直接使用 I/O，而是使用了 NSCache。</h5><h2 id="三、如何优化电量？"><a href="#三、如何优化电量？" class="headerlink" title="三、如何优化电量？"></a>三、如何优化电量？</h2><p><strong>苹果公司专门维护了一个电量优化指南 “<a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/Performance/Conceptual/EnergyGuide-iOS/">Energy Efficiency Guide for iOS Apps</a>”，分别从 CPU、设备唤醒、网络、图形、动画、视频、定位、加速度计、陀螺仪、磁力计、蓝牙等多方面因素提出了电量优化方面的建议。</strong></p>
-<h3 id="1-减少工作并优先排序"><a href="#1-减少工作并优先排序" class="headerlink" title="1.减少工作并优先排序"></a>1.减少工作并优先排序</h3><h4 id="1-1-减少后台工作："><a href="#1-1-减少后台工作：" class="headerlink" title="1.1 减少后台工作："></a>1.1 减少后台工作：</h4><ul>
-<li><strong>后台活动完成后没有通知系统</strong></li>
-<li><strong>播放无声音频</strong></li>
-<li><strong>执行位置更新</strong></li>
-<li><strong>与蓝牙配件交互</strong></li>
-<li><strong>可以推迟的下载</strong></li>
-</ul>
-<h4 id="1-2-尽量减少计时器的使用"><a href="#1-2-尽量减少计时器的使用" class="headerlink" title="1.2 尽量减少计时器的使用"></a>1.2 尽量减少计时器的使用</h4><ul>
-<li><strong>计时器的高成本</strong></li>
-<li><strong>无需使用计时器即可获取事件通知</strong></li>
-<li><strong>使用GCD工具进行同步，而不是计时器</strong></li>
-<li><strong>如果您必须使用计时器，请高效使用它</strong></li>
-</ul>
-<h4 id="1-3-尽量减少I-O"><a href="#1-3-尽量减少I-O" class="headerlink" title="1.3 尽量减少I/O"></a>1.3 尽量减少I/O</h4><ul>
-<li><strong>尽量减少数据写入</strong></li>
-<li><strong>避免太频繁地访问内存</strong></li>
-<li><strong>尽可能按顺序读取和写入数据</strong></li>
-<li><strong>了解系统如何缓存文件数据</strong></li>
-</ul>
-<h3 id="2-网络变量对能源的影响"><a href="#2-网络变量对能源的影响" class="headerlink" title="2.网络变量对能源的影响"></a>2.网络变量对能源的影响</h3><ul>
-<li><strong>蜂窝网络活动比Wi-Fi活动需要的能量要多得多</strong></li>
-<li><strong>网络吞吐量，过多频繁的网络请求</strong></li>
-<li><strong>降低媒体质量和大小，压缩数据</strong></li>
-</ul>
-<h3 id="3-高效使用图形，动画，视频"><a href="#3-高效使用图形，动画，视频" class="headerlink" title="3.高效使用图形，动画，视频"></a>3.高效使用图形，动画，视频</h3><ul>
-<li><strong>减少应用程序使用的视图数量</strong></li>
-<li><strong>减少不透明度的使用</strong></li>
-<li><strong>尽可能对动画使用较低的帧速率</strong></li>
-<li><strong>避免在屏幕上同时使用多个帧速率</strong></li>
-</ul>
-<h3 id="4-尽量减少外围互动"><a href="#4-尽量减少外围互动" class="headerlink" title="4.尽量减少外围互动"></a>4.尽量减少外围互动</h3><ul>
-<li><strong>仅在需要时扫描设备</strong></li>
-<li><strong>尽可能减少收音机的使用</strong></li>
-<li><strong>蓝牙设备消耗能源</strong></li>
+<li><p><strong>组件化里面处处都有惊喜，比如一个小小的 hmap 优化，可以很大程度的减少编译耗时，比如一个二进制的压缩和解压的优化，可以很大程度减少 pod install 的整体耗时。</strong></p>
+</li>
+<li><p><strong>当然这里面也会有很多很棘手的问题，需要通过一些特殊的方案解决，比如针对分布式开发，由于阻塞式发版必然会导致一些不同分支存在冲突的代码发版后影响主干的稳定性。</strong></p>
+</li>
 </ul>
 
     
@@ -380,7 +400,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2021/12/20/iOS应用程序的能源效率指南/" title="iOS应用程序的能源效率指南" target="_blank">https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2021/12/20/iOS应用程序的能源效率指南/</a>
+          <a href="https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2021/12/30/抖音工程架构演进/" title="抖音工程架构演进" target="_blank">https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2021/12/30/抖音工程架构演进/</a>
         </li>
         
         <li>
@@ -458,7 +478,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://ruixiaoguo.github.io/Grx.github.io/2021/12/20/iOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%83%BD%E6%BA%90%E6%95%88%E7%8E%87%E6%8C%87%E5%8D%97/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://ruixiaoguo.github.io/Grx.github.io/2021/12/30/%E6%8A%96%E9%9F%B3%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -473,18 +493,9 @@
 
 <nav id="article-nav">
   
-    <a href="/Grx.github.io/2021/12/30/%E6%8A%96%E9%9F%B3%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          抖音工程架构演进
-        
-      </div>
-    </a>
   
-  
-    <a href="/Grx.github.io/2021/11/12/%E8%B0%88%E4%B8%80%E8%B0%88LLVM%E7%BC%96%E8%AF%91%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">谈一谈LLVM编译器</div>
+    <a href="/Grx.github.io/2021/12/20/iOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%83%BD%E6%BA%90%E6%95%88%E7%8E%87%E6%8C%87%E5%8D%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS应用程序的能源效率指南</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -511,7 +522,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%89%AF%E5%A5%BD%E7%9A%84%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E9%9C%80%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">一、良好的用户体验需要:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%80%97%E7%94%B5%E5%8E%9F%E5%9B%A0%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">二、耗电原因？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU-%E6%98%AF%E8%80%97%E7%94%B5%E6%93%8D%E4%BD%9C"><span class="toc-number">2.1.</span> <span class="toc-text">CPU 是耗电操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I-O-%E8%80%97%E7%94%B5%E6%93%8D%E4%BD%9C"><span class="toc-number">2.2.</span> <span class="toc-text">I&#x2F;O 耗电操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A4%BA%E8%8C%83%E5%9C%BA%E6%99%AF%EF%BC%9A"><span class="toc-number">2.2.0.1.</span> <span class="toc-text">示范场景：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#SDWebImage-%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E6%A1%86%E6%9E%B6%EF%BC%8C%E5%9C%A8%E5%9B%BE%E7%89%87%E7%9A%84%E8%AF%BB%E5%8F%96%E7%BC%93%E5%AD%98%E5%A4%84%E7%90%86%E6%97%B6%E6%B2%A1%E6%9C%89%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8-I-O%EF%BC%8C%E8%80%8C%E6%98%AF%E4%BD%BF%E7%94%A8%E4%BA%86-NSCache%E3%80%82"><span class="toc-number">2.2.0.2.</span> <span class="toc-text">SDWebImage 图片加载框架，在图片的读取缓存处理时没有直接使用 I&#x2F;O，而是使用了 NSCache。</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%E7%94%B5%E9%87%8F%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">三、如何优化电量？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%87%8F%E5%B0%91%E5%B7%A5%E4%BD%9C%E5%B9%B6%E4%BC%98%E5%85%88%E6%8E%92%E5%BA%8F"><span class="toc-number">3.1.</span> <span class="toc-text">1.减少工作并优先排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E5%87%8F%E5%B0%91%E5%90%8E%E5%8F%B0%E5%B7%A5%E4%BD%9C%EF%BC%9A"><span class="toc-number">3.1.1.</span> <span class="toc-text">1.1 减少后台工作：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E5%B0%BD%E9%87%8F%E5%87%8F%E5%B0%91%E8%AE%A1%E6%97%B6%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">3.1.2.</span> <span class="toc-text">1.2 尽量减少计时器的使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E5%B0%BD%E9%87%8F%E5%87%8F%E5%B0%91I-O"><span class="toc-number">3.1.3.</span> <span class="toc-text">1.3 尽量减少I&#x2F;O</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BD%91%E7%BB%9C%E5%8F%98%E9%87%8F%E5%AF%B9%E8%83%BD%E6%BA%90%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">3.2.</span> <span class="toc-text">2.网络变量对能源的影响</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%AB%98%E6%95%88%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BD%A2%EF%BC%8C%E5%8A%A8%E7%94%BB%EF%BC%8C%E8%A7%86%E9%A2%91"><span class="toc-number">3.3.</span> <span class="toc-text">3.高效使用图形，动画，视频</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%B0%BD%E9%87%8F%E5%87%8F%E5%B0%91%E5%A4%96%E5%9B%B4%E4%BA%92%E5%8A%A8"><span class="toc-number">3.4.</span> <span class="toc-text">4.尽量减少外围互动</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8A%96%E9%9F%B3%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84%E5%9B%9B%E4%B8%AA%E9%98%B6%E6%AE%B5%E7%9A%84%E6%BC%94%E8%BF%9B%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">一、抖音工程架构四个阶段的演进过程：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B6%E6%AE%B5%E4%B8%80%EF%BC%9A%E6%8A%96%E9%9F%B3%E5%8E%9F%E5%A7%8B%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">阶段一：抖音原始工程架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B6%E6%AE%B5%E4%BA%8C%EF%BC%9A%E5%88%86%E7%A6%BB%E5%A3%B3%E5%B7%A5%E7%A8%8B%E5%90%8E%E7%9A%84%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84"><span class="toc-number">1.2.</span> <span class="toc-text">阶段二：分离壳工程后的工程架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B6%E6%AE%B5%E4%B8%89%EF%BC%9A%E5%8D%95%E4%BB%93%E5%A4%9A%E7%BB%84%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84"><span class="toc-number">1.3.</span> <span class="toc-text">阶段三：单仓多组件工程架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B6%E6%AE%B5%E5%9B%9B%EF%BC%9AExample-%E5%AD%90%E5%A3%B3%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84"><span class="toc-number">1.4.</span> <span class="toc-text">阶段四：Example 子壳工程架构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E5%8C%96%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">组件化遇到的问题：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%B1%A1%E6%9F%93"><span class="toc-number">2.1.</span> <span class="toc-text">1.二进制污染</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BC%96%E8%AF%91%E4%BC%98%E5%8C%96"><span class="toc-number">2.2.</span> <span class="toc-text">2.编译优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%B8%BB%E5%B9%B2%E5%88%86%E6%94%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E9%97%AE%E9%A2%98"><span class="toc-number">2.3.</span> <span class="toc-text">3.主干分支稳定性问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%B8%9A%E5%8A%A1%E5%B1%82%E7%9A%84%E4%BE%9D%E8%B5%96%E8%80%A6%E5%90%88%E9%97%AE%E9%A2%98"><span class="toc-number">2.4.</span> <span class="toc-text">4.业务层的依赖耦合问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
                     </div>
                 </span>
             </div>
