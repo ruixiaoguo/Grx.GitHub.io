@@ -6,22 +6,39 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ruixiaoguo.github.io/Grx.github.io">
-  <title>创建属于自己的私有库(github)以及提交到cocoapods | Grx博客</title>
+  <title>创建属于自己的私有库(码云)以及提交到cocoapods | Grx博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="创建属于自己的私有库(github)以及提交到cocoapods相信每个Develophttps:&#x2F;&#x2F;link.jianshu.com&#x2F;?t&#x3D;https:&#x2F;&#x2F;github.com&#x2F;CharlsPrince&#x2F;CommonExtension.git%27er都会在使用Cocoapods这儿第三方库管理工具，虽然有时候pod install的时候会有种想死的感觉o(╯□╰)o，但依然无法阻挡某些程序员去">
+  <meta name="description" content="项目开发中经常使用pod管理三方库，但在实际开发中，有很多公共组件甚至业务组件也想用 CocoaPods 统一管理，也有助于多人开发。接下来，咱们来说说用 CocoaPods 创建私有库。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="创建属于自己的私有库(github)以及提交到cocoapods">
-<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/2018/07/08/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(github)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/index.html">
+<meta property="og:title" content="创建属于自己的私有库(码云)以及提交到cocoapods">
+<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/2022/01/18/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(%E7%A0%81%E4%BA%91)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/index.html">
 <meta property="og:site_name" content="Grx博客">
-<meta property="og:description" content="创建属于自己的私有库(github)以及提交到cocoapods相信每个Develophttps:&#x2F;&#x2F;link.jianshu.com&#x2F;?t&#x3D;https:&#x2F;&#x2F;github.com&#x2F;CharlsPrince&#x2F;CommonExtension.git%27er都会在使用Cocoapods这儿第三方库管理工具，虽然有时候pod install的时候会有种想死的感觉o(╯□╰)o，但依然无法阻挡某些程序员去">
+<meta property="og:description" content="项目开发中经常使用pod管理三方库，但在实际开发中，有很多公共组件甚至业务组件也想用 CocoaPods 统一管理，也有助于多人开发。接下来，咱们来说说用 CocoaPods 创建私有库。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2018-07-08T10:28:47.000Z">
-<meta property="article:modified_time" content="2019-07-01T10:55:23.000Z">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhw9hbsfij30jo0kmab6.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhwca00enj311i04674g.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhwfarzwxj30sa08m768.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhwi05eyrj30ig0k7q46.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhwmbynbej30fp094ab8.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhwnggw5cj30lx03ot95.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhwusid7qj31ga0qyae5.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhwfarzwxj30sa08m768.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhx4ubc8bj30ty0gkdiq.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhx6un4mtj30i506lmxt.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhxbks6eoj30kc03cmxh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhxbl11gqj30k90bdwh0.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhxbkxku0j30if06tdgj.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhxk3cocjj30fo075jta.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhxk34egdj30mo0jedjk.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhxk394wrj30jk07mjs4.jpg">
+<meta property="article:published_time" content="2022-01-18T10:33:01.000Z">
+<meta property="article:modified_time" content="2022-01-18T09:02:53.039Z">
 <meta property="article:author" content="Grx">
 <meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyhw9hbsfij30jo0kmab6.jpg">
   
     <link rel="alternative" href="/Grx.github.io/atom.xml" title="Grx博客" type="application/atom+xml">
   
@@ -227,14 +244,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-创建属于自己的私有库(github)以及提交到cocoapods" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-创建属于自己的私有库(码云)以及提交到cocoapods" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      创建属于自己的私有库(github)以及提交到cocoapods
+      创建属于自己的私有库(码云)以及提交到cocoapods
     </h1>
   
 
@@ -246,8 +263,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/Grx.github.io/2018/07/08/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(github)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/" class="archive-article-date">
-        <time datetime="2018-07-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-08</time>
+<a href="/Grx.github.io/2022/01/18/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(%E7%A0%81%E4%BA%91)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/" class="archive-article-date">
+        <time datetime="2022-01-18T10:33:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-18</time>
 </a>
 
   
@@ -260,7 +277,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.4k字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -269,7 +286,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">9分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -280,105 +297,124 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="创建属于自己的私有库-github-以及提交到cocoapods"><a href="#创建属于自己的私有库-github-以及提交到cocoapods" class="headerlink" title="创建属于自己的私有库(github)以及提交到cocoapods"></a>创建属于自己的私有库(github)以及提交到cocoapods</h1><p>相信每个Develop<a target="_blank" rel="noopener" href="https://link.jianshu.com/?t=https://github.com/CharlsPrince/CommonExtension.git%27er%E9%83%BD%E4%BC%9A%E5%9C%A8%E4%BD%BF%E7%94%A8Cocoapods%E8%BF%99%E5%84%BF%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%8C%E8%99%BD%E7%84%B6%E6%9C%89%E6%97%B6%E5%80%99pod">https://link.jianshu.com/?t=https://github.com/CharlsPrince/CommonExtension.git%27er都会在使用Cocoapods这儿第三方库管理工具，虽然有时候pod</a> install的时候会有种想死的感觉o(╯□╰)o，但依然无法阻挡某些程序员去使用它的热情，why？因为它能使你的项目工程看起来更加简洁，更加有条理性，而不至于使自己项目的Vendor文件夹看起来臃肿，而且能减少手动导入静态framework的麻烦，也可以将自己封装好的代码提交到Trunk供自己和别人使用，的确方便。</p>
+    <blockquote>
+<p>项目开发中经常使用pod管理三方库，但在实际开发中，有很多公共组件甚至业务组件也想用 CocoaPods 统一管理，也有助于多人开发。接下来，咱们来说说用 CocoaPods 创建私有库。</p>
+</blockquote>
 <span id="more"></span>
-<p>但有时候我们将代码封装起来后，想要重复利用，又不想push到Trunk(毕竟在又要验证又要被墙什么的，麻烦)，这时就需要使用到私有库了，作为小白和英语四级都没过的“程序猿”，在Cocoapods上的确踩了不少的坑，而且Cocoapods官网上面的流程看起来比较官方，只把一些主要的步骤标记出来，根本就没有一个完成的流程，而且全英文，看起来有点吃力(毕竟我是中国人O(∩_∩)O~)<br>那么我们就不扯远了，什么是私有库？</p>
-<h2 id="私有库及公有库理解"><a href="#私有库及公有库理解" class="headerlink" title="私有库及公有库理解"></a>私有库及公有库理解</h2><p>在我看来，私有库就是自己封装的Code放到不开源的代码仓库，而GitHub就是一个管理开源Code的代码仓库，相信很多同学都是通过在GitHub上开源自己封装好的组件的，毕竟有好东西要学会分享✧(≖ ◡ ≖✿)嘿嘿</p>
-<h2 id="Cocoapods的原理及目录结构"><a href="#Cocoapods的原理及目录结构" class="headerlink" title="Cocoapods的原理及目录结构"></a>Cocoapods的原理及目录结构</h2><p>Cocoapods一共分成两块，就是Cocoapods和Specs,Specs是一个目录容器，将所有的第三方的podspec存放在这里，而podspec就相当于是这个库的介绍文件，里面包含了库的名字、版本、下载地址等信息<br>注意项</p>
-<pre><code>   • ~/.cocoapods/repos/master
-</code></pre>
-<p>开源第三方库管理podspec的地方，这个文件夹是在使用Cocoapods的时候自动从Specs上clone到本地的</p>
-<h2 id="基本目录结构："><a href="#基本目录结构：" class="headerlink" title="基本目录结构："></a>基本目录结构：</h2><pre><code>    repos-&gt;master-&gt;Specs-&gt;[Name]-&gt;[Version]-&gt;[Name].podspec
-</code></pre>
-<p>这个就是共有的第三方的目录，我们要做私有库，可以模仿共有库的目录结构，建立一个自己的Spec私有仓库来维护，以后我们要维护的东西基本就两样：</p>
-<pre><code>    1. 私有的Specs目录
-    2. 我们要上传的库
-</code></pre>
-<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="一、git上创建私有的Specs库文件夹"><a href="#一、git上创建私有的Specs库文件夹" class="headerlink" title="一、git上创建私有的Specs库文件夹"></a>一、git上创建私有的Specs库文件夹</h2><p>在远端GitHub建一个仓库，命名为MySpecs,将仓库clone到本地(可以是桌面或指定文件夹下)，将共有的Cocoapods-version.yml(见附件)文件拷贝到里面，并创建一个命名为“Specs”的文件夹(在文件夹里面随意的文件，只要不是空文件夹就行了，因为如果是空文件夹的话在push到远端的时候会被忽略)，然后推送到远端，就这样，远端的Specs仓库已经创建完成了，这时本地和远端都会有了两个同步的库，如图：</p>
-<pre><code> 本地仓库.png
- 远程仓库.png
-</code></pre>
-<h2 id="二、将远端的私有Specs仓库clone到本地-cocoapods目录下"><a href="#二、将远端的私有Specs仓库clone到本地-cocoapods目录下" class="headerlink" title="二、将远端的私有Specs仓库clone到本地.cocoapods目录下"></a>二、将远端的私有Specs仓库clone到本地.cocoapods目录下</h2><p>在终端运行：</p>
-<pre><code> $ pod repo add MySpecs https://github.com/CharlsPrince/MySpecs.git（clon到本地.cocoapods目录指令）(建议使用github Desktop克隆到本地cocoapods目录方便同步代码到远端)
-</code></pre>
-<p>MySpecs 指的是仓库的名字，后面的路径就是仓库在远端的路径，这个是根据每个人远端仓库的路径而定的，将路径改成你的远端路径就行了</p>
-<h2 id="三、创建一个podspec文件"><a href="#三、创建一个podspec文件" class="headerlink" title="三、创建一个podspec文件"></a>三、创建一个podspec文件</h2><p>cd到工程文件目录下 ，<br>在终端执行命令：</p>
-<pre><code>    $ pod spec create CommonExtension https://github.com/CharlsPrince/CommonExtension.git
-    CommonExtension 指的是这个podspec文件的名字，后面的路径就是这个工程在远端的路径，当然，如果要实现这一步，你需要先将你的工程push到远端，至于怎么push，这里就不详细介绍了，因为如果你使用不同的代码管理服务器方法也不尽相同，执行完了以后你会发现在当前的这个工程文件目录下回出现一个叫CommonExtension.podspec的文件（添加一个LICENSE文件见附件）
-</code></pre>
-<p>podspec文件.png<br>用sublime打开这个文件，没有sublime的也可以使用系统自带的文本编辑器打开，只不过用sublime打开可以将编辑语言改成Ruby，这样这些文本就会高亮显示了，编辑podspec里面的信息：(参考附件最好复制容易报错)</p>
-<pre><code>    s.name          = &quot;HomePageModule&quot;
-    s.version       = &quot;1.0&quot;
-    s.summary       = &quot;description of HomePageModule&quot;
-    s.description   = &lt;&lt;-DESC
-    &quot;this is HomePageModule content description.&quot;
-    DESC
-    s.homepage      = &quot;https://coding.net/u/LiuXiaoZhuang/p/HomePageModule/git&quot;
-    s.license       = &quot;MIT&quot;
-    s.author        = &#123; &quot;LiuXiaoZhuang&quot; =&gt; &quot;2046703959@qq.com&quot; &#125;
-    s.source        = &#123; :git =&gt; &quot;https://git.coding.net/LiuXiaoZhuang/HomePageModule.git&quot;, :tag =&gt; &quot;#&#123;s.version&#125;&quot; &#125;
-    s.exclude_files = &quot;&quot;
-    s.source_files  = &quot;HomePageModule/HomePageModule/*.&#123;h,m&#125;&quot;
-    s.frameworks    = &#39;UIKit&#39;
-    s.platform      = :ios
-</code></pre>
-<p>当然还有一些其他的，详细介绍可以去Cocoapods看看或可以看看AFNetworking的podspec，他们写得很正规和简洁。</p>
-<h2 id="四、验证podspec合法性"><a href="#四、验证podspec合法性" class="headerlink" title="四、验证podspec合法性"></a>四、验证podspec合法性</h2><p>如果终端是在项目的当前目录下就直接执行一下命令，否则你需要cd到你要验证的.podspec的文件目录下：<br>(如果有文件夹s.source_files  = “GGCoServers/**/*.{h,m}”)</p>
-<pre><code>    $ pod lib lint  (--allow-warnings可消除警告)
-    或
-    $ pod spec lint
-    注意项
-    • pod lib lint 所编译的源代码是来自于podspec所在目录而不是source所指定git地址
-    • pod spec lint 会联网校验，通过source中的git地址获取源代码，同时还会校验git地址上是否有对应version字段的tag
-    • 执行完，如果有错就根据错误修改podspec文件，通过则继续
-</code></pre>
-<h2 id="五、给当前代码打上tag"><a href="#五、给当前代码打上tag" class="headerlink" title="五、给当前代码打上tag"></a>五、给当前代码打上tag</h2><p>cd到你的.podspec私有库文件目录下<br>验证通过后，给当前代码打上tag，建议tag和版本号一致，并push到远端(官网的tag是不能向下修改的),这时候打开你的远端，你会发现出现了你提交的tag</p>
-<pre><code>    $ git tag &quot;0.0.1&quot;
-    $ git push origin --tags
-</code></pre>
-<p>远端tag.png</p>
-<h2 id="六、向mySpecs提交-podspec文件"><a href="#六、向mySpecs提交-podspec文件" class="headerlink" title="六、向mySpecs提交.podspec文件"></a>六、向mySpecs提交.podspec文件</h2><p>将tag推送到远端以后，向自己的私有库提交podspec文件：(进入私有库podspec所在目录)</p>
-<p>$ pod repo push MySpecs [name].podspec –allow-warnings</p>
-<p>如果提交成功，去<del>/.cocoapods/repos/MySpecs文件夹下就能找到你创建的私有库了，当然，只是podspec文件哦，因为</del>/.cocoapods/repos/只是用来保存podspec文件的嘛<br>到这，你的私有库就已经创建完成了</p>
-<h2 id="问题小结"><a href="#问题小结" class="headerlink" title="问题小结"></a>问题小结</h2><h3 id="1、执行pod-lib-create-（组件库）-出错"><a href="#1、执行pod-lib-create-（组件库）-出错" class="headerlink" title="1、执行pod lib create （组件库） 出错"></a>1、执行pod lib create （组件库） 出错</h3><pre><code>提示错误：rubygems/core_ext/kernel_require.rb:120:in`require&#39;: cannot load such file -- colored2
-(LoadError)
-解决办法：
-输入上面提示的colored2的两条gem命令即可解决问题
-sudo gem install colored2
-sudo gem update --system
-</code></pre>
-<h3 id="2、添加组件库到私有spec-repo仓库后-执行-pod-search搜索不到。"><a href="#2、添加组件库到私有spec-repo仓库后-执行-pod-search搜索不到。" class="headerlink" title="2、添加组件库到私有spec repo仓库后 执行 pod search搜索不到。"></a>2、添加组件库到私有spec repo仓库后 执行 pod search搜索不到。</h3><p>方法一：</p>
-<pre><code>先确认你本地仓库上面确实有你新创建的组件库，这时候可以先删除search缓存文件
-rm ~/Library/Caches/CocoaPods/search_index.json,删除后从新执行pod search ***
-</code></pre>
-<p>方法二：</p>
-<pre><code>1.切换到某个项目（含有podfile文件）下
-2.执行pod update（提示不能更新）
-3.尝试 pod repo update —verbose获取详细信息，我记得是提示我删除一个 index.lock文件，
-4.删除后从新 执行  pod repo update —verbose  会更新本地私有库和master仓库
-5.执行pod search ***   创建search索引，可以搜到
-</code></pre>
-<h3 id="3、提交本地podspec到Specs仓库的时候出错，提示repo-文件夹下的spec-repo-is-not-clean"><a href="#3、提交本地podspec到Specs仓库的时候出错，提示repo-文件夹下的spec-repo-is-not-clean" class="headerlink" title="3、提交本地podspec到Specs仓库的时候出错，提示repo 文件夹下的spec repo is not clean"></a>3、提交本地podspec到Specs仓库的时候出错，提示repo 文件夹下的spec repo is not clean</h3><pre><code>方法一:cd到spec repo 文件夹下，执行 git  clean -f
-方法二：cd到spec repo 文件夹下，执行  git  stash
-方法三: 删除spec repo 下的Specs仓库，我这里的是“MySpecs”,然后重新从git上将私有仓库clone下来：
-pod repo add MySpecs https://github.com/CharlsPrince/MySpecs.git
-</code></pre>
-<p>the repo “xxx” at “xxx” is no clean</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h3><p>• 每次提交本地podspec到Specs仓库都要将Specs提交到git远程服务器，确保本地仓库与远程仓库同步</p>
-<h2 id="七、查询私有库并使用"><a href="#七、查询私有库并使用" class="headerlink" title="七、查询私有库并使用"></a>七、查询私有库并使用</h2><p>不出意外，这个时候，你去终端pod search 你的三方库名字，就能搜到（如果你的名字和官方Specs里面的某个三方库名字一样的话将会搜不到），使用的时候在Podfile中加入两个Specs源即：</p>
-<pre><code>    官方源：
-    source &#39;https://github.com/CocoaPods/Specs.git&#39;
-    私有源：
-    source &#39;https://github.com/CharlsPrince/CommonExtension.git&#39; #即你的私有源仓库地址
-    当然，你也可以指定地址
-    pod &#39;xxxx&#39;, :git =&gt;&#39;https://github.com/CharlsPrince/CommonExtension.git&#39;
-    或
-    pod &#39;xxx&#39;, :podspec =&gt; &#39;xxxx.podspec&#39;
-</code></pre>
-<h2 id="八、更新私有库代码"><a href="#八、更新私有库代码" class="headerlink" title="八、更新私有库代码"></a>八、更新私有库代码</h2><p>1.先把代码clone到本地修改。<br>2.修改完代码再修改podspecs文件的版本号提交代码。<br>3.给代码打上tag后push到远端私有库同步代码。<br>4.向自己的私有库提交podspec文件$ pod repo push MySpecs [name].podspec<br>5.github DeskTop客户端同步本地spec仓库到远程specs仓库。<br>6.更新结束，可以搜索到新版本。pod search XXX</p>
-<h2 id="二-让你的框架支持cocoapods"><a href="#二-让你的框架支持cocoapods" class="headerlink" title="二.让你的框架支持cocoapods"></a>二.让你的框架支持cocoapods</h2><h3 id="1-注册Trunk"><a href="#1-注册Trunk" class="headerlink" title="1.注册Trunk"></a>1.注册Trunk</h3><p>// 加上–verbose可以输出详细debug信息，方便出错时查看。<br>pod trunk register <a href="mailto:&#119;&#101;&#x6e;&#x79;&#97;&#x6e;&#106;&#117;&#110;&#49;&#51;&#49;&#52;&#64;&#49;&#54;&#x33;&#46;&#x63;&#x6f;&#109;">&#119;&#101;&#x6e;&#x79;&#97;&#x6e;&#106;&#117;&#110;&#49;&#51;&#49;&#52;&#64;&#49;&#54;&#x33;&#46;&#x63;&#x6f;&#109;</a> “coderYJ” –verbose</p>
-<h3 id="2-发布到cocoapods-验证通过后，给当前代码打上tag，建议tag和版本号一致"><a href="#2-发布到cocoapods-验证通过后，给当前代码打上tag，建议tag和版本号一致" class="headerlink" title="2.发布到cocoapods(验证通过后，给当前代码打上tag，建议tag和版本号一致)"></a>2.发布到cocoapods(验证通过后，给当前代码打上tag，建议tag和版本号一致)</h3><p>// –use-libraries –allow-warnings<br>pod trunk push YJSettingTableView.podspec(进入到podspec所在目录执行)</p>
-<h3 id="2-验证"><a href="#2-验证" class="headerlink" title="2.验证"></a>2.验证</h3><p>pod search XXXXXXX</p>
+<h2 id="一、创建远程私有索引库（存放podspec管理私有库）"><a href="#一、创建远程私有索引库（存放podspec管理私有库）" class="headerlink" title="一、创建远程私有索引库（存放podspec管理私有库）"></a>一、创建远程私有索引库（存放podspec管理私有库）</h2><p><strong>在码云（<a target="_blank" rel="noopener" href="https://gitee.com/">https://gitee.com</a>）上创建一个自己的远程私有索引库，用来存放私有框架的详细描述信息.podspec文件</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhw9hbsfij30jo0kmab6.jpg"></p>
+<h2 id="二、将本地的私有索引库与远程私有索引库进行关联"><a href="#二、将本地的私有索引库与远程私有索引库进行关联" class="headerlink" title="二、将本地的私有索引库与远程私有索引库进行关联"></a>二、将本地的私有索引库与远程私有索引库进行关联</h2><ul>
+<li><strong>pod repo（查看本地已存在的索引库）</strong></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhwca00enj311i04674g.jpg"></p>
+<ul>
+<li><strong>添加本地私有索引库并与远程私有库</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod repo add MyProjectSpec https://git.oschina.net/funky_hs/myprojectspec.git</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>添加完毕后查看本地已存在的索引库 pod repo</strong></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhwfarzwxj30sa08m768.jpg"></p>
+<h2 id="三、创建一个用来存放项目基础组件的仓库"><a href="#三、创建一个用来存放项目基础组件的仓库" class="headerlink" title="三、创建一个用来存放项目基础组件的仓库"></a>三、创建一个用来存放项目基础组件的仓库</h2><p><strong>在码云（<a target="_blank" rel="noopener" href="https://gitee.com/">https://gitee.com</a>）上创建一个用来存放项目基础组件的仓库，用来存放组件代码。</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhwi05eyrj30ig0k7q46.jpg"></p>
+<h2 id="四、快速创建模板测试工程（测试基础组件）"><a href="#四、快速创建模板测试工程（测试基础组件）" class="headerlink" title="四、快速创建模板测试工程（测试基础组件）"></a>四、快速创建模板测试工程（测试基础组件）</h2><ul>
+<li><p><strong>桌面新建文件夹CocoaPodRemoteLib存放测试工程</strong></p>
+</li>
+<li><p><strong>进入文件夹 cd /Users/XXX/Desktop/CocoaPodRemoteLib</strong></p>
+</li>
+<li><p><strong>执行命令 pod lib create MyProjectBase（快速创建）</strong></p>
+</li>
+<li><p><strong>按照下图提示选择选项：</strong><br><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhwmbynbej30fp094ab8.jpg"></p>
+</li>
+<li><p><strong>创建完毕Xcode会自动打开测试工程，结构如下图：</strong></p>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhwnggw5cj30lx03ot95.jpg"></p>
+<ul>
+<li><p><strong>删除Replace.m文件，将组件的代码复制到文件夹下</strong></p>
+</li>
+<li><p><strong>进入Example路径下，重新执行pod install操作：</strong></p>
+</li>
+<li><p><strong>cd /Users/XXX/Desktop/CocoaPodRemoteLib/MyProjectBase/Example</strong></p>
+</li>
+<li><p><strong>pod install</strong></p>
+</li>
+<li><p><strong>此时打开模板测试工程，我们可以看到Pods &gt; Development Pods &gt; MyProjectBase &gt; MyProjectBase &gt; Classes &gt; 组件库</strong></p>
+</li>
+</ul>
+<h4 id="至此模板测试工程配置完毕！"><a href="#至此模板测试工程配置完毕！" class="headerlink" title="至此模板测试工程配置完毕！"></a>至此模板测试工程配置完毕！</h4><h2 id="五、将上面的模板测试工程，提交到第三步创建的远程组件仓库"><a href="#五、将上面的模板测试工程，提交到第三步创建的远程组件仓库" class="headerlink" title="五、将上面的模板测试工程，提交到第三步创建的远程组件仓库"></a>五、将上面的模板测试工程，提交到第三步创建的远程组件仓库</h2><ul>
+<li><strong>打开模板测试工程，编辑工程下的MyProjectBase.podspec文件</strong></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhwusid7qj31ga0qyae5.jpg"></p>
+<h4 id="注意：podspec文件中信息必须配置正确，尤其是git地址！！"><a href="#注意：podspec文件中信息必须配置正确，尤其是git地址！！" class="headerlink" title="注意：podspec文件中信息必须配置正确，尤其是git地址！！"></a>注意：podspec文件中信息必须配置正确，尤其是git地址！！</h4><ul>
+<li><p><strong>进入测试工程：cd /Users/XXX/Desktop/CocoaPodRemoteLib/MyProjectBase</strong></p>
+</li>
+<li><p><strong>验证上一步编辑的 MyProjectBase.podspec文件: pod lib lint</strong></p>
+</li>
+</ul>
+<h5 id="如果有ERROR，则需要去一个个修改完成"><a href="#如果有ERROR，则需要去一个个修改完成" class="headerlink" title="如果有ERROR，则需要去一个个修改完成"></a>如果有ERROR，则需要去一个个修改完成</h5><h5 id="出现MyProjectBase-passed-validation-则说明验证通过，依次执行以下命令："><a href="#出现MyProjectBase-passed-validation-则说明验证通过，依次执行以下命令：" class="headerlink" title="出现MyProjectBase passed validation. 则说明验证通过，依次执行以下命令："></a>出现MyProjectBase passed validation. 则说明验证通过，依次执行以下命令：</h5><ul>
+<li><strong>git status</strong></li>
+<li><strong>git add .</strong></li>
+<li><strong>git commit -m ‘编辑spec文件’</strong></li>
+<li><strong>git remote add origin <a target="_blank" rel="noopener" href="https://git.oschina.net/funky_hs/myprojectbase.git">https://git.oschina.net/funky_hs/myprojectbase.git</a> (将本地库与远程组件代码仓库进行关联)</strong></li>
+<li><strong>git push origin master (提交到远程仓库)</strong></li>
+<li><strong>git tag ‘0.1.0’ (要与MyProjectBase.podspec文件中的tag值保持一致)</strong></li>
+<li><strong>git push –tags(将tag提交到远程)</strong></li>
+<li><strong>pod spec lint –allow-warnings（验证远程是否正确，注意：Username与Password一定要填写正确）</strong></li>
+</ul>
+<h5 id="出现MyProjectBase-podspec-passed-validation-表明验证通过"><a href="#出现MyProjectBase-podspec-passed-validation-表明验证通过" class="headerlink" title="出现MyProjectBase.podspec passed validation. 表明验证通过"></a>出现MyProjectBase.podspec passed validation. 表明验证通过</h5><h2 id="六、将podspec文件提交到本地的私有索引库"><a href="#六、将podspec文件提交到本地的私有索引库" class="headerlink" title="六、将podspec文件提交到本地的私有索引库"></a>六、将<em><strong>podspec</strong></em>文件提交到本地的私有索引库</h2><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhwfarzwxj30sa08m768.jpg"></p>
+<ul>
+<li><p><strong>进入测试工程：cd /Users/XXX/Desktop/CocoaPodRemoteLib/MyProjectBase</strong></p>
+</li>
+<li><p><strong>执行命令：pod repo push MyProjectSpec MyProjectBase.podspec 提交到本地的私有索引库</strong></p>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhx4ubc8bj30ty0gkdiq.jpg"></p>
+<h4 id="至此远程私有库配置到此就已结束！"><a href="#至此远程私有库配置到此就已结束！" class="headerlink" title="至此远程私有库配置到此就已结束！"></a>至此远程私有库配置到此就已结束！</h4><h2 id="七、主工程利用Pods使用我们自己的私有框架"><a href="#七、主工程利用Pods使用我们自己的私有框架" class="headerlink" title="七、主工程利用Pods使用我们自己的私有框架"></a>七、主工程利用<em><strong>Pods</strong></em>使用我们自己的私有框架</h2><ul>
+<li><strong>用Xcode打开编辑Podfile文件</strong></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhx6un4mtj30i506lmxt.jpg"></p>
+<ul>
+<li><strong>pod install</strong></li>
+</ul>
+<h2 id="八、添加及修改基础组件内容"><a href="#八、添加及修改基础组件内容" class="headerlink" title="八、添加及修改基础组件内容"></a>八、添加及修改基础组件内容</h2><ul>
+<li><strong>打开模板测试工程，新增文件</strong></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhxbks6eoj30kc03cmxh.jpg"></p>
+<ul>
+<li><p><strong>重新编辑MyProjectBase模版工程的MyProjectBase.podspec文件</strong><br><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhxbl11gqj30k90bdwh0.jpg"></p>
+</li>
+<li><p><strong>进入测试工程：cd /Users/XXX/Desktop/CocoaPodRemoteLib/MyProjectBase</strong></p>
+</li>
+</ul>
+<h5 id="依次执行以下命令更新远程组件代码库："><a href="#依次执行以下命令更新远程组件代码库：" class="headerlink" title="依次执行以下命令更新远程组件代码库："></a>依次执行以下命令更新远程组件代码库：</h5><ul>
+<li><strong>git status</strong></li>
+<li><strong>git add .</strong></li>
+<li><strong>git commit -m ‘新增Base，Tool文件内容’</strong></li>
+<li><strong>git push origin master (提交到远程仓库)</strong></li>
+<li><strong>git tag ‘0.2.0’</strong></li>
+<li><strong>git push –tags(将tag提交到远程)</strong></li>
+<li><strong>pod repo push MyProjectSpec MyProjectBase.podspec</strong></li>
+</ul>
+<h5 id="更新pod库："><a href="#更新pod库：" class="headerlink" title="更新pod库："></a>更新pod库：</h5><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhxbkxku0j30if06tdgj.jpg"></p>
+<h2 id="九、在基础组件MyProjectBase内部生成子库"><a href="#九、在基础组件MyProjectBase内部生成子库" class="headerlink" title="九、在基础组件MyProjectBase内部生成子库"></a>九、在基础组件<em><strong>MyProjectBase</strong></em>内部生成子库</h2><p><strong>问题描述：当我们执行完第九步后，我们发现主工程的Pods中并没有按文件夹（Base，Category，Tool）进行不同类的划分，同时当我们仅仅想引入一个Category库时，连同Base，Tool也引入进项目中，这就太恶心了！</strong></p>
+<h4 id="参照AFNetworking"><a href="#参照AFNetworking" class="headerlink" title="参照AFNetworking"></a>参照AFNetworking</h4><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhxk3cocjj30fo075jta.jpg"></p>
+<h4 id="修改MyProjectBase-podspec文件："><a href="#修改MyProjectBase-podspec文件：" class="headerlink" title="修改MyProjectBase.podspec文件："></a><strong>修改MyProjectBase.podspec文件：</strong></h4><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhxk34egdj30mo0jedjk.jpg"></p>
+<ul>
+<li><strong>进入测试工程：cd /Users/XXX/Desktop/CocoaPodRemoteLib/MyProjectBase</strong></li>
+</ul>
+<h5 id="依次执行以下命令更新远程组件代码库：-1"><a href="#依次执行以下命令更新远程组件代码库：-1" class="headerlink" title="依次执行以下命令更新远程组件代码库："></a>依次执行以下命令更新远程组件代码库：</h5><ul>
+<li><strong>git status</strong></li>
+<li><strong>git add .</strong></li>
+<li><strong>git commit -m ‘生成子库文件夹’</strong></li>
+<li><strong>git push origin master (提交到远程仓库)</strong></li>
+<li><strong>git tag ‘0.3.0’</strong></li>
+<li><strong>git push –tags(将tag提交到远程)</strong></li>
+<li><strong>pod repo push MyProjectSpec MyProjectBase.podspec</strong></li>
+</ul>
+<h5 id="更新pod库：-1"><a href="#更新pod库：-1" class="headerlink" title="更新pod库："></a>更新pod库：</h5><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyhxk394wrj30jk07mjs4.jpg"></p>
+<p>##CocoaPods远程组件私有库配置完毕！</p>
 
     
 
@@ -420,7 +456,7 @@ pod repo add MySpecs https://github.com/CharlsPrince/MySpecs.git
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2018/07/08/创建属于自己的私有库(github)以及提交到cocoapods/" title="创建属于自己的私有库(github)以及提交到cocoapods" target="_blank">https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2018/07/08/创建属于自己的私有库(github)以及提交到cocoapods/</a>
+          <a href="https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2022/01/18/创建属于自己的私有库(码云)以及提交到cocoapods/" title="创建属于自己的私有库(码云)以及提交到cocoapods" target="_blank">https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2022/01/18/创建属于自己的私有库(码云)以及提交到cocoapods/</a>
         </li>
         
         <li>
@@ -498,7 +534,7 @@ pod repo add MySpecs https://github.com/CharlsPrince/MySpecs.git
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://ruixiaoguo.github.io/Grx.github.io/2018/07/08/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(github)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://ruixiaoguo.github.io/Grx.github.io/2022/01/18/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(%E7%A0%81%E4%BA%91)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -513,18 +549,9 @@ pod repo add MySpecs https://github.com/CharlsPrince/MySpecs.git
 
 <nav id="article-nav">
   
-    <a href="/Grx.github.io/2018/07/18/iOS%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%E8%B0%88%20%E5%BC%80%E7%AF%87/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          iOS应用架构谈 开篇
-        
-      </div>
-    </a>
   
-  
-    <a href="/Grx.github.io/2018/06/08/iOS%20%E7%BB%84%E4%BB%B6%E5%8C%96%E6%96%B9%E6%A1%88%E6%8E%A2%E7%B4%A2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS 组件化方案探索</div>
+    <a href="/Grx.github.io/2022/01/18/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(github)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">创建属于自己的私有库(github)以及提交到cocoapods</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -551,7 +578,7 @@ pod repo add MySpecs https://github.com/CharlsPrince/MySpecs.git
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93-github-%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods"><span class="toc-number">1.</span> <span class="toc-text">创建属于自己的私有库(github)以及提交到cocoapods</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%81%E6%9C%89%E5%BA%93%E5%8F%8A%E5%85%AC%E6%9C%89%E5%BA%93%E7%90%86%E8%A7%A3"><span class="toc-number">1.1.</span> <span class="toc-text">私有库及公有库理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cocoapods%E7%9A%84%E5%8E%9F%E7%90%86%E5%8F%8A%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.</span> <span class="toc-text">Cocoapods的原理及目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">基本目录结构：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.</span> <span class="toc-text">步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81git%E4%B8%8A%E5%88%9B%E5%BB%BA%E7%A7%81%E6%9C%89%E7%9A%84Specs%E5%BA%93%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">2.1.</span> <span class="toc-text">一、git上创建私有的Specs库文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%B0%86%E8%BF%9C%E7%AB%AF%E7%9A%84%E7%A7%81%E6%9C%89Specs%E4%BB%93%E5%BA%93clone%E5%88%B0%E6%9C%AC%E5%9C%B0-cocoapods%E7%9B%AE%E5%BD%95%E4%B8%8B"><span class="toc-number">2.2.</span> <span class="toc-text">二、将远端的私有Specs仓库clone到本地.cocoapods目录下</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AApodspec%E6%96%87%E4%BB%B6"><span class="toc-number">2.3.</span> <span class="toc-text">三、创建一个podspec文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%AA%8C%E8%AF%81podspec%E5%90%88%E6%B3%95%E6%80%A7"><span class="toc-number">2.4.</span> <span class="toc-text">四、验证podspec合法性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%BB%99%E5%BD%93%E5%89%8D%E4%BB%A3%E7%A0%81%E6%89%93%E4%B8%8Atag"><span class="toc-number">2.5.</span> <span class="toc-text">五、给当前代码打上tag</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%90%91mySpecs%E6%8F%90%E4%BA%A4-podspec%E6%96%87%E4%BB%B6"><span class="toc-number">2.6.</span> <span class="toc-text">六、向mySpecs提交.podspec文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93"><span class="toc-number">2.7.</span> <span class="toc-text">问题小结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%89%A7%E8%A1%8Cpod-lib-create-%EF%BC%88%E7%BB%84%E4%BB%B6%E5%BA%93%EF%BC%89-%E5%87%BA%E9%94%99"><span class="toc-number">2.7.1.</span> <span class="toc-text">1、执行pod lib create （组件库） 出错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E6%B7%BB%E5%8A%A0%E7%BB%84%E4%BB%B6%E5%BA%93%E5%88%B0%E7%A7%81%E6%9C%89spec-repo%E4%BB%93%E5%BA%93%E5%90%8E-%E6%89%A7%E8%A1%8C-pod-search%E6%90%9C%E7%B4%A2%E4%B8%8D%E5%88%B0%E3%80%82"><span class="toc-number">2.7.2.</span> <span class="toc-text">2、添加组件库到私有spec repo仓库后 执行 pod search搜索不到。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E6%8F%90%E4%BA%A4%E6%9C%AC%E5%9C%B0podspec%E5%88%B0Specs%E4%BB%93%E5%BA%93%E7%9A%84%E6%97%B6%E5%80%99%E5%87%BA%E9%94%99%EF%BC%8C%E6%8F%90%E7%A4%BArepo-%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84spec-repo-is-not-clean"><span class="toc-number">2.7.3.</span> <span class="toc-text">3、提交本地podspec到Specs仓库的时候出错，提示repo 文件夹下的spec repo is not clean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">2.7.4.</span> <span class="toc-text">注意:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E6%9F%A5%E8%AF%A2%E7%A7%81%E6%9C%89%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8"><span class="toc-number">2.8.</span> <span class="toc-text">七、查询私有库并使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E6%9B%B4%E6%96%B0%E7%A7%81%E6%9C%89%E5%BA%93%E4%BB%A3%E7%A0%81"><span class="toc-number">2.9.</span> <span class="toc-text">八、更新私有库代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E8%AE%A9%E4%BD%A0%E7%9A%84%E6%A1%86%E6%9E%B6%E6%94%AF%E6%8C%81cocoapods"><span class="toc-number">2.10.</span> <span class="toc-text">二.让你的框架支持cocoapods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%B3%A8%E5%86%8CTrunk"><span class="toc-number">2.10.1.</span> <span class="toc-text">1.注册Trunk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8F%91%E5%B8%83%E5%88%B0cocoapods-%E9%AA%8C%E8%AF%81%E9%80%9A%E8%BF%87%E5%90%8E%EF%BC%8C%E7%BB%99%E5%BD%93%E5%89%8D%E4%BB%A3%E7%A0%81%E6%89%93%E4%B8%8Atag%EF%BC%8C%E5%BB%BA%E8%AE%AEtag%E5%92%8C%E7%89%88%E6%9C%AC%E5%8F%B7%E4%B8%80%E8%87%B4"><span class="toc-number">2.10.2.</span> <span class="toc-text">2.发布到cocoapods(验证通过后，给当前代码打上tag，建议tag和版本号一致)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%AA%8C%E8%AF%81"><span class="toc-number">2.10.3.</span> <span class="toc-text">2.验证</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E7%A7%81%E6%9C%89%E7%B4%A2%E5%BC%95%E5%BA%93%EF%BC%88%E5%AD%98%E6%94%BEpodspec%E7%AE%A1%E7%90%86%E7%A7%81%E6%9C%89%E5%BA%93%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">一、创建远程私有索引库（存放podspec管理私有库）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%B0%86%E6%9C%AC%E5%9C%B0%E7%9A%84%E7%A7%81%E6%9C%89%E7%B4%A2%E5%BC%95%E5%BA%93%E4%B8%8E%E8%BF%9C%E7%A8%8B%E7%A7%81%E6%9C%89%E7%B4%A2%E5%BC%95%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%85%B3%E8%81%94"><span class="toc-number">2.</span> <span class="toc-text">二、将本地的私有索引库与远程私有索引库进行关联</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%94%A8%E6%9D%A5%E5%AD%98%E6%94%BE%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BB%93%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text">三、创建一个用来存放项目基础组件的仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E6%A8%A1%E6%9D%BF%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%EF%BC%88%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">四、快速创建模板测试工程（测试基础组件）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%B3%E6%AD%A4%E6%A8%A1%E6%9D%BF%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%AF%95%EF%BC%81"><span class="toc-number">4.0.1.</span> <span class="toc-text">至此模板测试工程配置完毕！</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%B0%86%E4%B8%8A%E9%9D%A2%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%EF%BC%8C%E6%8F%90%E4%BA%A4%E5%88%B0%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%88%9B%E5%BB%BA%E7%9A%84%E8%BF%9C%E7%A8%8B%E7%BB%84%E4%BB%B6%E4%BB%93%E5%BA%93"><span class="toc-number">5.</span> <span class="toc-text">五、将上面的模板测试工程，提交到第三步创建的远程组件仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9Apodspec%E6%96%87%E4%BB%B6%E4%B8%AD%E4%BF%A1%E6%81%AF%E5%BF%85%E9%A1%BB%E9%85%8D%E7%BD%AE%E6%AD%A3%E7%A1%AE%EF%BC%8C%E5%B0%A4%E5%85%B6%E6%98%AFgit%E5%9C%B0%E5%9D%80%EF%BC%81%EF%BC%81"><span class="toc-number">5.0.1.</span> <span class="toc-text">注意：podspec文件中信息必须配置正确，尤其是git地址！！</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E6%9C%89ERROR%EF%BC%8C%E5%88%99%E9%9C%80%E8%A6%81%E5%8E%BB%E4%B8%80%E4%B8%AA%E4%B8%AA%E4%BF%AE%E6%94%B9%E5%AE%8C%E6%88%90"><span class="toc-number">5.0.1.1.</span> <span class="toc-text">如果有ERROR，则需要去一个个修改完成</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%87%BA%E7%8E%B0MyProjectBase-passed-validation-%E5%88%99%E8%AF%B4%E6%98%8E%E9%AA%8C%E8%AF%81%E9%80%9A%E8%BF%87%EF%BC%8C%E4%BE%9D%E6%AC%A1%E6%89%A7%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">5.0.1.2.</span> <span class="toc-text">出现MyProjectBase passed validation. 则说明验证通过，依次执行以下命令：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%87%BA%E7%8E%B0MyProjectBase-podspec-passed-validation-%E8%A1%A8%E6%98%8E%E9%AA%8C%E8%AF%81%E9%80%9A%E8%BF%87"><span class="toc-number">5.0.1.3.</span> <span class="toc-text">出现MyProjectBase.podspec passed validation. 表明验证通过</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%B0%86podspec%E6%96%87%E4%BB%B6%E6%8F%90%E4%BA%A4%E5%88%B0%E6%9C%AC%E5%9C%B0%E7%9A%84%E7%A7%81%E6%9C%89%E7%B4%A2%E5%BC%95%E5%BA%93"><span class="toc-number">6.</span> <span class="toc-text">六、将podspec文件提交到本地的私有索引库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%B3%E6%AD%A4%E8%BF%9C%E7%A8%8B%E7%A7%81%E6%9C%89%E5%BA%93%E9%85%8D%E7%BD%AE%E5%88%B0%E6%AD%A4%E5%B0%B1%E5%B7%B2%E7%BB%93%E6%9D%9F%EF%BC%81"><span class="toc-number">6.0.1.</span> <span class="toc-text">至此远程私有库配置到此就已结束！</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E4%B8%BB%E5%B7%A5%E7%A8%8B%E5%88%A9%E7%94%A8Pods%E4%BD%BF%E7%94%A8%E6%88%91%E4%BB%AC%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E6%A1%86%E6%9E%B6"><span class="toc-number">7.</span> <span class="toc-text">七、主工程利用Pods使用我们自己的私有框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E6%B7%BB%E5%8A%A0%E5%8F%8A%E4%BF%AE%E6%94%B9%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">8.</span> <span class="toc-text">八、添加及修改基础组件内容</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%9D%E6%AC%A1%E6%89%A7%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%E6%9B%B4%E6%96%B0%E8%BF%9C%E7%A8%8B%E7%BB%84%E4%BB%B6%E4%BB%A3%E7%A0%81%E5%BA%93%EF%BC%9A"><span class="toc-number">8.0.0.1.</span> <span class="toc-text">依次执行以下命令更新远程组件代码库：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0pod%E5%BA%93%EF%BC%9A"><span class="toc-number">8.0.0.2.</span> <span class="toc-text">更新pod库：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E5%9C%A8%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6MyProjectBase%E5%86%85%E9%83%A8%E7%94%9F%E6%88%90%E5%AD%90%E5%BA%93"><span class="toc-number">9.</span> <span class="toc-text">九、在基础组件MyProjectBase内部生成子库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E7%85%A7AFNetworking"><span class="toc-number">9.0.1.</span> <span class="toc-text">参照AFNetworking</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9MyProjectBase-podspec%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-number">9.0.2.</span> <span class="toc-text">修改MyProjectBase.podspec文件：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%9D%E6%AC%A1%E6%89%A7%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%E6%9B%B4%E6%96%B0%E8%BF%9C%E7%A8%8B%E7%BB%84%E4%BB%B6%E4%BB%A3%E7%A0%81%E5%BA%93%EF%BC%9A-1"><span class="toc-number">9.0.2.1.</span> <span class="toc-text">依次执行以下命令更新远程组件代码库：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0pod%E5%BA%93%EF%BC%9A-1"><span class="toc-number">9.0.2.2.</span> <span class="toc-text">更新pod库：</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
