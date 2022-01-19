@@ -6,23 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ruixiaoguo.github.io/Grx.github.io">
-  <title>Grx博客</title>
+  <title>iOS 14 Widget小组件 (SwiftUI) | Grx博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter"> -->
-  
-  <meta name="description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Grx博客">
-<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/index.html">
+  <meta name="description" content="iOS14 Widget仅支持SwiftUI，支持在任意主界面上进行Widget页面的编辑，UI变成了三种尺寸，每一个Widget都是一个单独的组件，他们可以自己管理自己通过简单的长按下压手势进行编辑和删除操作。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 14 Widget小组件 (SwiftUI)">
+<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/2021/12/23/iOS%2014%20Widget%E5%B0%8F%E7%BB%84%E4%BB%B6%20(SwiftUI)/index.html">
 <meta property="og:site_name" content="Grx博客">
-<meta property="og:description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter">
+<meta property="og:description" content="iOS14 Widget仅支持SwiftUI，支持在任意主界面上进行Widget页面的编辑，UI变成了三种尺寸，每一个Widget都是一个单独的组件，他们可以自己管理自己通过简单的长按下压手势进行编辑和删除操作。">
 <meta property="og:locale">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyj15q4vsjj30xc0o140v.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyj15psvuvj30xc0o175l.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyj15pyip9j30xc0n5mz9.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyj1mey7h5j30k70egdgn.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyj1nsw32mj305z02tq2r.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyj1ntf41oj30m507bq38.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyj1ntbj46j30bk05yjrn.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyj1nt3ld9j30m50d6aaq.jpg">
+<meta property="article:published_time" content="2021-12-23T14:01:15.000Z">
+<meta property="article:modified_time" content="2022-01-19T08:14:02.023Z">
 <meta property="article:author" content="Grx">
+<meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyj15q4vsjj30xc0o140v.jpg">
   
     <link rel="alternative" href="/Grx.github.io/atom.xml" title="Grx博客" type="application/atom+xml">
   
@@ -228,475 +236,25 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-Carthage包管理三方库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-iOS 14 Widget小组件 (SwiftUI)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/Grx.github.io/2022/01/19/Carthage%E5%8C%85%E7%AE%A1%E7%90%86%E4%B8%89%E6%96%B9%E5%BA%93/">Carthage包管理三方库</a>
-	
+    <h1 class="article-title" itemprop="name">
+      iOS 14 Widget小组件 (SwiftUI)
     </h1>
   
 
 
   
   
-<a href="/Grx.github.io/2022/01/19/Carthage%E5%8C%85%E7%AE%A1%E7%90%86%E4%B8%89%E6%96%B9%E5%BA%93/" class="archive-article-date">
-        <time datetime="2022-01-19T13:10:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-19</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <blockquote>
-<p>carthage是一个和cocopods类似的第三方库管理工具。Carthage是一个新的第三方库管理工具，它轻耦合，使用很灵活，不会修改项目文件，使用xcodebuild工具来编译第三方库,Carthage只支持动态框架库。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/Grx.github.io/2022/01/19/Carthage%E5%8C%85%E7%AE%A1%E7%90%86%E4%B8%89%E6%96%B9%E5%BA%93/#more">更多 >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/Grx.github.io/2022/01/19/Carthage%E5%8C%85%E7%AE%A1%E7%90%86%E4%B8%89%E6%96%B9%E5%BA%93/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-
-
-
-  
-    <article id="post-创建属于自己的私有库(码云)以及提交到cocoapods" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/Grx.github.io/2022/01/18/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(%E7%A0%81%E4%BA%91)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/">创建属于自己的私有库(码云)以及提交到cocoapods</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/Grx.github.io/2022/01/18/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(%E7%A0%81%E4%BA%91)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/" class="archive-article-date">
-        <time datetime="2022-01-18T10:33:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-18</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <blockquote>
-<p>项目开发中经常使用pod管理三方库，但在实际开发中，有很多公共组件甚至业务组件也想用 CocoaPods 统一管理，也有助于多人开发。接下来，咱们来说说用 CocoaPods 创建私有库。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/Grx.github.io/2022/01/18/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(%E7%A0%81%E4%BA%91)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/#more">更多 >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/Grx.github.io/2022/01/18/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(%E7%A0%81%E4%BA%91)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-深入了解DeepLink" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/Grx.github.io/2022/01/08/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3DeepLink/">深入了解DeepLink</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/Grx.github.io/2022/01/08/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3DeepLink/" class="archive-article-date">
-        <time datetime="2022-01-08T10:21:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <blockquote>
-<p>在移动前端，deepLink一般指app内部的逻辑处理，可以根据这个deeplink直接跳转到对应的页面或者触发特定的逻辑，deeplink的目的是通过deep link打开app，并且跳转带app内某个页面，前提是该APP在该手机上已安装，且该APP需要编程支持该Deep Link的“schema”语法定义。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/Grx.github.io/2022/01/08/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3DeepLink/#more">更多 >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/Grx.github.io/2022/01/08/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3DeepLink/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-iOS广告归因历史演变" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/Grx.github.io/2022/01/01/iOS%E5%B9%BF%E5%91%8A%E5%BD%92%E5%9B%A0%E5%8E%86%E5%8F%B2%E6%BC%94%E5%8F%98/">iOS广告归因历史演变</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/Grx.github.io/2022/01/01/iOS%E5%B9%BF%E5%91%8A%E5%BD%92%E5%9B%A0%E5%8E%86%E5%8F%B2%E6%BC%94%E5%8F%98/" class="archive-article-date">
-        <time datetime="2022-01-01T12:30:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-01</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <blockquote>
-<p>随着iOS14的发布，苹果在用户隐私权限对厂商开放程度这块收的更紧，诸如相机，相册访问的粒度细化啦，定位精确度的可选啦等等。相对于用户来说，这是好事，减少了个人隐私信息的泄露。但是从另一个方向来看，苦了一大批以用户隐私数据为生的厂商，本文要讨论的就是广告追踪这块。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/Grx.github.io/2022/01/01/iOS%E5%B9%BF%E5%91%8A%E5%BD%92%E5%9B%A0%E5%8E%86%E5%8F%B2%E6%BC%94%E5%8F%98/#more">更多 >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/Grx.github.io/2022/01/01/iOS%E5%B9%BF%E5%91%8A%E5%BD%92%E5%9B%A0%E5%8E%86%E5%8F%B2%E6%BC%94%E5%8F%98/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-抖音工程架构演进" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/Grx.github.io/2021/12/30/%E6%8A%96%E9%9F%B3%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/">抖音工程架构演进</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/Grx.github.io/2021/12/30/%E6%8A%96%E9%9F%B3%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/" class="archive-article-date">
-        <time datetime="2021-12-30T10:20:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-30</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <blockquote>
-<p>快速的业务发展也对技术支撑提出了更高的要求，架构演进的本质是为了提高研发效率，提高代码稳定性和保证代码质量。架构要解决的问题是如何组织代码。合理的架构设计可以解决大型项目跨团队协作分工和多业务线并行开发的效率问题。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/Grx.github.io/2021/12/30/%E6%8A%96%E9%9F%B3%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/#more">更多 >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/Grx.github.io/2021/12/30/%E6%8A%96%E9%9F%B3%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-iOS 14 Widget小组件 (SwiftUI)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/Grx.github.io/2021/12/23/iOS%2014%20Widget%E5%B0%8F%E7%BB%84%E4%BB%B6%20(SwiftUI)/">iOS 14 Widget小组件 (SwiftUI)</a>
-	
-    </h1>
-  
-
-
-  
-  
 <a href="/Grx.github.io/2021/12/23/iOS%2014%20Widget%E5%B0%8F%E7%BB%84%E4%BB%B6%20(SwiftUI)/" class="archive-article-date">
         <time datetime="2021-12-23T14:01:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-23</time>
 </a>
@@ -704,6 +262,27 @@
   
   
     
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">2.2k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">10分</span>
+    </span>
+  </span>
+</div>
+
 
   
   </header>
@@ -713,13 +292,151 @@
     <blockquote>
 <p>iOS14 Widget仅支持SwiftUI，支持在任意主界面上进行Widget页面的编辑，UI变成了三种尺寸，每一个Widget都是一个单独的组件，他们可以自己管理自己通过简单的长按下压手势进行编辑和删除操作。</p>
 </blockquote>
-    
-    <a class="article-more-a" href="/Grx.github.io/2021/12/23/iOS%2014%20Widget%E5%B0%8F%E7%BB%84%E4%BB%B6%20(SwiftUI)/#more">更多 >></a>
-    
-    
+<span id="more"></span>
+<h2 id="一、iOS14-创建Widget"><a href="#一、iOS14-创建Widget" class="headerlink" title="一、iOS14 创建Widget"></a>一、iOS14 创建Widget</h2><h4 id="创建iOS的项目："><a href="#创建iOS的项目：" class="headerlink" title="创建iOS的项目："></a>创建iOS的项目：</h4><ul>
+<li><strong>Create a new Xcode Project</strong></li>
+<li><strong>语言选择：Swift/OC</strong></li>
+</ul>
+<h4 id="创建Widget组件："><a href="#创建Widget组件：" class="headerlink" title="创建Widget组件："></a>创建Widget组件：</h4><ul>
+<li><strong>File-&gt;New-&gt;Target添加Widget Extension Target 点击Next</strong></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyj15q4vsjj30xc0o140v.jpg"></p>
+<ul>
+<li><strong>输入Widget组件名，取消勾选Include Configuration Intent，点击Finish就可以了。</strong></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyj15psvuvj30xc0o175l.jpg"></p>
+<ul>
+<li><strong>此时工程默认生成模板，可以看到Widget三个尺寸。</strong></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyj15pyip9j30xc0n5mz9.jpg"></p>
+<h2 id="二、生命周期解读代码"><a href="#二、生命周期解读代码" class="headerlink" title="二、生命周期解读代码"></a>二、生命周期解读代码</h2><h3 id="1-Provider"><a href="#1-Provider" class="headerlink" title="1. Provider"></a>1. Provider</h3><ul>
+<li><strong>为小组件展示提供一切必要信息的结构体，实现TimelineProvider协议</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">struct Provider: TimelineProvider &#123;</span><br><span class="line">    func placeholder(in context: Context) -&gt; SimpleEntry &#123; ...... &#125;</span><br><span class="line">    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -&gt; Void) &#123; ...... &#125;</span><br><span class="line">    func getTimeline(in context: Context, completion: @escaping (Timeline&lt;SimpleEntry&gt;) -&gt; Void) &#123; ...... &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>placeholder：提供一个默认的视图，当网络数据请求失败或者其他一些异常的时候，用于展示</strong></li>
+<li><strong>getSnapshot：为了在小部件库中显示小部件，WidgetKit要求提供者提供预览快照，在组件的添加页面可以看到效果</strong></li>
+<li><strong>getTimeline：在这个方法内可以进行网络请求，拿到的数据保存在对应的entry中，调用completion之后会到刷新小组件。</strong></li>
+<li><strong>请求时间线有两个地方：一个是按照策略请求，一个在请求即时快照时。</strong></li>
+<li><strong>刷新小组件并不能重新获取展示数据，只有重启时间线，才能重新获取数据。</strong></li>
+<li><strong>如果需要定义小组件的刷新策略为每分钟刷新，15分钟后重启时间线：</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//设置时间线</span><br><span class="line">    func getTimeline(in context: Context, completion: @escaping (Timeline&lt;Entry&gt;) -&gt; ()) &#123;</span><br><span class="line">        var entries: [SimpleEntry] = []</span><br><span class="line">        </span><br><span class="line">        let currentDate = Date()</span><br><span class="line">        for hourOffset in 0 ..&lt; 15 &#123;</span><br><span class="line">            //设置刷新策略</span><br><span class="line">            let entryDate = Calendar.current.date(byAdding: .minute, value: hourOffset, to: currentDate)!</span><br><span class="line">            entries.append(simpleModel(entryDate))</span><br><span class="line">        &#125;</span><br><span class="line">        //重启时间线策略</span><br><span class="line">        let timeline = Timeline(entries: entries, policy: .atEnd)</span><br><span class="line">        completion(timeline)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>关于重启策略，根据官方文档，每个配置的小部件每天接收有限的重启次数。有几个因素会影响小部件接收的重启次数，例如：包含的应用程序是在前台还是后台运行，小部件在屏幕上显示的频率，以及包含的应用程序参与的活动类型。</strong></li>
+<li><strong>根据我参考其他开发者的分享，设定在5分钟以下的重启时间线策略几乎无效。一般设定在15分钟以上的策略，才能按时重启时间线。<br>策略有如下几种：</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//在结束时重启</span><br><span class="line">public static let atEnd: TimelineReloadPolicy</span><br><span class="line">//从不重启</span><br><span class="line"></span><br><span class="line">public static let never: TimelineReloadPolicy</span><br><span class="line">//在某一时间点后重启</span><br><span class="line"></span><br><span class="line">public static func after(_ date: Date) -&gt; TimelineReloadPolicy</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-SimpleEntry"><a href="#2-SimpleEntry" class="headerlink" title="2. SimpleEntry"></a>2. SimpleEntry</h3><ul>
+<li><strong>实现TimelineEntry协议，就是用来保存所需要的数据。</strong></li>
+<li><strong>其中TimelineEntry含有date属性。</strong></li>
+<li><strong>可以继续添加其他的属性。例如自定义一个展示用的model：</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">struct Model &#123;</span><br><span class="line">    let Title: String</span><br><span class="line">    let Image: UIImage</span><br><span class="line">    let ID: String</span><br><span class="line">    let Context: String</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">将Model添加到entry中</span><br><span class="line">struct SimpleEntry: TimelineEntry &#123;</span><br><span class="line">    let date: Date</span><br><span class="line">    let Obj1: Model</span><br><span class="line">    let Obj2: Model</span><br><span class="line">    let Obj3: Model</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-加载入口"><a href="#3-加载入口" class="headerlink" title="3. 加载入口"></a>3. 加载入口</h3><ul>
+<li><strong>YourWidget是我们为组件设置的名字，模板自动使用这个名字帮我们生成了一个实现了Widget协议的结构体。</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">struct YourWidget: Widget &#123;</span><br><span class="line">    let kind: String = &quot;YourWidgetKind&quot;</span><br><span class="line">    var body: some WidgetConfiguration &#123;</span><br><span class="line">        StaticConfiguration(kind: kind, provider: Provider()) &#123; entry in</span><br><span class="line">            YourWidgetEntryView(entry: entry)</span><br><span class="line">        &#125;</span><br><span class="line">        .configurationDisplayName(&quot;---&quot;)</span><br><span class="line">        .description(&quot;---&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>StaticConfiguration是系统提供的组件配置结构体，其用来对静态类型的组件提供配置。</strong></li>
+<li><strong>kind：是Widget的唯一标识</strong></li>
+<li><strong>StaticConfiguration：初始化配置代码</strong></li>
+<li><strong>configurationDisplayName：添加编辑界面展示的标题</strong></li>
+<li><strong>description：添加编辑界面展示的描述内容</strong></li>
+<li><strong>supportedFamilies这里可以限制要提供三个样式中的哪几个</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">一个Widget只提供了三个样式的选择：大、中、小</span><br><span class="line">如果需要展示多个Widget(最多5个):</span><br><span class="line">struct YourWidgets: WidgetBundle &#123;</span><br><span class="line">    @WidgetBundleBuilder</span><br><span class="line">    var body: some Widget &#123;</span><br><span class="line">        Widget()</span><br><span class="line">        Widget2()</span><br><span class="line">        ......</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-SwiftUI展示UI"><a href="#4-SwiftUI展示UI" class="headerlink" title="4. SwiftUI展示UI"></a>4. SwiftUI展示UI</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">VStack:垂直排列元素</span><br><span class="line">HStack:水平排列元素</span><br><span class="line">ZStack:堆叠排列元素</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">显示文本方法：</span><br><span class="line">Text(entry. Obj1.Title)</span><br><span class="line">.font(.system(size: 18))</span><br><span class="line">.fontWeight(.bold)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">显示图片方法：</span><br><span class="line">Image(uiImage: entry. Obj1.Image)</span><br><span class="line">.resizable()</span><br><span class="line">.frame(width: 50, height: 50)</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、Widget与App交互及获取数据"><a href="#三、Widget与App交互及获取数据" class="headerlink" title="三、Widget与App交互及获取数据"></a>三、Widget与App交互及获取数据</h2><h3 id="1-唤起APP跳转"><a href="#1-唤起APP跳转" class="headerlink" title="1. 唤起APP跳转"></a>1. 唤起APP跳转</h3><ul>
+<li><strong>systemSmall只能用widgetURL修饰符实现URL传递:</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ZStack(content: &#123;</span><br><span class="line">    Image(...)</span><br><span class="line">    VStack(alignment: .leading, spacing: 4) &#123;</span><br><span class="line">        Text(&quot;...&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">.widgetURL(URL(string: &quot;abc://...&quot;))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>systemMedium、systemLarge可以用Link或者 widgetUrl处理:</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Link(destination: URL(string: &quot;abc://...&quot;)!)&#123;</span><br><span class="line">    HStack(content: &#123;</span><br><span class="line">        Image(...)</span><br><span class="line">        VStack(alignment: .leading, spacing: 4) &#123;</span><br><span class="line">            Text(...)</span><br><span class="line">            Text(...)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-主App传值到Widget"><a href="#2-主App传值到Widget" class="headerlink" title="2. 主App传值到Widget"></a>2. 主App传值到Widget</h3><p><strong>先使用开发者账号创建主App与Widget的group，生成groupid;<br>通过NSUserDefault或NSFileManager进行通信;</strong></p>
+<ul>
+<li><strong>App存值：</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@&quot;groupId&quot;];</span><br><span class="line">[userDefaults setObject:dict forKey:key]];</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>Widget取值：</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//从UserDefault中取值</span><br><span class="line">func simpleModel(_ entryDate:Date) -&gt; SimpleEntry</span><br><span class="line">&#123;</span><br><span class="line">    let object1: NSDictionary = UserDefaults(suiteName: &quot;groupId&quot;)?.object(forKey: key1) as! NSDictionary</span><br><span class="line">    //可以继续添加obj2、obj3</span><br><span class="line">    return SimpleEntry(date: Date(), object: object1)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-加载网络图片"><a href="#3-加载网络图片" class="headerlink" title="3. 加载网络图片"></a>3. 加载网络图片</h3><p><strong>无法异步加载图片，只能同步加载</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let Image:UIImage = &#123;</span><br><span class="line">    if let iamgeData = try? Data(contentsOf: URL(string: “...” as!String)!) &#123;</span><br><span class="line">        return UIImage(data: iamgeData)!</span><br><span class="line">    &#125;</span><br><span class="line">    return UIImage(named: &quot;&quot;)!</span><br><span class="line">&#125;()</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-网络请求"><a href="#4-网络请求" class="headerlink" title="4. 网络请求"></a>4. 网络请求</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">static func request(completion: @escaping (Result&lt;SimpleEntry, Error&gt;) -&gt; Void) &#123;</span><br><span class="line">    let url = URL(string: &quot;...&quot;)!</span><br><span class="line">    let task = URLSession.shared.dataTask(with: url) &#123; (data, response, error) in</span><br><span class="line">        guard error == nil else &#123;</span><br><span class="line">            completion(.failure(error!))</span><br><span class="line">            return</span><br><span class="line">        &#125;</span><br><span class="line">        let poetry = getDataFromJson(fromData: data!)</span><br><span class="line">        completion(.success(poetry))</span><br><span class="line">    &#125;</span><br><span class="line">    task.resume()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">static func getDataFromJson(fromData data: Data) -&gt; SimpleEntry &#123;</span><br><span class="line">    let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]</span><br><span class="line">    //因为免费接口请求频率问题，如果太频繁了，请求可能失败，这里做下处理，放置crash</span><br><span class="line">    guard let data = json[&quot;data&quot;] as? [String: Any] else &#123;</span><br><span class="line">        return SimpleEntry(加载失败的数据)</span><br><span class="line">    &#125;</span><br><span class="line">    return SimpleEntry(...)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-App主动刷新Widget"><a href="#5-App主动刷新Widget" class="headerlink" title="5. App主动刷新Widget"></a>5. App主动刷新Widget</h3><p><strong>因为主动刷新小组件，仅支持swift。所以如果在OC原生环境中使用，需加入swift作为桥接。<br>创建 WidgetKitManager.swift文件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import WidgetKit</span><br><span class="line">@objc</span><br><span class="line">@available(iOS 14.0, *)</span><br><span class="line">class WidgetKitManager: NSObject &#123;</span><br><span class="line"></span><br><span class="line">    @objc</span><br><span class="line">    static let shareManager = WidgetKitManager()</span><br><span class="line">    </span><br><span class="line">    /// MARK: 刷新所有小组件</span><br><span class="line">    @objc</span><br><span class="line">    func reloadAllTimelines() &#123;</span><br><span class="line">        #if arch(arm64) || arch(i386) || arch(x86_64)</span><br><span class="line">         WidgetCenter.shared.reloadAllTimelines()</span><br><span class="line">        #endif</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /// MARK: 刷新单个小组件</span><br><span class="line">    /*</span><br><span class="line">     kind: 小组件Configuration 中的kind</span><br><span class="line">     */</span><br><span class="line">    @objc</span><br><span class="line">    func reloadTimelines(kind: String) &#123;</span><br><span class="line">        #if arch(arm64) || arch(i386) || arch(x86_64)</span><br><span class="line">         WidgetCenter.shared.reloadTimelines(ofKind: kind)</span><br><span class="line">        #endif</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>OC中使用刷新小组件：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (@available(iOS 14.0, *)) &#123;</span><br><span class="line">    //刷新所有小组件</span><br><span class="line">    [[WidgetKitManager shareManager] reloadAllTimelines];</span><br><span class="line">    //刷新单个小组件</span><br><span class="line">    [[WidgetKitManager shareManager] reloadTimelinesWithKind:@&quot;KindId&quot;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、用户属性配置"><a href="#四、用户属性配置" class="headerlink" title="四、用户属性配置"></a>四、用户属性配置</h2><p><strong>在第一次创建Widget的时候，有一个选项我们没有勾选，Include Configuration Intent。这选项主要是用来支持你自定义一些属性配置（例如天气组件，用户可以选择城市，股票组件，用户可以选择代码等）</strong></p>
+<h3 id="1-补充创建"><a href="#1-补充创建" class="headerlink" title="1. 补充创建"></a>1. 补充创建</h3><p><strong>菜单File -&gt;New -&gt;File然后找到Siri Intent Definition File之后添加到Widget中.<br>这里一定记得勾选。</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyj1mey7h5j30k70egdgn.jpg"></p>
+<p><strong>添加Intent</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyj1nsw32mj305z02tq2r.jpg"></p>
+<p><strong>将属性改为：</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyj1ntf41oj30m507bq38.jpg"></p>
+<p><strong>此时系统会根据你的命名生成一个只读文件：</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyj1ntbj46j30bk05yjrn.jpg"></p>
+<h3 id="2-设置可配置选项"><a href="#2-设置可配置选项" class="headerlink" title="2.设置可配置选项"></a>2.设置可配置选项</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyj1nt3ld9j30m50d6aaq.jpg"></p>
+<h4 id="这个选项设置完，就在上图中的代码上会有对应显示。"><a href="#这个选项设置完，就在上图中的代码上会有对应显示。" class="headerlink" title="这个选项设置完，就在上图中的代码上会有对应显示。"></a>这个选项设置完，就在上图中的代码上会有对应显示。</h4><h3 id="3-修改代码"><a href="#3-修改代码" class="headerlink" title="3.修改代码"></a>3.修改代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Intents</span><br></pre></td></tr></table></figure>
+
+<p><strong>SimpleEntry添加ConfigurationIntent属性</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">//从UserDefault中取值</span><br><span class="line">func simpleModel(_ entryDate:Date, config:ConfigurationIntent) -&gt; SimpleEntry</span><br><span class="line">&#123;</span><br><span class="line">    let object1: NSDictionary = UserDefaults(suiteName: &quot;......&quot;)?.object(forKey: &quot;......&quot;) as! NSDictionary</span><br><span class="line">    let object2: NSDictionary = UserDefaults(suiteName: &quot;......&quot;)?.object(forKey: &quot;......&quot;) as! NSDictionary</span><br><span class="line">    let object3: NSDictionary = UserDefaults(suiteName: &quot;......&quot;)?.object(forKey: &quot;......&quot;) as! NSDictionary</span><br><span class="line">    </span><br><span class="line">    return SimpleEntry(date: Date(), configuration: config, Obj1: buildModel(object1), Obj2: buildModel(object2), Obj3: buildModel(object3))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//获取显示数据</span><br><span class="line">func buildModel(_ dict:NSDictionary) -&gt; Model</span><br><span class="line">&#123;</span><br><span class="line">    let modelImage:UIImage = &#123;</span><br><span class="line">        if let iamgeData = try? Data(contentsOf: URL(string: dict.object(forKey: &quot;ImageUrl&quot;) as!String)!) &#123;</span><br><span class="line">            return UIImage(data: iamgeData)!</span><br><span class="line">        &#125;</span><br><span class="line">        return UIImage(named: &quot;&quot;)!</span><br><span class="line">    &#125;()</span><br><span class="line">    let Model = WistTVModel(</span><br><span class="line">        Title: dict.object(forKey: &quot;title&quot;) as! String,</span><br><span class="line">        Image: modelImage,</span><br><span class="line">        ID: dict.object(forKey: &quot;ID&quot;) as! String,</span><br><span class="line">        Context: dict.object(forKey: &quot;Context&quot;) as! String</span><br><span class="line">    )</span><br><span class="line">    return Model</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">struct SimpleEntry: TimelineEntry &#123;</span><br><span class="line">    let date: Date</span><br><span class="line">    let configuration: ConfigurationIntent</span><br><span class="line">    let Obj1: Model</span><br><span class="line">    let Obj2: Model</span><br><span class="line">    let Obj3: Model</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>TimelineProvider -&gt; IntentTimelineProvider</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">struct Provider: TimelineProvider &#123;</span><br><span class="line">    //设置默认视图</span><br><span class="line">    func placeholder(in context: Context) -&gt; SimpleEntry &#123;</span><br><span class="line">        simpleModel(Date(), config: ConfigurationIntent())</span><br><span class="line">    &#125;</span><br><span class="line">    //小部件库中显示小部件，设置快照</span><br><span class="line">    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -&gt; ()) &#123;</span><br><span class="line">        let entry = simpleModel(Date(), config: configuration)</span><br><span class="line">        completion(entry)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //设置时间线</span><br><span class="line">    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline&lt;Entry&gt;) -&gt; ()) &#123;</span><br><span class="line">        var entries: [SimpleEntry] = []</span><br><span class="line">        </span><br><span class="line">        let currentDate = Date()</span><br><span class="line">        for hourOffset in 0 ..&lt; 15 &#123;</span><br><span class="line">            //设置刷新策略</span><br><span class="line">            let entryDate = Calendar.current.date(byAdding: .minute, value: hourOffset, to: currentDate)!</span><br><span class="line">            entries.append(simpleModel(entryDate, config: configuration))</span><br><span class="line">        &#125;</span><br><span class="line">        //重启时间线策略</span><br><span class="line">        let timeline = Timeline(entries: entries, policy: .atEnd)</span><br><span class="line">        completion(timeline)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>StaticConfiguration -&gt; IntentConfiguration</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var body: some WidgetConfiguration &#123;</span><br><span class="line">     IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) &#123; entry in</span><br><span class="line">     YourWidgetEntryView(entry: entry)</span><br><span class="line">    &#125;</span><br><span class="line">    .configurationDisplayName(&quot;YourWidget&quot;)</span><br><span class="line">    .description(&quot;YourWidget description&quot;)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p> <strong>显示</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Text(entry.configuration.parameter == nil ? &quot;没有值&quot; : entry.configuration.parameter!)</span><br></pre></td></tr></table></figure>
+<h2 id="五、优化及调试"><a href="#五、优化及调试" class="headerlink" title="五、优化及调试"></a>五、优化及调试</h2><h3 id="1-优化"><a href="#1-优化" class="headerlink" title="1. 优化"></a>1. 优化</h3><p><strong>在widget使用数据之前，App应已经准备数据。使用共享组group存储数据。<br>让App使用后台处理时间来更新widget数据。<br>选择最合适的刷新策略。<br>仅当小部件当前显示的信息更改时，才调用reloadtimelines。</strong></p>
+<h3 id="2-调试"><a href="#2-调试" class="headerlink" title="2. 调试"></a>2. 调试</h3><p><strong>在Xcode中调试时，WidgetKit不会施加刷新次数限制。要验证Widget的行为是否正确，需使用真机测试。</strong></p>
 
     
 
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Grx
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2021/12/23/iOS 14 Widget小组件 (SwiftUI)/" title="iOS 14 Widget小组件 (SwiftUI)" target="_blank">https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2021/12/23/iOS 14 Widget小组件 (SwiftUI)/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
     
 
   </div>
@@ -740,16 +457,85 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/Grx.github.io/2021/12/23/iOS%2014%20Widget%E5%B0%8F%E7%BB%84%E4%BB%B6%20(SwiftUI)/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://ruixiaoguo.github.io/Grx.github.io/2021/12/23/iOS%2014%20Widget%E5%B0%8F%E7%BB%84%E4%BB%B6%20(SwiftUI)/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+    <a href="/Grx.github.io/2021/12/30/%E6%8A%96%E9%9F%B3%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          抖音工程架构演进
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Grx.github.io/2021/12/21/%E4%BB%8A%E5%B9%B4%E6%9C%80%E5%80%BC%E5%BE%97%E5%85%B3%E6%B3%A8%E7%9A%84%2023%20%E7%A7%8D%E6%96%B0%E7%A7%BB%E5%8A%A8%E6%8A%80%E6%9C%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">今年最值得关注的 23 种新移动技术</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -764,378 +550,33 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-今年最值得关注的 23 种新移动技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/Grx.github.io/2021/12/21/%E4%BB%8A%E5%B9%B4%E6%9C%80%E5%80%BC%E5%BE%97%E5%85%B3%E6%B3%A8%E7%9A%84%2023%20%E7%A7%8D%E6%96%B0%E7%A7%BB%E5%8A%A8%E6%8A%80%E6%9C%AF/">今年最值得关注的 23 种新移动技术</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/Grx.github.io/2021/12/21/%E4%BB%8A%E5%B9%B4%E6%9C%80%E5%80%BC%E5%BE%97%E5%85%B3%E6%B3%A8%E7%9A%84%2023%20%E7%A7%8D%E6%96%B0%E7%A7%BB%E5%8A%A8%E6%8A%80%E6%9C%AF/" class="archive-article-date">
-        <time datetime="2021-12-21T12:33:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <blockquote>
-<p>DAO的出现是否意味着技术的革新，这个还不太确认，但这几年行业变化太快了，新技术不断的更新迭代，稍不留意你已经在技术的后沿。<br>紧跟趋势的步伐，今天主要来看看，和我们比较密切的移动应用程序板块在 2021 年所期待的最新趋势。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/Grx.github.io/2021/12/21/%E4%BB%8A%E5%B9%B4%E6%9C%80%E5%80%BC%E5%BE%97%E5%85%B3%E6%B3%A8%E7%9A%84%2023%20%E7%A7%8D%E6%96%B0%E7%A7%BB%E5%8A%A8%E6%8A%80%E6%9C%AF/#more">更多 >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/Grx.github.io/2021/12/21/%E4%BB%8A%E5%B9%B4%E6%9C%80%E5%80%BC%E5%BE%97%E5%85%B3%E6%B3%A8%E7%9A%84%2023%20%E7%A7%8D%E6%96%B0%E7%A7%BB%E5%8A%A8%E6%8A%80%E6%9C%AF/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81iOS14-%E5%88%9B%E5%BB%BAWidget"><span class="toc-number">1.</span> <span class="toc-text">一、iOS14 创建Widget</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAiOS%E7%9A%84%E9%A1%B9%E7%9B%AE%EF%BC%9A"><span class="toc-number">1.0.1.</span> <span class="toc-text">创建iOS的项目：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAWidget%E7%BB%84%E4%BB%B6%EF%BC%9A"><span class="toc-number">1.0.2.</span> <span class="toc-text">创建Widget组件：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A7%A3%E8%AF%BB%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">二、生命周期解读代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Provider"><span class="toc-number">2.1.</span> <span class="toc-text">1. Provider</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-SimpleEntry"><span class="toc-number">2.2.</span> <span class="toc-text">2. SimpleEntry</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8A%A0%E8%BD%BD%E5%85%A5%E5%8F%A3"><span class="toc-number">2.3.</span> <span class="toc-text">3. 加载入口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-SwiftUI%E5%B1%95%E7%A4%BAUI"><span class="toc-number">2.4.</span> <span class="toc-text">4. SwiftUI展示UI</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81Widget%E4%B8%8EApp%E4%BA%A4%E4%BA%92%E5%8F%8A%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-number">3.</span> <span class="toc-text">三、Widget与App交互及获取数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%94%A4%E8%B5%B7APP%E8%B7%B3%E8%BD%AC"><span class="toc-number">3.1.</span> <span class="toc-text">1. 唤起APP跳转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%BBApp%E4%BC%A0%E5%80%BC%E5%88%B0Widget"><span class="toc-number">3.2.</span> <span class="toc-text">2. 主App传值到Widget</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8A%A0%E8%BD%BD%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%89%87"><span class="toc-number">3.3.</span> <span class="toc-text">3. 加载网络图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82"><span class="toc-number">3.4.</span> <span class="toc-text">4. 网络请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-App%E4%B8%BB%E5%8A%A8%E5%88%B7%E6%96%B0Widget"><span class="toc-number">3.5.</span> <span class="toc-text">5. App主动刷新Widget</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%94%A8%E6%88%B7%E5%B1%9E%E6%80%A7%E9%85%8D%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">四、用户属性配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%A1%A5%E5%85%85%E5%88%9B%E5%BB%BA"><span class="toc-number">4.1.</span> <span class="toc-text">1. 补充创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%AE%BE%E7%BD%AE%E5%8F%AF%E9%85%8D%E7%BD%AE%E9%80%89%E9%A1%B9"><span class="toc-number">4.2.</span> <span class="toc-text">2.设置可配置选项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%99%E4%B8%AA%E9%80%89%E9%A1%B9%E8%AE%BE%E7%BD%AE%E5%AE%8C%EF%BC%8C%E5%B0%B1%E5%9C%A8%E4%B8%8A%E5%9B%BE%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81%E4%B8%8A%E4%BC%9A%E6%9C%89%E5%AF%B9%E5%BA%94%E6%98%BE%E7%A4%BA%E3%80%82"><span class="toc-number">4.2.1.</span> <span class="toc-text">这个选项设置完，就在上图中的代码上会有对应显示。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BF%AE%E6%94%B9%E4%BB%A3%E7%A0%81"><span class="toc-number">4.3.</span> <span class="toc-text">3.修改代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E4%BC%98%E5%8C%96%E5%8F%8A%E8%B0%83%E8%AF%95"><span class="toc-number">5.</span> <span class="toc-text">五、优化及调试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BC%98%E5%8C%96"><span class="toc-number">5.1.</span> <span class="toc-text">1. 优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%B0%83%E8%AF%95"><span class="toc-number">5.2.</span> <span class="toc-text">2. 调试</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
 
-  
-    <article id="post-iOS应用程序的能源效率指南" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/Grx.github.io/2021/12/20/iOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%83%BD%E6%BA%90%E6%95%88%E7%8E%87%E6%8C%87%E5%8D%97/">iOS应用程序的能源效率指南</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/Grx.github.io/2021/12/20/iOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%83%BD%E6%BA%90%E6%95%88%E7%8E%87%E6%8C%87%E5%8D%97/" class="archive-article-date">
-        <time datetime="2021-12-20T09:18:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-20</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <blockquote>
-<p>所有应用程序在CPU上运行网络操作、更新用户界面或运行代码时都会消耗能源。随着用户越来越依赖电池电量，以及应用程序的激增，能源效率成为用户体验不可或缺的一部分。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/Grx.github.io/2021/12/20/iOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%83%BD%E6%BA%90%E6%95%88%E7%8E%87%E6%8C%87%E5%8D%97/#more">更多 >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/Grx.github.io/2021/12/20/iOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%83%BD%E6%BA%90%E6%95%88%E7%8E%87%E6%8C%87%E5%8D%97/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
 
-  
-    <article id="post-谈一谈LLVM编译器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/Grx.github.io/2021/11/12/%E8%B0%88%E4%B8%80%E8%B0%88LLVM%E7%BC%96%E8%AF%91%E5%99%A8/">谈一谈LLVM编译器</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/Grx.github.io/2021/11/12/%E8%B0%88%E4%B8%80%E8%B0%88LLVM%E7%BC%96%E8%AF%91%E5%99%A8/" class="archive-article-date">
-        <time datetime="2021-11-12T06:22:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-12</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <blockquote>
-<p>LLVM最早的时候是Illinois的一个研究项目，主要负责人是Chris Lattner，他现在就职于Apple. Apple 目前也是llvm项目的主要赞助者之一，对开发者保持开放，并兼容已有脚本。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/Grx.github.io/2021/11/12/%E8%B0%88%E4%B8%80%E8%B0%88LLVM%E7%BC%96%E8%AF%91%E5%99%A8/#more">更多 >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/Grx.github.io/2021/11/12/%E8%B0%88%E4%B8%80%E8%B0%88LLVM%E7%BC%96%E8%AF%91%E5%99%A8/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
 
-  
-    <article id="post-利用 RunLoop 原理监控线程卡顿" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/Grx.github.io/2021/10/02/%E5%88%A9%E7%94%A8%20RunLoop%20%E5%8E%9F%E7%90%86%E7%9B%91%E6%8E%A7%E7%BA%BF%E7%A8%8B%E5%8D%A1%E9%A1%BF/">利用 RunLoop 原理监控线程卡顿</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/Grx.github.io/2021/10/02/%E5%88%A9%E7%94%A8%20RunLoop%20%E5%8E%9F%E7%90%86%E7%9B%91%E6%8E%A7%E7%BA%BF%E7%A8%8B%E5%8D%A1%E9%A1%BF/" class="archive-article-date">
-        <time datetime="2021-10-02T13:20:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-02</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <blockquote>
-<p>卡顿问题，就是在主线程上无法响应用户交互的问题。如果一个 App 时不时地就给你卡一下，有时还长时间无响应，这时你还愿意继续用它吗？所以说，卡顿问题对 App 的伤害是巨大的，也是我们必须要重点解决的一个问题。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/Grx.github.io/2021/10/02/%E5%88%A9%E7%94%A8%20RunLoop%20%E5%8E%9F%E7%90%86%E7%9B%91%E6%8E%A7%E7%BA%BF%E7%A8%8B%E5%8D%A1%E9%A1%BF/#more">更多 >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/Grx.github.io/2021/10/02/%E5%88%A9%E7%94%A8%20RunLoop%20%E5%8E%9F%E7%90%86%E7%9B%91%E6%8E%A7%E7%BA%BF%E7%A8%8B%E5%8D%A1%E9%A1%BF/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/Grx.github.io/page/2/">2</a><a class="page-number" href="/Grx.github.io/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/Grx.github.io/page/11/">11</a><a class="extend next" rel="next" href="/Grx.github.io/page/2/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -1175,8 +616,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
