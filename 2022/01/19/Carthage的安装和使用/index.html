@@ -6,23 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ruixiaoguo.github.io/Grx.github.io">
-  <title>Grx博客</title>
+  <title>Carthage的安装和使用 | Grx博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter"> -->
-  
-  <meta name="description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Grx博客">
-<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/page/11/index.html">
+  <meta name="description" content="carthage是一个和cocopods类似的第三方库管理工具。Carthage是一个新的第三方库管理工具，它轻耦合，使用很灵活，不会修改项目文件，使用xcodebuild工具来编译第三方库,Carthage只支持动态框架库。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Carthage的安装和使用">
+<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/2022/01/19/Carthage%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Grx博客">
-<meta property="og:description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter">
+<meta property="og:description" content="carthage是一个和cocopods类似的第三方库管理工具。Carthage是一个新的第三方库管理工具，它轻耦合，使用很灵活，不会修改项目文件，使用xcodebuild工具来编译第三方库,Carthage只支持动态框架库。">
 <meta property="og:locale">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyize06edqj30mu04kaa3.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyize0a70rj30xc04ddg3.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyizlks8j3j30co0a90t3.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyizlk2rj1j30de07fmxk.jpg">
+<meta property="article:published_time" content="2022-01-19T13:10:11.000Z">
+<meta property="article:modified_time" content="2022-01-19T07:03:28.011Z">
 <meta property="article:author" content="Grx">
+<meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gyize06edqj30mu04kaa3.jpg">
   
     <link rel="alternative" href="/Grx.github.io/atom.xml" title="Grx博客" type="application/atom+xml">
   
@@ -228,46 +232,175 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-深入Objective-C的动态特性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Carthage的安装和使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/Grx.github.io/2014/06/01/%E6%B7%B1%E5%85%A5Objective-C%E7%9A%84%E5%8A%A8%E6%80%81%E7%89%B9%E6%80%A7/">深入Objective-C的动态特性</a>
-	
+    <h1 class="article-title" itemprop="name">
+      Carthage的安装和使用
     </h1>
   
 
 
   
   
-<a href="/Grx.github.io/2014/06/01/%E6%B7%B1%E5%85%A5Objective-C%E7%9A%84%E5%8A%A8%E6%80%81%E7%89%B9%E6%80%A7/" class="archive-article-date">
-        <time datetime="2014-06-01T06:07:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-06-01</time>
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/Grx.github.io/2022/01/19/Carthage%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+        <time datetime="2022-01-19T13:10:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-19</time>
 </a>
 
   
   
     
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">864字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
 
   
   </header>
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>Objective-C具有相当多的动态特性，基本的，也是经常被提到和用到的有动态类型（Dynamic typing），动态绑定（Dynamic binding）和动态加载（Dynamic loading）。</p>
-    
-    <a class="article-more-a" href="/Grx.github.io/2014/06/01/%E6%B7%B1%E5%85%A5Objective-C%E7%9A%84%E5%8A%A8%E6%80%81%E7%89%B9%E6%80%A7/#more">更多 >></a>
-    
+    <blockquote>
+<p>carthage是一个和cocopods类似的第三方库管理工具。Carthage是一个新的第三方库管理工具，它轻耦合，使用很灵活，不会修改项目文件，使用xcodebuild工具来编译第三方库,Carthage只支持动态框架库。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="carthage和cocopods区别"><a href="#carthage和cocopods区别" class="headerlink" title="carthage和cocopods区别"></a>carthage和cocopods区别</h2><h3 id="cocopods："><a href="#cocopods：" class="headerlink" title="cocopods："></a>cocopods：</h3><ul>
+<li><strong>中心化的三方库管理工具，需要开发者将代码提供到中心服务器。</strong></li>
+<li><strong>希望建立一个生态系统，可以更加方便的发现和集成第三方代码库，使用起来方便。</strong></li>
+<li><strong>自动建立和更新一个Xcode workspace，用来管理你的项目和所有依赖。</strong></li>
+<li><strong>需要配置podspec文件，包含了项目和第三方库的信息。</strong></li>
+</ul>
+<h3 id="cocopods缺点："><a href="#cocopods缺点：" class="headerlink" title="cocopods缺点："></a>cocopods缺点：</h3><ul>
+<li><strong>每次更新环境都需要连接到中心仓库，比较耗时</strong></li>
+<li><strong>繁琐的维护过程</strong></li>
+<li><strong>每次编译都会把所有第三方库都重新编译一次</strong></li>
+</ul>
+<h3 id="Carthage："><a href="#Carthage：" class="headerlink" title="Carthage："></a>Carthage：</h3><ul>
+<li><strong>去中心化的，使用git托管第三方库，这样的好处在于可以替换三方库的来源。</strong></li>
+<li><strong>使用xcodebuild来编译出二进制库，剩下的集成工作完全交给开发人员。</strong></li>
+<li><strong>更加灵活并且对现有项目没有太多的侵略性</strong></li>
+<li><strong>希望变成一个去中心化的依赖管理系统，不提供中心化的项目列表，减少维护成本和单点失败的概率。</strong></li>
+<li><strong>并不使用类似的配置文件，第三方库的依赖关系是通过Xcode项目来配置的。</strong></li>
+<li><strong>在swift中使用很方便，它本身就是swift写的。</strong></li>
+</ul>
+<h3 id="Carthage缺点："><a href="#Carthage缺点：" class="headerlink" title="Carthage缺点："></a>Carthage缺点：</h3><ul>
+<li><strong>仅支持 iOS8 +</strong></li>
+<li><strong>它只支持Framework，所以不能用来针对 iOS 8 以前的系统版本进行开发</strong></li>
+<li><strong>支持的 Carthage 安装的第三方框架和依赖不如 CocoaPods 丰富</strong></li>
+<li><strong>无法在 Xcode 里定位到源码，只可以看到一个库的头文件</strong></li>
+<li><strong>安装包的大小比用CocoaPods安装的包大</strong></li>
+<li><strong>每次update时，需要从git仓库中重新拉取下载，比较耗时</strong></li>
+</ul>
+<h2 id="Carthage安装"><a href="#Carthage安装" class="headerlink" title="Carthage安装"></a>Carthage安装</h2><ul>
+<li><strong>使用Homebrew安装Carthage之前，先对其进行更新：</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo brew update</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>安装Carthage</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo brew install carthage</span><br></pre></td></tr></table></figure>
+<h5 id="安装完毕后的路径-opt-homebrew-Cellar-carthage"><a href="#安装完毕后的路径-opt-homebrew-Cellar-carthage" class="headerlink" title="安装完毕后的路径 /opt/homebrew/Cellar/carthage"></a>安装完毕后的路径 /opt/homebrew/Cellar/carthage</h5><blockquote>
+<h4 id="如果xcode-报错-usr-local-bin-carthage-No-such-file-or-dictionary，将上面路径下的carthage中的二进制文件拷贝到-usr-local-bin-路径下面。"><a href="#如果xcode-报错-usr-local-bin-carthage-No-such-file-or-dictionary，将上面路径下的carthage中的二进制文件拷贝到-usr-local-bin-路径下面。" class="headerlink" title="如果xcode 报错 /usr/local/bin/carthage : No such file or dictionary，将上面路径下的carthage中的二进制文件拷贝到/usr/local/bin/路径下面。"></a>如果xcode 报错 /usr/local/bin/carthage : No such file or dictionary，将上面路径下的carthage中的二进制文件拷贝到/usr/local/bin/路径下面。</h4></blockquote>
+<ul>
+<li><strong>查看及升级Carthage版本</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">carthage version</span><br><span class="line">brew upgrade carthage</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>卸载Carthage</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo brew uninstall carthage</span><br></pre></td></tr></table></figure>
+
+<h2 id="Carthage使用"><a href="#Carthage使用" class="headerlink" title="Carthage使用"></a>Carthage使用</h2><h3 id="1-创建Cartfile文件："><a href="#1-创建Cartfile文件：" class="headerlink" title="1.创建Cartfile文件："></a>1.创建Cartfile文件：</h3><ul>
+<li><strong>创建一个文件用于配置安装哪些库(cd 进入到工程项目)</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch Cartfile</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>导入库，例如SVProgressHUD，在创建的Cartfile文件中编辑</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">github &quot;SVProgressHUD/SVProgressHUD&quot; ~&gt; 1.0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~&gt;3.0：表示使用版本3.0以上但是低于4.0的最新版本，如3.5, 3.9。</span><br><span class="line">==3.0：表示使用3.0版本。</span><br><span class="line">&gt;=3.0：表示使用3.0或更高的版本。</span><br><span class="line">如果你没有指明版本号，则会自动使用最新的版本。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>保存退出，下面就该安装了</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Carthage update --platform iOS</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>安装完毕后工程目录如下：</strong></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyize06edqj30mu04kaa3.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyize0a70rj30xc04ddg3.jpg"></p>
+<h3 id="2-配置xcode项目：引入Framework"><a href="#2-配置xcode项目：引入Framework" class="headerlink" title="2.配置xcode项目：引入Framework"></a>2.配置xcode项目：引入Framework</h3><ul>
+<li><strong>Target -&gt; Build Phases -&gt; Link Library with Libraries选择Carthage/Build导入framework</strong></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyizlks8j3j30co0a90t3.jpg"></p>
+<ul>
+<li><p><strong>点击Build Phases，点击“+” -&gt; New Run Script Phase</strong></p>
+</li>
+<li><p><strong>添加添加脚本 /usr/local/bin/Carthage copy-frameworks</strong></p>
+</li>
+<li><p><strong>添加”Input Files” $(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework</strong></p>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyizlk2rj1j30de07fmxk.jpg"></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul>
+<li><strong>在项目文件中导入</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;SVProgressHUD/SVProgressHUD.h&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="注意：Carthage包管理由于使用的是动态库，有的三方库不支持模拟器调试！！必须使用真机！！"><a href="#注意：Carthage包管理由于使用的是动态库，有的三方库不支持模拟器调试！！必须使用真机！！" class="headerlink" title="注意：Carthage包管理由于使用的是动态库，有的三方库不支持模拟器调试！！必须使用真机！！"></a>注意：Carthage包管理由于使用的是动态库，有的三方库不支持模拟器调试！！必须使用真机！！</h3>
     
 
     
 
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Grx
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2022/01/19/Carthage的安装和使用/" title="Carthage的安装和使用" target="_blank">https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2022/01/19/Carthage的安装和使用/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
     
 
   </div>
@@ -288,16 +421,76 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/Grx.github.io/2014/06/01/%E6%B7%B1%E5%85%A5Objective-C%E7%9A%84%E5%8A%A8%E6%80%81%E7%89%B9%E6%80%A7/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://ruixiaoguo.github.io/Grx.github.io/2022/01/19/Carthage%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/Grx.github.io/2022/01/18/%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93(%E7%A0%81%E4%BA%91)%E4%BB%A5%E5%8F%8A%E6%8F%90%E4%BA%A4%E5%88%B0cocoapods/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">创建属于自己的私有库(码云)以及提交到cocoapods</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -312,106 +505,33 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Hexo搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/Grx.github.io/2014/05/01/Hexo%E6%90%AD%E5%BB%BA/">Hexo搭建个人博客</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/Grx.github.io/2014/05/01/Hexo%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-        <time datetime="2014-05-01T08:03:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-05-01</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>hexo是一个基于Node.js的静态博客程序，优势是生成静态文件的速度非常快，支持markdown,速度快而且不容易出错，并且可以一键部署到github或者其它静态服务器上去</p>
-    
-    <a class="article-more-a" href="/Grx.github.io/2014/05/01/Hexo%E6%90%AD%E5%BB%BA/#more">更多 >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/Grx.github.io/2014/05/01/Hexo%E6%90%AD%E5%BB%BA/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#carthage%E5%92%8Ccocopods%E5%8C%BA%E5%88%AB"><span class="toc-number">1.</span> <span class="toc-text">carthage和cocopods区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cocopods%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">cocopods：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cocopods%E7%BC%BA%E7%82%B9%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">cocopods缺点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Carthage%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">Carthage：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Carthage%E7%BC%BA%E7%82%B9%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">Carthage缺点：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Carthage%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">Carthage安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%AE%8C%E6%AF%95%E5%90%8E%E7%9A%84%E8%B7%AF%E5%BE%84-opt-homebrew-Cellar-carthage"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">安装完毕后的路径 &#x2F;opt&#x2F;homebrew&#x2F;Cellar&#x2F;carthage</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E6%9E%9Cxcode-%E6%8A%A5%E9%94%99-usr-local-bin-carthage-No-such-file-or-dictionary%EF%BC%8C%E5%B0%86%E4%B8%8A%E9%9D%A2%E8%B7%AF%E5%BE%84%E4%B8%8B%E7%9A%84carthage%E4%B8%AD%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E6%8B%B7%E8%B4%9D%E5%88%B0-usr-local-bin-%E8%B7%AF%E5%BE%84%E4%B8%8B%E9%9D%A2%E3%80%82"><span class="toc-number">2.0.1.</span> <span class="toc-text">如果xcode 报错 &#x2F;usr&#x2F;local&#x2F;bin&#x2F;carthage : No such file or dictionary，将上面路径下的carthage中的二进制文件拷贝到&#x2F;usr&#x2F;local&#x2F;bin&#x2F;路径下面。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Carthage%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">Carthage使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BACartfile%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-number">3.1.</span> <span class="toc-text">1.创建Cartfile文件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AExcode%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%BC%95%E5%85%A5Framework"><span class="toc-number">3.2.</span> <span class="toc-text">2.配置xcode项目：引入Framework</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9ACarthage%E5%8C%85%E7%AE%A1%E7%90%86%E7%94%B1%E4%BA%8E%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF%E5%8A%A8%E6%80%81%E5%BA%93%EF%BC%8C%E6%9C%89%E7%9A%84%E4%B8%89%E6%96%B9%E5%BA%93%E4%B8%8D%E6%94%AF%E6%8C%81%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%B0%83%E8%AF%95%EF%BC%81%EF%BC%81%E5%BF%85%E9%A1%BB%E4%BD%BF%E7%94%A8%E7%9C%9F%E6%9C%BA%EF%BC%81%EF%BC%81"><span class="toc-number">4.1.</span> <span class="toc-text">注意：Carthage包管理由于使用的是动态库，有的三方库不支持模拟器调试！！必须使用真机！！</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
 
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/Grx.github.io/page/10/">&amp;laquo; Prev</a><a class="page-number" href="/Grx.github.io/">1</a><span class="space">&hellip;</span><a class="page-number" href="/Grx.github.io/page/9/">9</a><a class="page-number" href="/Grx.github.io/page/10/">10</a><span class="page-number current">11</span>
-    </nav>
-  
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -451,8 +571,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
