@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="一、查看当前源：pod repo二、切换当前源：cd ~&#x2F;.cocoapods&#x2F;repospod repo remove mastergit clone https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;git&#x2F;CocoaPods&#x2F;Specs.git master最后进入自己的工程，在自己工程的podFile第一行加上：source ‘https:&#x2F;&#x2F;mirrors.tun">
+  <meta name="description" content="CocoaPods 是一个 Cocoa 和 Cocoa Touch 框架的依赖管理器，具体原理和 Homebrew 有点类似，都是从 GitHub 下载索引，然后根据索引下载依赖的源代码。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cocopods切换当前源">
 <meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/2022/08/01/cocopods%E5%88%87%E6%8D%A2%E5%BD%93%E5%89%8D%E6%BA%90/index.html">
 <meta property="og:site_name" content="Grx博客">
-<meta property="og:description" content="一、查看当前源：pod repo二、切换当前源：cd ~&#x2F;.cocoapods&#x2F;repospod repo remove mastergit clone https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;git&#x2F;CocoaPods&#x2F;Specs.git master最后进入自己的工程，在自己工程的podFile第一行加上：source ‘https:&#x2F;&#x2F;mirrors.tun">
+<meta property="og:description" content="CocoaPods 是一个 Cocoa 和 Cocoa Touch 框架的依赖管理器，具体原理和 Homebrew 有点类似，都是从 GitHub 下载索引，然后根据索引下载依赖的源代码。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-08-01T09:12:43.000Z">
-<meta property="article:modified_time" content="2022-08-01T07:28:14.425Z">
+<meta property="article:modified_time" content="2022-08-01T07:47:00.810Z">
 <meta property="article:author" content="Grx">
 <meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
@@ -260,7 +260,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">105字</span>
+      <span class="post-count">203字</span>
     </span>
   </span>
 
@@ -280,8 +280,30 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="一、查看当前源："><a href="#一、查看当前源：" class="headerlink" title="一、查看当前源："></a>一、查看当前源：</h2><h4 id="pod-repo"><a href="#pod-repo" class="headerlink" title="pod repo"></a>pod repo</h4><h2 id="二、切换当前源："><a href="#二、切换当前源：" class="headerlink" title="二、切换当前源："></a>二、切换当前源：</h2><h4 id="cd-cocoapods-repos"><a href="#cd-cocoapods-repos" class="headerlink" title="cd ~/.cocoapods/repos"></a>cd ~/.cocoapods/repos</h4><h4 id="pod-repo-remove-master"><a href="#pod-repo-remove-master" class="headerlink" title="pod repo remove master"></a>pod repo remove master</h4><h4 id="git-clone-https-mirrors-tuna-tsinghua-edu-cn-git-CocoaPods-Specs-git-master"><a href="#git-clone-https-mirrors-tuna-tsinghua-edu-cn-git-CocoaPods-Specs-git-master" class="headerlink" title="git clone https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git master"></a>git clone <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git">https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git</a> master</h4><h4 id="最后进入自己的工程，在自己工程的podFile第一行加上："><a href="#最后进入自己的工程，在自己工程的podFile第一行加上：" class="headerlink" title="最后进入自己的工程，在自己工程的podFile第一行加上："></a>最后进入自己的工程，在自己工程的podFile第一行加上：</h4><p><strong>source ‘<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git&#39;">https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git&#39;</a></strong></p>
-<h2 id="三、常用镜像："><a href="#三、常用镜像：" class="headerlink" title="三、常用镜像："></a>三、常用镜像：</h2><p><strong>source ‘<a target="_blank" rel="noopener" href="https://gitee.com/mirrors/CocoaPods-Specs.git&#39;">https://gitee.com/mirrors/CocoaPods-Specs.git&#39;</a></strong><br/><br><strong>source ‘<a target="_blank" rel="noopener" href="https://github.com/CocoaPods/Specs.git&#39;">https://github.com/CocoaPods/Specs.git&#39;</a></strong><br/><br><strong>source ‘<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git&#39;">https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git&#39;</a></strong><br/><br><strong>source ‘<a target="_blank" rel="noopener" href="https://cdn.cocoapods.org/&#39;">https://cdn.cocoapods.org/&#39;</a></strong><br/></p>
+    <blockquote>
+<p>CocoaPods 是一个 Cocoa 和 Cocoa Touch 框架的依赖管理器，具体原理和 Homebrew 有点类似，都是从 GitHub 下载索引，然后根据索引下载依赖的源代码。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="一、查看当前源："><a href="#一、查看当前源：" class="headerlink" title="一、查看当前源："></a>一、查看当前源：</h2><pre><code>pod repo
+</code></pre>
+<h2 id="二、切换当前源："><a href="#二、切换当前源：" class="headerlink" title="二、切换当前源："></a>二、切换当前源：</h2><h4 id="进入源路径"><a href="#进入源路径" class="headerlink" title="进入源路径"></a>进入源路径</h4><pre><code>cd ~/.cocoapods/repos 
+</code></pre>
+<h4 id="移除旧源路径"><a href="#移除旧源路径" class="headerlink" title="移除旧源路径"></a>移除旧源路径</h4><pre><code>pod repo remove master
+</code></pre>
+<h4 id="安装新源路径"><a href="#安装新源路径" class="headerlink" title="安装新源路径"></a>安装新源路径</h4><pre><code>git clone https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git master
+</code></pre>
+<h4 id="最后进入自己的工程，在自己工程的podFile第一行加上："><a href="#最后进入自己的工程，在自己工程的podFile第一行加上：" class="headerlink" title="最后进入自己的工程，在自己工程的podFile第一行加上："></a>最后进入自己的工程，在自己工程的podFile第一行加上：</h4><pre><code>source &#39;https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git&#39;
+</code></pre>
+<h2 id="三、常用镜像："><a href="#三、常用镜像：" class="headerlink" title="三、常用镜像："></a>三、常用镜像：</h2><h4 id="码云源"><a href="#码云源" class="headerlink" title="码云源"></a>码云源</h4><pre><code>source &#39;https://gitee.com/mirrors/CocoaPods-Specs.git&#39;
+</code></pre>
+<h4 id="Github源"><a href="#Github源" class="headerlink" title="Github源"></a>Github源</h4><pre><code>source &#39;https://github.com/CocoaPods/Specs.git&#39;
+</code></pre>
+<h4 id="清华源"><a href="#清华源" class="headerlink" title="清华源"></a>清华源</h4><pre><code>source &#39;https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git&#39;
+</code></pre>
+<h4 id="cdn源"><a href="#cdn源" class="headerlink" title="cdn源"></a>cdn源</h4><pre><code>source &#39;https://cdn.cocoapods.org/&#39;
+</code></pre>
+<h4 id="北京外国语大学源"><a href="#北京外国语大学源" class="headerlink" title="北京外国语大学源"></a>北京外国语大学源</h4><pre><code>source  https://mirrors.bfsu.edu.cn/git/CocoaPods/Specs.git 
+</code></pre>
 
     
 
@@ -418,7 +440,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E6%BA%90%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">一、查看当前源：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pod-repo"><span class="toc-number">1.0.1.</span> <span class="toc-text">pod repo</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%87%E6%8D%A2%E5%BD%93%E5%89%8D%E6%BA%90%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">二、切换当前源：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#cd-cocoapods-repos"><span class="toc-number">2.0.1.</span> <span class="toc-text">cd ~&#x2F;.cocoapods&#x2F;repos</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pod-repo-remove-master"><span class="toc-number">2.0.2.</span> <span class="toc-text">pod repo remove master</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-clone-https-mirrors-tuna-tsinghua-edu-cn-git-CocoaPods-Specs-git-master"><span class="toc-number">2.0.3.</span> <span class="toc-text">git clone https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;git&#x2F;CocoaPods&#x2F;Specs.git master</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E8%BF%9B%E5%85%A5%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B7%A5%E7%A8%8B%EF%BC%8C%E5%9C%A8%E8%87%AA%E5%B7%B1%E5%B7%A5%E7%A8%8B%E7%9A%84podFile%E7%AC%AC%E4%B8%80%E8%A1%8C%E5%8A%A0%E4%B8%8A%EF%BC%9A"><span class="toc-number">2.0.4.</span> <span class="toc-text">最后进入自己的工程，在自己工程的podFile第一行加上：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">三、常用镜像：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E6%BA%90%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">一、查看当前源：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%87%E6%8D%A2%E5%BD%93%E5%89%8D%E6%BA%90%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">二、切换当前源：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E6%BA%90%E8%B7%AF%E5%BE%84"><span class="toc-number">2.0.1.</span> <span class="toc-text">进入源路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%BB%E9%99%A4%E6%97%A7%E6%BA%90%E8%B7%AF%E5%BE%84"><span class="toc-number">2.0.2.</span> <span class="toc-text">移除旧源路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%96%B0%E6%BA%90%E8%B7%AF%E5%BE%84"><span class="toc-number">2.0.3.</span> <span class="toc-text">安装新源路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E8%BF%9B%E5%85%A5%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B7%A5%E7%A8%8B%EF%BC%8C%E5%9C%A8%E8%87%AA%E5%B7%B1%E5%B7%A5%E7%A8%8B%E7%9A%84podFile%E7%AC%AC%E4%B8%80%E8%A1%8C%E5%8A%A0%E4%B8%8A%EF%BC%9A"><span class="toc-number">2.0.4.</span> <span class="toc-text">最后进入自己的工程，在自己工程的podFile第一行加上：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">三、常用镜像：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A0%81%E4%BA%91%E6%BA%90"><span class="toc-number">3.0.1.</span> <span class="toc-text">码云源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Github%E6%BA%90"><span class="toc-number">3.0.2.</span> <span class="toc-text">Github源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E5%8D%8E%E6%BA%90"><span class="toc-number">3.0.3.</span> <span class="toc-text">清华源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cdn%E6%BA%90"><span class="toc-number">3.0.4.</span> <span class="toc-text">cdn源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%97%E4%BA%AC%E5%A4%96%E5%9B%BD%E8%AF%AD%E5%A4%A7%E5%AD%A6%E6%BA%90"><span class="toc-number">3.0.5.</span> <span class="toc-text">北京外国语大学源</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
