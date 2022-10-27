@@ -6,19 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ruixiaoguo.github.io/Grx.github.io">
-  <title>Archives | Grx博客</title>
+  <title>微信支付宝离线支付原理 | Grx博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Grx博客">
-<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/archives/page/9/index.html">
+  <meta name="description" content="移动支付现在非常的普及，最常用的支付宝和微信支付相信已经有非常多的用户在使用了。微信，支付宝都可以实现离线支付。那么在没网络的情况下，离线支付如何实现。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信支付宝离线支付原理">
+<meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/2022/05/01/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E5%AE%9D%E7%A6%BB%E7%BA%BF%E6%94%AF%E4%BB%98%E5%8E%9F%E7%90%86/index.html">
 <meta property="og:site_name" content="Grx博客">
-<meta property="og:description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图，Wiz，TimeMeter">
+<meta property="og:description" content="移动支付现在非常的普及，最常用的支付宝和微信支付相信已经有非常多的用户在使用了。微信，支付宝都可以实现离线支付。那么在没网络的情况下，离线支付如何实现。">
 <meta property="og:locale">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008vxvgGly1h7jlno5gt6j30go069mxe.jpg">
+<meta property="article:published_time" content="2022-05-01T03:20:13.000Z">
+<meta property="article:modified_time" content="2022-10-27T02:02:08.898Z">
 <meta property="article:author" content="Grx">
+<meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008vxvgGly1h7jlno5gt6j30go069mxe.jpg">
   
     <link rel="alternative" href="/Grx.github.io/atom.xml" title="Grx博客" type="application/atom+xml">
   
@@ -224,41 +229,116 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-微信支付宝离线支付原理" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/Grx.github.io/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/05/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%B0%E7%8E%8B%E8%80%85-realm/" class="archive-article-date">
-        <time datetime="2016-05-13T06:17:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-13</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/05/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%B0%E7%8E%8B%E8%80%85-realm/">移动端数据库新王者:realm</a>
-	
+    <h1 class="article-title" itemprop="name">
+      微信支付宝离线支付原理
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/Grx.github.io/2022/05/01/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E5%AE%9D%E7%A6%BB%E7%BA%BF%E6%94%AF%E4%BB%98%E5%8E%9F%E7%90%86/" class="archive-article-date">
+        <time datetime="2022-05-01T03:20:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-01</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.1k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <blockquote>
+<p>移动支付现在非常的普及，最常用的支付宝和微信支付相信已经有非常多的用户在使用了。微信，支付宝都可以实现离线支付。那么在没网络的情况下，离线支付如何实现。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="一、前提条件："><a href="#一、前提条件：" class="headerlink" title="一、前提条件："></a>一、前提条件：</h2><p> <strong>1.离线支付功能只支持已签约免密支付/自动扣款的项目，比如支付宝或者微信的付款码。不能超过免密支付限额。</strong></p>
+<p><strong>2.商家手持扫码枪扫码，在金额比较少的情况下，不需要输入支付密码验证就可以完成支付的。</strong></p>
+<p><strong>3.手机可以离线，但是作为收款方的商户需要自己的扫码设备保持在线，通过在线的收款方搭桥，将离线的付款信息传到支付宝服务器端进行校验，最后完成支付操作</strong></p>
+<h2 id="二、支付流程图："><a href="#二、支付流程图：" class="headerlink" title="二、支付流程图："></a>二、支付流程图：</h2><p><img src="https://tva1.sinaimg.cn/large/008vxvgGly1h7jlno5gt6j30go069mxe.jpg"></p>
+<h2 id="三、实现流程："><a href="#三、实现流程：" class="headerlink" title="三、实现流程："></a>三、实现流程：</h2><h3 id="1-离线生成的付款码："><a href="#1-离线生成的付款码：" class="headerlink" title="1.离线生成的付款码："></a>1.离线生成的付款码：</h3><p><strong>1.用户打开支付宝客户端选择付款码，软件会向服务端申请令牌种子</strong></p>
+<p><strong>2.支付宝服务器会根据算法生成一个令牌种子，返回给支付宝客户端</strong></p>
+<p><strong>3.支付宝客户端得到令牌种子后，根据算法生成付款码（可以离线生成）</strong></p>
+<h3 id="2-付款码是一次性且动态更新"><a href="#2-付款码是一次性且动态更新" class="headerlink" title="2.付款码是一次性且动态更新"></a>2.付款码是一次性且动态更新</h3><p><strong>1.支付宝客户端生成的付款码会包含有用户标识、令牌值等信息</strong></p>
+<p><strong>2.付款码是一次性的，且每分钟会更新一次，有效避免出现别人把你的付款码打印出来再去付款</strong></p>
+<h3 id="3-扫码枪在线"><a href="#3-扫码枪在线" class="headerlink" title="3.扫码枪在线"></a>3.扫码枪在线</h3><p><strong>1.线下支付时，打开支付宝客户端，出示付款码（可以离线状态）</strong></p>
+<p><strong>2.商家扫码枪读取付款码，通过商家的设备上传至支付宝服务器</strong></p>
+<p><strong>3.支付宝服务器收到商家传来的付款码后，与令牌系统里保存的信息进行对比</strong></p>
+<p><strong>4.比对匹配则创建支付订单，并返回给商户订单信息，如果用户的余额足够便可完成支付</strong></p>
+<h2 id="四-离线码的劣势"><a href="#四-离线码的劣势" class="headerlink" title="四.离线码的劣势:"></a>四.离线码的劣势:</h2><p><strong>一.算法调整不灵活，如果相关算法较大的调整，可能需要升级客户端,并且这个期间服务端还需要兼容新老算法产生的付款码。</strong></p>
+<p><strong>二.安全性问题，正常的情况相关密钥无法被普通用户获取，但是架不住有有心之人。他们可能通过获取手机用户 Root 权限或者越狱手机，利用恶意程序获取密钥，然后随意生成付款码。</strong><br><strong>不过这一点，我觉得不过过分担心，蚂蚁集团这么多大神，不是吃干饭的，他们肯定有很多措施保证支付安全。</strong></p>
+<p><strong>三.数据碰撞问题，A 用户生成付款码算出来与 B 用户一致，这就 Hash 算法一样，再怎么优秀的算法，也有概率才生一样的额 Hash 值。<br>这就导致原本是扣用户 A 的钱，最后却扣了 B 用户。这样一来，确实很乌龙，对于 B 用户来讲，莫名其妙被扣钱了。</strong><br><strong>不过这种事放到放到现在，我觉得还是比买彩票中奖低，所以这种事还是不用过分担心了。</strong></p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p><strong>总结一下，我们平常使用付款码支付，其实原理就是商家端获取我们手机 APP 付款码（「其实就是一串数字」），然后后台调用支付宝支付接口完成扣款。</strong></p>
+<p><strong>这个流程商家端后台程序必须联网在线，但是对于我们客户端来讲可以在线，也可以离线。</strong></p>
+<p><strong>如果我们客户端在线，那就可以通过服务端向客户端发送付款码，这种方式更加安全，灵活，但是对于弱网环境下，体验就很差。</strong></p>
+<p><strong>如果我们客户端没网，那就通过客户端通过一定算法生成付款码，服务端收到经过相关校验，确认是哪个用户，确认码有效性，并且完成扣款。这种方式，适合客户端没有网络的情况，不过相对不灵活，且安全性稍差。</strong></p>
+<p><strong>了解原理，有没有觉得还是挺有意思的<del>下次排队付款钱,如果手机没网，不要担心尴尬，放心拿出手机付钱</del></strong></p>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Grx
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2022/05/01/微信支付宝离线支付原理/" title="微信支付宝离线支付原理" target="_blank">https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/2022/05/01/微信支付宝离线支付原理/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -270,410 +350,129 @@
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://ruixiaoguo.github.io/Grx.github.io/2022/05/01/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E5%AE%9D%E7%A6%BB%E7%BA%BF%E6%94%AF%E4%BB%98%E5%8E%9F%E7%90%86/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/05/08/Swift%20%E9%A1%B9%E7%9B%AE/" class="archive-article-date">
-        <time datetime="2016-05-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-08</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/Grx.github.io/2022/05/01/Apple%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95-sign%20in%20with%20Apple/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Apple授权登录-sign in with Apple
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Grx.github.io/2022/01/19/Carthage%E5%8C%85%E7%AE%A1%E7%90%86%E4%B8%89%E6%96%B9%E5%BA%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Carthage包管理三方库</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/05/08/Swift%20%E9%A1%B9%E7%9B%AE/">Swift 项目</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">一、前提条件：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%94%AF%E4%BB%98%E6%B5%81%E7%A8%8B%E5%9B%BE%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">二、支付流程图：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AE%9E%E7%8E%B0%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">三、实现流程：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%A6%BB%E7%BA%BF%E7%94%9F%E6%88%90%E7%9A%84%E4%BB%98%E6%AC%BE%E7%A0%81%EF%BC%9A"><span class="toc-number">3.1.</span> <span class="toc-text">1.离线生成的付款码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BB%98%E6%AC%BE%E7%A0%81%E6%98%AF%E4%B8%80%E6%AC%A1%E6%80%A7%E4%B8%94%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0"><span class="toc-number">3.2.</span> <span class="toc-text">2.付款码是一次性且动态更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%89%AB%E7%A0%81%E6%9E%AA%E5%9C%A8%E7%BA%BF"><span class="toc-number">3.3.</span> <span class="toc-text">3.扫码枪在线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B-%E7%A6%BB%E7%BA%BF%E7%A0%81%E7%9A%84%E5%8A%A3%E5%8A%BF"><span class="toc-number">4.</span> <span class="toc-text">四.离线码的劣势:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">总结：</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/05/07/iOS%E4%B8%AD%E4%BF%9D%E8%AF%81%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%E4%B8%8E%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/" class="archive-article-date">
-        <time datetime="2016-05-07T01:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-07</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/05/07/iOS%E4%B8%AD%E4%BF%9D%E8%AF%81%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%E4%B8%8E%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/">iOS中保证线程安全的几种方式与性能对比</a>
-	
-    </h1>
-  
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/05/05/%E5%BC%80%E6%BA%90APP%E9%A1%B9%E7%9B%AE/" class="archive-article-date">
-        <time datetime="2016-05-05T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-05</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/05/05/%E5%BC%80%E6%BA%90APP%E9%A1%B9%E7%9B%AE/">开源APP项目</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/04/08/Swift%20%E6%96%87%E7%AB%A0%E7%B2%BE%E9%80%89/" class="archive-article-date">
-        <time datetime="2016-04-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/04/08/Swift%20%E6%96%87%E7%AB%A0%E7%B2%BE%E9%80%89/">Swift 文章精选</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/03/25/iOS%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E6%8C%87%E5%8D%97/" class="archive-article-date">
-        <time datetime="2016-03-25T01:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-25</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/03/25/iOS%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E6%8C%87%E5%8D%97/">iOS人机交互指南</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ios</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/03/08/Swift%20%E5%85%A5%E9%97%A8%E6%8C%87%E5%BC%95/" class="archive-article-date">
-        <time datetime="2016-03-08T10:28:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/03/08/Swift%20%E5%85%A5%E9%97%A8%E6%8C%87%E5%BC%95/">Swift 入门指引</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/02/19/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%A7%E5%93%81%EF%BC%8D%E4%B8%87%E8%B1%A1%E4%BC%98%E5%9B%BE/" class="archive-article-date">
-        <time datetime="2016-02-19T01:58:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-19</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/02/19/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%A7%E5%93%81%EF%BC%8D%E4%B8%87%E8%B1%A1%E4%BC%98%E5%9B%BE/">腾讯云产品－万象优图</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/02/18/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%A7%E5%93%81%EF%BC%8D%E7%BB%B4%E7%BA%B3%E6%96%AF/" class="archive-article-date">
-        <time datetime="2016-02-18T09:21:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-18</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/02/18/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%A7%E5%93%81%EF%BC%8D%E7%BB%B4%E7%BA%B3%E6%96%AF/">腾讯云产品－维纳斯</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Grx.github.io/2016/02/16/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%A7%E5%93%81%EF%BC%8D%E4%BC%98%E5%9B%BE%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/" class="archive-article-date">
-        <time datetime="2016-02-16T02:32:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-16</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/Grx.github.io/2016/02/16/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%A7%E5%93%81%EF%BC%8D%E4%BC%98%E5%9B%BE%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/">腾讯云产品－优图人脸识别</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/Grx.github.io/archives/page/8/">&amp;laquo; Prev</a><a class="page-number" href="/Grx.github.io/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/Grx.github.io/archives/page/7/">7</a><a class="page-number" href="/Grx.github.io/archives/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/Grx.github.io/archives/page/10/">10</a><a class="page-number" href="/Grx.github.io/archives/page/11/">11</a><a class="extend next" rel="next" href="/Grx.github.io/archives/page/10/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -714,8 +513,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
