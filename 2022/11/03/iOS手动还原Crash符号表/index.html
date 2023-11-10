@@ -10,18 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="大家平时在开发过程中，经常会遇到Crash，那也是在正常不过的事，但是作为一个优秀的iOS开发人员，必将这些用户不良体验降到最低。   线下Crash：我们直接可以调试，结合stack信息，不难定位！ 线上Crash：会直接存储到用户手机，需要连接Xcode导出  审核中Crash：审核人员会上传crash文件给你，自己符号化分析">
+  <meta name="description" content="大家平时在开发过程中，经常会遇到Crash，那也是在正常不过的事，但是作为一个优秀的iOS开发人员，必将这些用户不良体验降到最低。   线下Crash：我们直接可以调试，结合stack信息，不难定位！ 线上Crash：会直接存储到用户手机，需要连接Xcode导出 审核中Crash：审核人员会上传crash文件给你，自己符号化分析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS手动还原Crash符号表">
 <meta property="og:url" content="https://ruixiaoguo.github.io/Grx.github.io/2022/11/03/iOS%E6%89%8B%E5%8A%A8%E8%BF%98%E5%8E%9FCrash%E7%AC%A6%E5%8F%B7%E8%A1%A8/index.html">
 <meta property="og:site_name" content="Grx博客">
-<meta property="og:description" content="大家平时在开发过程中，经常会遇到Crash，那也是在正常不过的事，但是作为一个优秀的iOS开发人员，必将这些用户不良体验降到最低。   线下Crash：我们直接可以调试，结合stack信息，不难定位！ 线上Crash：会直接存储到用户手机，需要连接Xcode导出  审核中Crash：审核人员会上传crash文件给你，自己符号化分析">
+<meta property="og:description" content="大家平时在开发过程中，经常会遇到Crash，那也是在正常不过的事，但是作为一个优秀的iOS开发人员，必将这些用户不良体验降到最低。   线下Crash：我们直接可以调试，结合stack信息，不难定位！ 线上Crash：会直接存储到用户手机，需要连接Xcode导出 审核中Crash：审核人员会上传crash文件给你，自己符号化分析">
 <meta property="og:locale">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008vxvgGly1h7rzk33k9zj30xc06uwf5.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008vxvgGly1h7s17mw1udj30xc0f675b.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008vxvgGly1h7s172f2zhj30t40aywf2.jpg">
 <meta property="article:published_time" content="2022-11-03T02:20:03.000Z">
-<meta property="article:modified_time" content="2022-11-03T09:17:04.327Z">
+<meta property="article:modified_time" content="2023-04-04T08:17:02.005Z">
 <meta property="article:author" content="Grx">
 <meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
@@ -290,7 +290,7 @@
 <ul>
 <li>线下Crash：我们直接可以调试，结合stack信息，不难定位！</li>
 <li>线上Crash：会直接存储到用户手机，需要连接Xcode导出</li>
-<li> 审核中Crash：审核人员会上传crash文件给你，自己符号化分析</li>
+<li>审核中Crash：审核人员会上传crash文件给你，自己符号化分析</li>
 </ul>
 <span id="more"></span>
 
@@ -477,6 +477,15 @@ end tell
 
 <nav id="article-nav">
   
+    <a href="/Grx.github.io/2023/10/03/iOS%E5%9F%BA%E4%BA%8ELLVM%20+%20Clang%E6%B7%B7%E6%B7%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          iOS基于LLVM + Clang混淆
+        
+      </div>
+    </a>
+  
   
     <a href="/Grx.github.io/2022/10/02/Bugly%E4%B8%8A%E4%BC%A0%E7%AC%A6%E5%8F%B7%E8%A1%A8/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Bugly上传符号表</div>
@@ -535,7 +544,7 @@ end tell
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2014-2022 <a href="https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/" target="_blank">Grx</a>
+    		&copy; 2014-2023 <a href="https://ruixiaoguo.github.io/Grx.github.io/Grx.github.io/" target="_blank">Grx</a>
     	</div>
       	<div class="footer-right">
 			
@@ -772,6 +781,10 @@ end tell
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MMKV</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">LLVM</a>
               </li>
             
             <div class="clearfix"></div>
